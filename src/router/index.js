@@ -7,8 +7,8 @@ import LoginAdmin from '@/components/LoginAdmin.vue'
 import DashboardAdmin from '@/views/DashboardAdmin.vue'
 
 // Tambahan halaman admin lainnya
-import RiwayatPKL from '@/views/admin/RiwayatPkl.vue'
-import RiwayatKunjungan from '@/views/admin/RiwayatKunjungan.vue'
+import RiwayatPKL from '@/views/RiwayatPkl.vue'
+import RiwayatKunjungan from '@/views/RiwayatKunjungan.vue'
 import Laporan from '@/views/admin/Laporan.vue'
 import Users from '@/views/admin/Users.vue'
 import Tentang from '@/views/admin/Tentang.vue'

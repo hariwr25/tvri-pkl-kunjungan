@@ -1,7 +1,11 @@
 <template>
-  <div class="font-sans antialiased text-gray-800 bg-gradient-to-br from-indigo-50 via-white to-blue-50 min-h-screen">
-    <router-view />
-  </div>
+  <v-app>
+    <v-main>
+      <div class="font-sans antialiased text-gray-800 bg-gradient-to-br from-indigo-50 via-white to-blue-50 min-h-screen">
+        <router-view />
+      </div>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
@@ -11,7 +15,6 @@ export default {
 </script>
 
 <style>
-/* Opsional: styling global tambahan */
 body {
   margin: 0;
 }

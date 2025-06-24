@@ -60,16 +60,16 @@ export default {
       this.loading = true;
 
       try {
-        const res = await fetch('http://localhost:3000/api/admin/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            username: this.username,
-            password: this.password
-          })
-        });
+        const res = await fetch('http://localhost:5050/api/admin/login', {
+  method: 'POST',  // <== Tambahkan ini
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    username: this.username,
+    password: this.password
+  })
+});
 
         const contentType = res.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
