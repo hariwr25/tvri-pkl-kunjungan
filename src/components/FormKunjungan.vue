@@ -3,7 +3,7 @@
     <div class="bg-gray-800 shadow-2xl rounded-3xl w-full max-w-2xl p-10 space-y-6">
       <div class="text-center">
         <h1 class="text-3xl font-extrabold text-indigo-400 mb-2">Pendaftaran Kunjungan</h1>
-        <p class="text-gray-300">Silakan isi formulir di bawah ini untuk mengajukan permohonan kunjungan ke TVRI.</p>
+        <p class="text-gray-300">Silahkan isi formulir di bawah ini untuk mengajukan permohonan kunjungan ke TVRI.</p>
       </div>
 
       <form @submit.prevent="submitForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">

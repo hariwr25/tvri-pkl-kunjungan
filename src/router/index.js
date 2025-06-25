@@ -14,19 +14,66 @@ import Users from '@/views/admin/Users.vue'
 import Tentang from '@/views/admin/Tentang.vue'
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/daftar-pkl', component: FormPKL },
-  { path: '/daftar-kunjungan', component: FormKunjungan },
-  { path: '/status', component: CekStatus },
-  { path: '/admin', component: LoginAdmin },
-  { path: '/admin/dashboard', component: DashboardAdmin },
+  { 
+    path: '/', 
+    name: 'Home', 
+    component: Home 
+  },
+  { 
+    path: '/daftar-pkl', 
+    name: 'DaftarPKL',
+    component: FormPKL 
+  },
+  { 
+    path: '/daftar-kunjungan', 
+    name: 'DaftarKunjungan',
+    component: FormKunjungan 
+  },
+  { 
+    path: '/cek-status', 
+    name: 'CekStatus',
+    component: CekStatus,
+    meta: { 
+      title: 'Cek Status Pendaftaran - TVRI Yogyakarta' 
+    }
+  },
+  { 
+    path: '/admin', 
+    name: 'LoginAdmin',
+    component: LoginAdmin 
+  },
+  { 
+    path: '/admin/dashboard', 
+    name: 'DashboardAdmin',
+    component: DashboardAdmin 
+  },
 
   // Rute tambahan untuk sidebar
-  { path: '/admin/riwayat-pkl', component: RiwayatPKL },
-  { path: '/admin/riwayat-kunjungan', component: RiwayatKunjungan },
-  { path: '/admin/laporan', component: Laporan },
-  { path: '/admin/users', component: Users },
-  { path: '/admin/tentang', component: Tentang },
+  { 
+    path: '/admin/riwayat-pkl', 
+    name: 'RiwayatPKL',
+    component: RiwayatPKL 
+  },
+  { 
+    path: '/admin/riwayat-kunjungan', 
+    name: 'RiwayatKunjungan',
+    component: RiwayatKunjungan 
+  },
+  { 
+    path: '/admin/laporan', 
+    name: 'Laporan',
+    component: Laporan 
+  },
+  { 
+    path: '/admin/users', 
+    name: 'Users',
+    component: Users 
+  },
+  { 
+    path: '/admin/tentang', 
+    name: 'Tentang',
+    component: Tentang 
+  },
 ]
 
 const router = createRouter({
@@ -46,6 +93,13 @@ router.beforeEach((to, from, next) => {
     '/admin/users',
     '/admin/tentang',
   ]
+
+  // Set judul halaman
+  if (to.meta.title) {
+    document.title = to.meta.title
+  } else {
+    document.title = 'TVRI Yogyakarta'
+  }
 
   if (adminOnlyPaths.includes(to.path) && !admin) {
     next('/admin')
