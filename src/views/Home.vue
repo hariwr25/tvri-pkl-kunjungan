@@ -184,7 +184,7 @@
               <div class="space-y-4 mb-8">
                 <div class="flex items-center gap-3">
                   <div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-                  <span class="text-gray-300">Durasi: 1-3 bulan (fleksibel)</span>
+                  <span class="text-gray-300">Durasi: Minimal 3 bulan (fleksibel)</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
@@ -241,7 +241,7 @@
               <div class="space-y-4 mb-8">
                 <div class="flex items-center gap-3">
                   <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                  <span class="text-gray-300">Durasi: 2-4 jam per kunjungan</span>
+                  <span class="text-gray-300">Durasi: 2 jam per kunjungan</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
@@ -279,6 +279,565 @@
       </div>
     </section>
 
+    <!-- Dokumen Section -->
+<section id="dokumen" class="py-16 px-6 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 text-amber-400">
+        Persyaratan Dokumen
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Siapkan dokumen-dokumen berikut sebelum mendaftar
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Dokumen PKL -->
+      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 hover:border-amber-400/60 transition-all">
+        <div class="text-4xl mb-4 text-amber-400">📄</div>
+        <h3 class="text-xl font-bold mb-3">PKL (Siswa/Mahasiswa)</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Surat Pengantar dari Sekolah/Kampus</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>CV/Riwayat Pendidikan</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Fotokopi KTP/Kartu Pelajar</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Pas Foto 3x4 (Latar Merah)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dokumen Kunjungan -->
+      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all">
+        <div class="text-4xl mb-4 text-emerald-400">📑</div>
+        <h3 class="text-xl font-bold mb-3">Kunjungan Edukatif</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Surat Permohonan Resmi</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Daftar Peserta (Min. 10 Orang)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Fotokopi Identitas Pendamping</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contoh Dokumen -->
+      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-sky-400/30 hover:border-sky-400/60 transition-all">
+        <div class="text-4xl mb-4 text-sky-400">📝</div>
+        <h3 class="text-xl font-bold mb-3">Contoh Dokumen</h3>
+        <div class="space-y-3">
+          <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
+            <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            <span>Contoh Surat Pengantar PKL</span>
+          </a>
+          <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
+            <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            <span>Template Daftar Peserta</span>
+          </a>
+          <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
+            <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            <span>Panduan Pengisian Formulir</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Upload Guidelines -->
+      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-400/30 hover:border-rose-400/60 transition-all">
+        <div class="text-4xl mb-4 text-rose-400">⚠️</div>
+        <h3 class="text-xl font-bold mb-3">Panduan Upload</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li class="flex items-start gap-2">
+            <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
+            <span>Format file: PDF/JPG/PNG (max. 2MB)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
+            <span>Nama file: NAMA_JENIS_DOKUMEN (contoh: ANDI_SURAT_PENGANTAR.pdf)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
+            <span>Dokumen harus terbaca jelas</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Proses Pendaftaran Responsif - TVRI Yogyakarta -->
+<section id="proses" class="py-12 px-4 sm:px-6 bg-gradient-to-b from-gray-800 to-gray-900">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">
+        Proses Pendaftaran TVRI Yogyakarta
+      </h2>
+      <div class="w-20 h-1 bg-amber-500 mx-auto mb-6"></div>
+    </div>
+
+    <!-- Mobile Timeline (horizontal) -->
+    <div class="md:hidden overflow-x-auto pb-6">
+      <div class="flex w-[700px] min-w-full space-x-8 px-4">
+        <!-- Step 1 -->
+        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+          <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-blue-300 font-bold mb-4">1</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Isi Formulir Online</h3>
+          <p class="text-gray-300 text-sm mb-3">Lengkapi data diri dan pilih program</p>
+          <div class="text-xs text-blue-400">Waktu: ±15 menit</div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+          <div class="w-12 h-12 bg-amber-900 rounded-full flex items-center justify-center text-amber-300 font-bold mb-4">2</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Upload Dokumen</h3>
+          <p class="text-gray-300 text-sm mb-3">Format: PDF/JPG (max. 2MB)</p>
+          <div class="text-xs text-amber-400">Resolusi min. 300dpi</div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+          <div class="w-12 h-12 bg-green-900 rounded-full flex items-center justify-center text-green-300 font-bold mb-4">3</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Verifikasi Admin</h3>
+          <p class="text-gray-300 text-sm mb-3">Proses: 1-3 hari kerja</p>
+          <div class="text-xs text-green-400">Cek email</div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+          <div class="w-12 h-12 bg-purple-900 rounded-full flex items-center justify-center text-purple-300 font-bold mb-4">4</div>
+          <h3 class="text-lg font-semibold text-white mb-2">Keputusan</h3>
+          <p class="text-gray-300 text-sm mb-3">Notifikasi real-time</p>
+          <div class="text-xs text-purple-400">Unduh surat</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Timeline (vertical) -->
+    <div class="hidden md:block relative">
+      <!-- Timeline line -->
+      <div class="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 via-amber-400 to-purple-400 transform -translate-x-1/2 z-0"></div>
+
+      <div class="space-y-16">
+        <!-- Step 1 -->
+        <div class="relative flex justify-between items-center">
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+            <h3 class="text-xl font-bold text-blue-400 mb-3">Isi Formulir Online</h3>
+            <p class="text-gray-300 mb-4">Lengkapi data diri secara lengkap dan pilih program</p>
+            <div class="text-sm text-blue-400 font-medium">⏳ Waktu: ±15 menit</div>
+          </div>
+          
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-blue-500 flex items-center justify-center text-blue-400 font-bold text-xl z-10 shadow-lg">
+            1
+          </div>
+          
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+            <h4 class="text-lg font-semibold text-white mb-3">PERSYARATAN:</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Scan KTP/Kartu Pelajar
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Surat pengantar institusi
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                CV terbaru (format PDF)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative flex justify-between items-center">
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+            <h3 class="text-xl font-bold text-amber-400 mb-3">Upload Dokumen</h3>
+            <p class="text-gray-300 mb-4">Unggah persyaratan dokumen sesuai ketentuan</p>
+            <div class="text-sm text-amber-400 font-medium">📁 Format: PDF/JPG (max. 2MB)</div>
+          </div>
+          
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-amber-500 flex items-center justify-center text-amber-400 font-bold text-xl z-10 shadow-lg">
+            2
+          </div>
+          
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+            <h4 class="text-lg font-semibold text-white mb-3">TIPS UPLOAD:</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Gunakan resolusi minimal 300dpi
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Pastikan dokumen terbaca jelas
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Nama file sesuai jenis dokumen
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative flex justify-between items-center">
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+            <h3 class="text-xl font-bold text-green-400 mb-3">Verifikasi Admin</h3>
+            <p class="text-gray-300 mb-4">Tim kami akan memverifikasi kelengkapan dokumen</p>
+            <div class="text-sm text-green-400 font-medium">⏱️ Proses: 1-3 hari kerja</div>
+          </div>
+          
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-green-500 flex items-center justify-center text-green-400 font-bold text-xl z-10 shadow-lg">
+            3
+          </div>
+          
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+            <h4 class="text-lg font-semibold text-white mb-3">YANG DIPERIKSA:</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Kelengkapan dokumen persyaratan
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Validitas dan keaslian dokumen
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Kesesuaian dengan program
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative flex justify-between items-center">
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+            <h3 class="text-xl font-bold text-purple-400 mb-3">Keputusan Penerimaan</h3>
+            <p class="text-gray-300 mb-4">Hasil verifikasi via halaman cek status</p>
+            <div class="text-sm text-purple-400 font-medium">🔔 Status update real-time</div>
+          </div>
+          
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-purple-500 flex items-center justify-center text-purple-400 font-bold text-xl z-10 shadow-lg">
+            4
+          </div>
+          
+          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+            <h4 class="text-lg font-semibold text-white mb-3">JIKA DITERIMA:</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Unduh surat penerimaan
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Konfirmasi kehadiran
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Terima panduan peserta
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divisi Section -->
+<section id="divisi" class="py-16 px-6 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 text-amber-400">
+        Divisi PKL Tersedia
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Pilih divisi yang sesuai dengan minat dan kompetensi Anda
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Produksi (PROGRAM) -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 hover:border-amber-400/60 transition-all hover:shadow-lg hover:shadow-amber-500/20">
+        <div class="text-4xl mb-4 text-amber-400 group-hover:animate-bounce">🎬</div>
+        <h3 class="text-xl font-bold mb-2">Program</h3>
+        <p class="text-gray-400 mb-4">Berfokus pada produksi program televisi dalam dan luar studio yang membutuhkan keahlian broadcasting dan pengelolaan tayangan.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Produksi</span>
+          <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Broadcast</span>
+          <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Studio</span>
+        </div>
+      </div>
+
+      <!-- Jurnalistik (BERITA) -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all hover:shadow-lg hover:shadow-emerald-500/20">
+        <div class="text-4xl mb-4 text-emerald-400 group-hover:animate-bounce">📰</div>
+        <h3 class="text-xl font-bold mb-2">Berita</h3>
+        <p class="text-gray-400 mb-4">Produksi berita dalam dan luar studio yang membutuhkan pengalaman jurnalistik dan komunikasi yang baik.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Jurnalistik</span>
+          <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Newsroom</span>
+          <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Peliputan</span>
+        </div>
+      </div>
+
+      <!-- Teknik -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-sky-400/30 hover:border-sky-400/60 transition-all hover:shadow-lg hover:shadow-sky-500/20">
+        <div class="text-4xl mb-4 text-sky-400 group-hover:animate-bounce">📡</div>
+        <h3 class="text-xl font-bold mb-2">Teknik</h3>
+        <p class="text-gray-400 mb-4">Fokus pada operasional produksi studio serta editing video dan pengetahuan teknis broadcasting.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">Transmisi</span>
+          <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">MCR</span>
+          <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">Editing</span>
+        </div>
+      </div>
+
+      <!-- Digital Media (KONTEN MEDIA BARU) -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/30 hover:border-purple-400/60 transition-all hover:shadow-lg hover:shadow-purple-500/20">
+        <div class="text-4xl mb-4 text-purple-400 group-hover:animate-bounce">💻</div>
+        <h3 class="text-xl font-bold mb-2">Konten Media Baru</h3>
+        <p class="text-gray-400 mb-4">Pengelolaan konten di media sosial dan produksi luar studio sesuai dengan SOP yang berlaku.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">Instagram</span>
+          <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">YouTube</span>
+          <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">Website</span>
+        </div>
+      </div>
+
+      <!-- Tata Artistik (Pindah ke PROMO) -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-red-400/30 hover:border-red-400/60 transition-all hover:shadow-lg hover:shadow-red-500/20">
+        <div class="text-4xl mb-4 text-red-400 group-hover:animate-bounce">🎨</div>
+        <h3 class="text-xl font-bold mb-2">Promo</h3>
+        <p class="text-gray-400 mb-4">Pengelolaan promosi konten TV melalui siaran maupun media sosial TVRI Yogyakarta.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Promosi</span>
+          <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Konten</span>
+          <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Media Sosial</span>
+        </div>
+      </div>
+
+      <!-- Keuangan -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-green-400/30 hover:border-green-400/60 transition-all hover:shadow-lg hover:shadow-green-500/20">
+        <div class="text-4xl mb-4 text-green-400 group-hover:animate-bounce">💰</div>
+        <h3 class="text-xl font-bold mb-2">Keuangan</h3>
+        <p class="text-gray-400 mb-4">Mengelola anggaran, pelaporan, arsip dokumen penting, dan aplikasi keuangan lembaga.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Anggaran</span>
+          <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Laporan</span>
+          <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Kearsipan</span>
+        </div>
+      </div>
+
+      <!-- SDM (UMUM) -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30 hover:border-yellow-400/60 transition-all hover:shadow-lg hover:shadow-yellow-500/20">
+        <div class="text-4xl mb-4 text-yellow-400 group-hover:animate-bounce">👥</div>
+        <h3 class="text-xl font-bold mb-2">Umum</h3>
+        <p class="text-gray-400 mb-4">Unit SDM & BMN, melayani administrasi kepegawaian, IT, dan pengelolaan barang milik negara.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">Kepegawaian</span>
+          <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">Aplikasi</span>
+          <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">IT</span>
+        </div>
+      </div>
+
+      <!-- Sekretariat (PENGEMBANGAN USAHA) -->
+      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-teal-400/30 hover:border-teal-400/60 transition-all hover:shadow-lg hover:shadow-teal-500/20">
+        <div class="text-4xl mb-4 text-teal-400 group-hover:animate-bounce">📝</div>
+        <h3 class="text-xl font-bold mb-2">Pengembangan Usaha</h3>
+        <p class="text-gray-400 mb-4">Mengelola kerjasama siaran & non-siaran, baik dari klien pemerintah maupun non-pemerintah.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Kerjasama</span>
+          <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Usaha</span>
+          <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Relasi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 px-6 bg-gray-950">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 text-rose-400">
+        Gallery Kegiatan
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Dokumentasi kegiatan PKL dan kunjungan sebelumnya
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Item 1 - PKL 1 -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
+        <img :src="require('@/assets/pkl01.jpg')" alt="PKL 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Sesi Pelatihan Kamera</h3>
+            <p class="text-gray-300 text-sm">Angkatan PKL 2024</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 2 - Kunjungan 1 -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
+        <img :src="require('@/assets/kunjungan1.jpg')" alt="Kunjungan 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Tour Studio TV</h3>
+            <p class="text-gray-300 text-sm">SMKN 1 Yogyakarta</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 3 - PKL 2 -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
+        <img :src="require('@/assets/pkl2.jpg')" alt="PKL 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Praktik Live Reporting</h3>
+            <p class="text-gray-300 text-sm">PKL Jurnalistik</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 4 - Kunjungan 2 -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
+        <img :src="require('@/assets/kunjungan2.jpg')" alt="Kunjungan 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Demo Peralatan</h3>
+            <p class="text-gray-300 text-sm">Siswa SMP</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video Preview -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300 col-span-2">
+        <img :src="require('@/assets/video-thumbnail.jpg')" alt="Video Testimoni" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-100 group-hover:opacity-80 transition-opacity duration-300">
+          <div class="w-16 h-16 bg-rose-500/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="absolute inset-0 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Testimoni Peserta PKL</h3>
+            <p class="text-gray-300 text-sm">Tonton pengalaman mereka</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 5 - PKL 3 -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
+        <img :src="require('@/assets/pkl3.jpg')" alt="PKL 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Editing Video</h3>
+            <p class="text-gray-300 text-sm">Workshop Post-Produksi</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 6 - Kunjungan 3 -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
+        <img :src="require('@/assets/kunjungan3.jpg')" alt="Kunjungan 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Sesi Tanya Jawab</h3>
+            <p class="text-gray-300 text-sm">Dengan Tim Produksi</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Item 7 - PKL 4 -->
+      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
+        <img :src="require('@/assets/pkl5.jpg')" alt="PKL 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <div>
+            <h3 class="font-bold text-white">Penyerahan Sertifikat</h3>
+            <p class="text-gray-300 text-sm">Wisuda PKL 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="px-6 py-3 bg-rose-500 hover:bg-rose-400 text-white font-medium rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-rose-500/30 flex items-center gap-2 mx-auto">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        Lihat Lebih Banyak Foto
+      </button>
+    </div>
+  </div>
+</section>
+
     <!-- Why Choose Us Section -->
     <section id="program" class="py-20 px-6 bg-gray-900">
       <div class="max-w-7xl mx-auto">
@@ -309,151 +868,122 @@
       </div>
     </section>
 
-    <!-- Testimonial Section -->
-<section id="testimoni" class="py-20 px-6 bg-gray-800 relative">
-  <div class="max-w-7xl mx-auto">
+   <!-- Testimonial Section -->
+<section id="testimoni" class="py-28 px-6 bg-gray-800 relative overflow-hidden">
+  <!-- Floating decorative elements -->
+  <div class="absolute -top-32 -left-32 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  
+  <div class="max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-5xl font-bold mb-6">
-        <span class="text-amber-400">
+      <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">
           Apa Kata Mereka?
         </span>
       </h2>
       <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Pengalaman peserta PKL dan kunjungan edukatif di TVRI Yogyakarta
+        Pengalaman nyata dari peserta yang telah merasakan program kami
       </p>
     </div>
 
-    <!-- Testimonial Slider Container -->
-    <div class="relative overflow-hidden">
-      <!-- Slider Track -->
-      <div class="flex transition-transform duration-500 ease-in-out" 
-           :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-        <!-- Testimonial 1 -->
-        <div class="w-full flex-shrink-0 px-4">
-          <div class="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 hover:border-amber-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-amber-500/20">
-            <div class="absolute -top-4 -left-4 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-xl shadow-lg">
-              <span class="text-white font-bold">AS</span>
-            </div>
-            <div class="flex items-center gap-4 mb-4">
-              <div class="flex-1">
-                <h3 class="text-xl font-bold text-white">Andi Setiawan</h3>
-                <p class="text-amber-300 text-sm">Peserta PKL 2024</p>
+    <!-- Modern Testimonial Carousel -->
+    <div class="relative">
+      <!-- Testimonial Cards Container -->
+      <div class="relative h-[500px] md:h-[400px] w-full overflow-hidden rounded-3xl">
+        <!-- Testimonial Cards -->
+        <div 
+          v-for="(testimonial, index) in testimonials"
+          :key="index"
+          :class="[
+            'absolute inset-0 transition-all duration-700 ease-in-out transform',
+            currentSlide === index ? 'opacity-100 translate-x-0' : 
+            (index > currentSlide ? 'opacity-0 translate-x-full' : 'opacity-0 -translate-x-full')
+          ]"
+        >
+          <div :class="`relative h-full w-full bg-gradient-to-br from-gray-800/60 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-${testimonial.color}-400/30 overflow-hidden`">
+            <!-- Floating avatar -->
+            <div :class="`absolute -top-8 -left-8 w-32 h-32 bg-${testimonial.color}-500/20 rounded-full z-0`"></div>
+            
+            <!-- Content -->
+            <div class="relative z-10 h-full flex flex-col">
+              <!-- Header with rating -->
+              <div class="flex items-start gap-6 mb-6">
+                <div :class="`w-20 h-20 bg-${testimonial.color}-500 rounded-2xl flex items-center justify-center text-3xl font-bold text-white shadow-lg`">
+                  {{ testimonial.initials }}
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white">{{ testimonial.name }}</h3>
+                  <p :class="`text-${testimonial.color}-300 text-sm`">{{ testimonial.role }}</p>
+                  <div class="flex mt-2">
+                    <span v-for="i in 5" :key="i" class="text-xl">
+                      <span :class="i <= testimonial.rating ? 'text-yellow-400' : 'text-gray-500'">★</span>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div class="text-yellow-400 text-2xl">★★★★★</div>
-            </div>
-            <p class="text-gray-300 italic mb-4">
-              "Pengalaman PKL di TVRI Yogya sangat berkesan! Saya belajar banyak tentang produksi berita langsung dari praktisi berpengalaman. Fasilitasnya lengkap dan mentor sangat membantu."
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-amber-600/30 text-amber-300 rounded-full text-xs border border-amber-400/30">Produksi</span>
-              <span class="px-2 py-1 bg-amber-600/30 text-amber-300 rounded-full text-xs border border-amber-400/30">Jurnalistik</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="w-full flex-shrink-0 px-4">
-          <div class="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-emerald-500/20">
-            <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-xl shadow-lg">
-              <span class="text-white font-bold">SD</span>
-            </div>
-            <div class="flex items-center gap-4 mb-4">
-              <div class="flex-1">
-                <h3 class="text-xl font-bold text-white">Siti Dewi</h3>
-                <p class="text-emerald-300 text-sm">Guru Pendamping</p>
+              
+              <!-- Testimonial text with animated quote marks -->
+              <div class="relative flex-1">
+                <span class="absolute -left-2 -top-4 text-7xl text-amber-400/10 font-serif">"</span>
+                <p class="text-gray-300 mb-6 leading-relaxed text-lg italic relative pl-8 z-10">
+                  {{ testimonial.content }}
+                </p>
+                <span class="absolute bottom-0 right-0 text-7xl text-amber-400/10 font-serif">"</span>
               </div>
-              <div class="text-yellow-400 text-2xl">★★★★★</div>
-            </div>
-            <p class="text-gray-300 italic mb-4">
-              "Kunjungan edukatif ke TVRI memberikan wawasan baru bagi siswa kami tentang dunia broadcasting. Tim sangat ramah dan penjelasannya mudah dipahami. Sangat direkomendasikan untuk sekolah!"
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-emerald-600/30 text-emerald-300 rounded-full text-xs border border-emerald-400/30">Study Tour</span>
-              <span class="px-2 py-1 bg-emerald-600/30 text-emerald-300 rounded-full text-xs border border-emerald-400/30">Edukasi</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="w-full flex-shrink-0 px-4">
-          <div class="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-400/30 hover:border-rose-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-rose-500/20">
-            <div class="absolute -top-4 -left-4 w-12 h-12 bg-rose-500 rounded-full flex items-center justify-center text-xl shadow-lg">
-              <span class="text-white font-bold">RF</span>
-            </div>
-            <div class="flex items-center gap-4 mb-4">
-              <div class="flex-1">
-                <h3 class="text-xl font-bold text-white">Rizal Fahmi</h3>
-                <p class="text-rose-300 text-sm">Mahasiswa Broadcasting</p>
+              
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span 
+                  v-for="(tag, tagIndex) in testimonial.tags" 
+                  :key="tagIndex"
+                  :class="`px-3 py-1.5 bg-${testimonial.color}-600/30 text-${testimonial.color}-300 rounded-full text-sm border border-${testimonial.color}-400/30`"
+                >
+                  {{ tag }}
+                </span>
               </div>
-              <div class="text-yellow-400 text-2xl">★★★★☆</div>
-            </div>
-            <p class="text-gray-300 italic mb-4">
-              "PKL di TVRI Yogya melengkapi teori yang saya dapat di kampus dengan praktik langsung. Saya bahkan berkesempatan ikut produksi siaran langsung. Pengalaman yang sangat berharga!"
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-rose-600/30 text-rose-300 rounded-full text-xs border border-rose-400/30">Teknik</span>
-              <span class="px-2 py-1 bg-rose-600/30 text-rose-300 rounded-full text-xs border border-rose-400/30">Live Production</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 4 -->
-        <div class="w-full flex-shrink-0 px-4">
-          <div class="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-sky-400/30 hover:border-sky-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-sky-500/20">
-            <div class="absolute -top-4 -left-4 w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center text-xl shadow-lg">
-              <span class="text-white font-bold">DA</span>
-            </div>
-            <div class="flex items-center gap-4 mb-4">
-              <div class="flex-1">
-                <h3 class="text-xl font-bold text-white">Dian Ayu</h3>
-                <p class="text-sky-300 text-sm">Siswa SMK</p>
-              </div>
-              <div class="text-yellow-400 text-2xl">★★★★★</div>
-            </div>
-            <p class="text-gray-300 italic mb-4">
-              "Program PKL di TVRI Yogya sangat profesional. Saya mendapatkan pengalaman nyata dalam produksi televisi dan jaringan profesional yang bermanfaat untuk karir saya kedepannya."
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-sky-600/30 text-sky-300 rounded-full text-xs border border-sky-400/30">Editing</span>
-              <span class="px-2 py-1 bg-sky-600/30 text-sky-300 rounded-full text-xs border border-sky-400/30">Post Production</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Slider Controls -->
-    <div class="flex justify-center items-center mt-8 gap-4">
+      
+      <!-- Navigation Arrows -->
       <button 
         @click="prevSlide"
-        class="w-12 h-12 rounded-full bg-gray-700 hover:bg-amber-500 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-amber-500/40"
+        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-gray-900/80 hover:bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-20"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       
-      <!-- Slider Indicators -->
-      <div class="flex gap-2">
+      <button 
+        @click="nextSlide"
+        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-gray-900/80 hover:bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-20"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      
+      <!-- Indicators -->
+      <div class="flex justify-center gap-2 mt-8">
         <button
-          v-for="(_, index) in testimonials"
+          v-for="(testimonial, index) in testimonials"
           :key="index"
           @click="goToSlide(index)"
           :class="[
             'w-3 h-3 rounded-full transition-all duration-300',
-            currentSlide === index ? 'bg-amber-400 w-6' : 'bg-gray-500'
+            currentSlide === index ? `bg-${testimonial.color}-400 w-6` : 'bg-gray-500'
           ]"
         ></button>
       </div>
-      
-      <button 
-        @click="nextSlide"
-        class="w-12 h-12 rounded-full bg-gray-700 hover:bg-amber-500 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-amber-500/40"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+    </div>
+
+    <!-- Video Testimonials CTA -->
+    <div class="mt-16 text-center">
+      <div class="inline-block relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-emerald-400 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -724,6 +1254,7 @@ export default {
     // Animate stats counter
     this.animateStats();
   },
+  
   methods: {
     scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
