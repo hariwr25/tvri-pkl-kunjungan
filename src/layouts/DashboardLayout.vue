@@ -25,11 +25,11 @@
       <!-- Menu Data -->
       <div v-if="!collapsed" class="px-6 pt-6 pb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">Data</div>
       <nav class="px-2 space-y-1 text-sm font-medium">
-        <router-link to="/admin/pkl" class="menu-link">
+        <router-link to="/admin/Pkl" class="menu-link">
           <i class="fas fa-clipboard-list"></i>
           <span v-if="!collapsed">Data PKL</span>
         </router-link>
-        <router-link to="/admin/kunjungan" class="menu-link">
+        <router-link to="/admin/Kunjungan" class="menu-link">
           <i class="fas fa-users"></i>
           <span v-if="!collapsed">Data Kunjungan</span>
         </router-link>
