@@ -7,13 +7,13 @@
       <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-pulse" style="animation-delay: 4s;"></div>
     </div>
 
-    <div class="relative w-full max-w-2xl">
+    <div class="relative w-full max-w-4xl px-4">
       <!-- Header -->
       <div class="text-center mb-8">
         <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent mb-2 animate-pulse">
           Form Pendaftaran PKL
         </h2>
-        <p class="text-gray-300">Lengkapi formulir di bawah untuk mendaftar program PKL</p>
+        <p class="text-gray-300">Lengkapi formulir di bawah untuk mendaftar program PKL di TVRI Yogyakarta</p>
       </div>
 
       <!-- Form Container -->
@@ -38,11 +38,11 @@
                     class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 group-hover:border-white/30"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </div>
 
@@ -57,11 +57,49 @@
                     class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 group-hover:border-white/30"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v1a1 1 0 01-1 1h-1v12a2 2 0 01-2 2H6a2 2 0 01-2-2V7H3a1 1 0 01-1-1V5a1 1 0 011-1h4z"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
                     </svg>
-                  </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Tempat/Tanggal Lahir -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Tempat Lahir</label>
+                <div class="relative group">
+                  <input
+                    v-model="form.tempat_lahir"
+                    type="text"
+                    placeholder="Kota kelahiran"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
+                    required
+                  />
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Tanggal Lahir</label>
+                <div class="relative group">
+                  <input
+                    v-model="form.tanggal_lahir"
+                    type="date"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white"
+                    required
+                  />
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
@@ -75,14 +113,14 @@
                     v-model="form.asal_instansi"
                     type="text"
                     placeholder="Nama sekolah/universitas"
-                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 group-hover:border-white/30"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </div>
 
@@ -94,14 +132,60 @@
                     v-model="form.jurusan"
                     type="text"
                     placeholder="Program studi/jurusan"
-                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 group-hover:border-white/30"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
                     </svg>
-                  </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Jenjang Pendidikan -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Jenjang Pendidikan</label>
+                <div class="relative group">
+                  <select
+                    v-model="form.jenjang_pendidikan"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white appearance-none"
+                    required
+                  >
+                    <option value="" disabled selected>Pilih jenjang</option>
+                    <option value="SMA/SMK" class="bg-gray-800 text-white">SMA/SMK</option>
+                    <option value="D1" class="bg-gray-800 text-white">Diploma 1 (D1)</option>
+                    <option value="D2" class="bg-gray-800 text-white">Diploma 2 (D2)</option>
+                    <option value="D3" class="bg-gray-800 text-white">Diploma 3 (D3)</option>
+                    <option value="D4" class="bg-gray-800 text-white">Diploma 4 (D4)</option>
+                    <option value="S1" class="bg-gray-800 text-white">Sarjana (S1)</option>
+                    <option value="S2" class="bg-gray-800 text-white">Magister (S2)</option>
+                  </select>
+                  <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-300 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Deskripsi Diri -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Deskripsi Diri & Peminatan</label>
+                <div class="relative group">
+                  <textarea
+                    v-model="form.deskripsi_diri"
+                    placeholder="Ceritakan singkat tentang diri Anda dan bidang yang diminati"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 min-h-[100px]"
+                    required
+                  ></textarea>
+                  <span class="absolute left-4 top-4 text-blue-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
@@ -117,20 +201,20 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- No HP -->
               <div class="space-y-2">
-                <label class="text-sm font-medium text-gray-200">No. HP</label>
+                <label class="text-sm font-medium text-gray-200">No. WhatsApp</label>
                 <div class="relative group">
                   <input
                     v-model="form.no_hp"
-                    type="text"
+                    type="tel"
                     placeholder="08xxxxxxxxxx"
-                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 group-hover:border-white/30"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-green-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </div>
 
@@ -142,26 +226,144 @@
                     v-model="form.email"
                     type="email"
                     placeholder="nama@email.com"
-                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 group-hover:border-white/30"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-green-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Schedule Section -->
+          <!-- PKL Information Section -->
           <div class="space-y-4">
             <h3 class="text-lg font-semibold text-white flex items-center">
               <div class="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse"></div>
-              Jadwal PKL
+              Informasi PKL
             </h3>
             
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Unit Kerja -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Unit Kerja yang Dipilih</label>
+                <div class="relative group">
+                  <select
+                    v-model="form.unit_kerja"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white appearance-none"
+                    required
+                  >
+                    <option value="" disabled selected>Pilih unit kerja</option>
+                    <option value="Umum" class="bg-gray-800 text-white">Umum</option>
+                    <option value="Program" class="bg-gray-800 text-white">Program</option>
+                    <option value="Promo" class="bg-gray-800 text-white">Promo</option>
+                    <option value="Berita" class="bg-gray-800 text-white">Berita</option>
+                    <option value="Teknik" class="bg-gray-800 text-white">Teknik</option>
+                    <option value="Keuangan" class="bg-gray-800 text-white">Keuangan</option>
+                    <option value="Pengembangan Usaha" class="bg-gray-800 text-white">Pengembangan Usaha</option>
+                    <option value="Konten Media Baru" class="bg-gray-800 text-white">Konten Media Baru</option>
+                  </select>
+                  <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-purple-300 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Jangka Waktu PKL - Bagian yang diubah -->
+              <div class="space-y-2">
+  <label class="text-sm font-medium text-gray-200">Jangka Waktu PKL</label>
+  <div class="radio-group">
+    <label class="radio-item">
+      <input 
+        v-model="form.jangka_waktu" 
+        type="radio" 
+        value="3 Bulan"
+        class="radio-input"
+        required
+      />
+      <span class="radio-custom"></span>
+      <span class="radio-label">3 Bulan</span>
+    </label>
+    
+    <label class="radio-item">
+      <input 
+        v-model="form.jangka_waktu" 
+        type="radio" 
+        value="6 Bulan"
+        class="radio-input"
+      />
+      <span class="radio-custom"></span>
+      <span class="radio-label">6 Bulan</span>
+    </label>
+    
+    <label class="radio-item">
+      <input 
+        v-model="form.jangka_waktu" 
+        type="radio" 
+        value="Lainnya"
+        class="radio-input"
+      />
+      <span class="radio-custom"></span>
+      <span class="radio-label">Lainnya</span>
+    </label>
+  </div>
+  
+  <input
+    v-if="form.jangka_waktu === 'Lainnya'"
+    v-model="form.jangka_waktu_lainnya"
+    type="text"
+    placeholder="Tulis jangka waktu"
+    class="w-full mt-2 px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
+    required
+  />
+</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Periode PKL -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Periode PKL (Bulan)</label>
+                <div class="relative group">
+                  <input
+                    v-model="form.bulan_pkl"
+                    type="text"
+                    placeholder="Contoh: Januari - April 2025"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
+                    required
+                  />
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Alasan Memilih TVRI -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Alasan Memilih TVRI Yogyakarta</label>
+                <div class="relative group">
+                  <textarea
+                    v-model="form.alasan_pilih_tvri"
+                    placeholder="Mengapa Anda ingin melaksanakan PKL di TVRI Yogyakarta?"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400 min-h-[100px]"
+                    required
+                  ></textarea>
+                  <span class="absolute left-4 top-4 text-purple-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Tanggal Mulai -->
               <div class="space-y-2">
@@ -170,14 +372,14 @@
                   <input
                     v-model="form.tanggal_mulai"
                     type="date"
-                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white group-hover:border-white/30"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </div>
 
@@ -188,38 +390,149 @@
                   <input
                     v-model="form.tanggal_selesai"
                     type="date"
-                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white group-hover:border-white/30"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white"
                     required
                   />
-                  <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- File Upload Section -->
+          <!-- Document Upload Section -->
           <div class="space-y-4">
             <h3 class="text-lg font-semibold text-white flex items-center">
               <div class="w-2 h-2 bg-orange-400 rounded-full mr-3 animate-pulse"></div>
               Dokumen Pendukung
             </h3>
             
-            <div class="space-y-2">
-              <label class="text-sm font-medium text-gray-200">Upload Surat Pengantar</label>
-              <div class="relative group">
-                <input
-                  type="file"
-                  @change="handleFileUpload"
-                  class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-500/20 file:text-blue-300 hover:file:bg-blue-500/30 file:transition-all file:duration-200 group-hover:border-white/30"
-                  accept=".pdf,.doc,.docx"
-                  required
-                />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Surat Pengantar -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Surat Permohonan PKL</label>
+                <div class="relative group">
+                  <input
+                    type="file"
+                    @change="handleFileUpload('surat_pengantar', $event)"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-500/20 file:text-blue-300 hover:file:bg-blue-500/30 file:transition-all file:duration-200"
+                    accept=".pdf"
+                    required
+                  />
+                  <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="text-xs text-gray-400">Format: PDF (Maksimal 5MB)</p>
               </div>
-              <p class="text-xs text-gray-400">Format yang didukung: PDF, DOC, DOCX (Maksimal 5MB)</p>
+
+              <!-- CV -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Curriculum Vitae (CV)</label>
+                <div class="relative group">
+                  <input
+                    type="file"
+                    @change="handleFileUpload('cv', $event)"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-500/20 file:text-blue-300 hover:file:bg-blue-500/30 file:transition-all file:duration-200"
+                    accept=".pdf"
+                    required
+                  />
+                  <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="text-xs text-gray-400">Format: PDF (Maksimal 5MB)</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Nilai Raport/Transkrip -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Nilai Raport/Transkrip Terakhir</label>
+                <div class="relative group">
+                  <input
+                    type="file"
+                    @change="handleFileUpload('nilai_raport_transkrip', $event)"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-500/20 file:text-blue-300 hover:file:bg-blue-500/30 file:transition-all file:duration-200"
+                    accept=".pdf"
+                    required
+                  />
+                  <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="text-xs text-gray-400">Format: PDF (Maksimal 5MB)</p>
+              </div>
+
+              <!-- Kartu Pelajar/Mahasiswa -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Kartu Tanda Pelajar/Mahasiswa</label>
+                <div class="relative group">
+                  <input
+                    type="file"
+                    @change="handleFileUpload('kartu_pelajar', $event)"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-500/20 file:text-blue-300 hover:file:bg-blue-500/30 file:transition-all file:duration-200"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                    required
+                  />
+                  <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="text-xs text-gray-400">Format: PDF, JPG, PNG (Maksimal 5MB)</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Foto ID Card -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Foto untuk ID Card</label>
+                <div class="relative group">
+                  <input
+                    type="file"
+                    @change="handleFileUpload('foto_id_card', $event)"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-500/20 file:text-blue-300 hover:file:bg-blue-500/30 file:transition-all file:duration-200"
+                    accept=".jpg,.jpeg,.png"
+                    required
+                  />
+                  <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="text-xs text-gray-400">Format: JPG/PNG (Background merah, memakai jas almamater)</p>
+              </div>
+
+              <!-- Portofolio Link -->
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-200">Link Portofolio/Hasil Karya</label>
+                <div class="relative group">
+                  <input
+                    v-model="form.portofolio_link"
+                    type="url"
+                    placeholder="https://contoh.com/portofolio"
+                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 hover:bg-white/20 text-white placeholder-gray-400"
+                  />
+                  <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-orange-300 opacity-0 group-focus-within:opacity-100 transition-opacity duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </div>
+                <p class="text-xs text-gray-400">Opsional - Lampirkan link portofolio jika ada</p>
+              </div>
             </div>
           </div>
 
@@ -263,24 +576,43 @@ export default {
   name: 'PKLRegistrationForm',
   data() {
     return {
-      isDark: true,
       isSubmitting: false,
       form: {
+        // Informasi Pribadi
         nama_lengkap: '',
-        asal_instansi: '',
         nim_nisn: '',
+        tempat_lahir: '',
+        tanggal_lahir: '',
+        asal_instansi: '',
         jurusan: '',
+        jenjang_pendidikan: '',
+        deskripsi_diri: '',
+        
+        // Informasi Kontak
         no_hp: '',
         email: '',
+        
+        // Informasi PKL
+        unit_kerja: '',
+        jangka_waktu: '3 Bulan',
+        jangka_waktu_lainnya: '',
+        bulan_pkl: '',
+        alasan_pilih_tvri: '',
         tanggal_mulai: '',
         tanggal_selesai: '',
+        
+        // Dokumen
         surat_pengantar: null,
+        cv: null,
+        nilai_raport_transkrip: null,
+        kartu_pelajar: null,
+        foto_id_card: null,
+        portofolio_link: '',
       },
     };
   },
-
-
-    handleFileUpload(event) {
+  methods: {
+    handleFileUpload(field, event) {
       const file = event.target.files[0];
       if (file) {
         // Validate file size (5MB limit)
@@ -297,12 +629,26 @@ export default {
           return;
         }
         
-        // Validate file type
-        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        // Validate file type based on field
+        let allowedTypes = [];
+        switch(field) {
+          case 'foto_id_card':
+            allowedTypes = ['image/jpeg', 'image/png'];
+            break;
+          case 'surat_pengantar':
+          case 'cv':
+          case 'nilai_raport_transkrip':
+          case 'kartu_pelajar':
+            allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
+            break;
+          default:
+            allowedTypes = ['application/pdf'];
+        }
+        
         if (!allowedTypes.includes(file.type)) {
           Swal.fire({
             title: 'Format File Tidak Valid!',
-            text: 'Hanya file PDF, DOC, dan DOCX yang diperbolehkan',
+            text: 'Format file tidak sesuai persyaratan',
             icon: 'error',
             background: '#1f2937',
             color: '#ffffff',
@@ -312,7 +658,7 @@ export default {
           return;
         }
 
-        this.form.surat_pengantar = file;
+        this.form[field] = file;
         
         // Show success message
         Swal.fire({
@@ -330,7 +676,6 @@ export default {
     },
 
     async submitForm() {
-      // Show loading state
       this.isSubmitting = true;
 
       // Show loading alert
@@ -349,7 +694,9 @@ export default {
 
       const formData = new FormData();
       for (const key in this.form) {
-        formData.append(key, this.form[key]);
+        if (this.form[key] !== null && this.form[key] !== '') {
+          formData.append(key, this.form[key]);
+        }
       }
 
       try {
@@ -357,7 +704,6 @@ export default {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
 
-        // Success alert with animation
         await Swal.fire({
           title: 'Berhasil!',
           text: 'Data pendaftaran PKL berhasil dikirim!',
@@ -374,13 +720,11 @@ export default {
           }
         });
 
-        // Reset form after successful submission
         this.resetForm();
 
       } catch (err) {
         console.error('Error submitting form:', err);
         
-        // Error alert
         Swal.fire({
           title: 'Gagal Mengirim!',
           text: 'Terjadi kesalahan saat mengirim data. Periksa koneksi internet atau coba lagi nanti.',
@@ -397,20 +741,21 @@ export default {
 
     resetForm() {
       Object.keys(this.form).forEach(key => {
-        if (key === 'surat_pengantar') {
-          this.form[key] = null;
-        } else {
+        if (key === 'jangka_waktu') {
+          this.form[key] = '3 Bulan';
+        } else if (typeof this.form[key] === 'string') {
           this.form[key] = '';
+        } else {
+          this.form[key] = null;
         }
       });
       
-      // Reset file input
-      const fileInput = document.querySelector('input[type="file"]');
-      if (fileInput) {
-        fileInput.value = '';
-      }
-    },
-
+      // Reset all file inputs
+      document.querySelectorAll('input[type="file"]').forEach(input => {
+        input.value = '';
+      });
+    }
+  },
   mounted() {
     // Welcome message
     setTimeout(() => {
@@ -434,500 +779,344 @@ export default {
 </script>
 
 <style scoped>
-/* Enhanced animations and transitions */
+/* Base Styles */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Background Elements */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+/* Form Container Styles */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+/* Input Field Styles */
+.bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hover\:bg-white\/20:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Dropdown Styling */
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5rem;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  transition: all 0.2s ease;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+}
+
+/* Dropdown Options */
+select option {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 0.5rem;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+/* Custom Radio Buttons */
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-custom {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+
+.radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.radio-input:checked ~ .radio-custom {
+  border-color: #8b5cf6;
+  background-color: #8b5cf6;
+}
+
+.radio-input:checked ~ .radio-custom::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-input:focus ~ .radio-custom {
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+}
+
+.radio-label {
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+/* Hover Effects */
+.radio-item:hover .radio-custom {
+  border-color: #a78bfa;
+}
+
+/* Input Focus Effects */
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  border-color: #8b5cf6;
+}
+
+/* File Input Styling */
+.file-input-container {
+  position: relative;
+}
+
+.file-input {
+  width: 100%;
+}
+
+.file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.file-input::before {
+  content: 'Pilih File';
+  display: inline-block;
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.2));
+  border: 1px solid rgba(30, 64, 175, 0.3);
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #93c5fd;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.file-input:hover::before {
+  background: linear-gradient(to bottom, rgba(37, 99, 235, 0.3), rgba(29, 78, 216, 0.3));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-section {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .radio-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .radio-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Date Input Styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Textarea Styling */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  transition: height 0.2s ease;
+}
+
+/* Form Validation */
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+input:valid,
+textarea:valid,
+select:valid {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* Loading State */
+.form-loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Icon Transitions */
+.icon-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Button Styles */
+.btn-submit {
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(to right, #2563eb, #4f46e5);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-submit:disabled {
+  background: linear-gradient(to right, #4b5563, #6b7280);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Section Headers */
+.section-header {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: pulse 2s infinite;
+}
+
 @keyframes pulse {
   0%, 100% {
     opacity: 0.7;
   }
   50% {
-    opacity: 0.9;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-pulse {
-  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Enhanced focus states with glow effect */
-input:focus,
-input[type="file"]:focus {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 10px 25px -5px rgba(0, 0, 0, 0.2), 
-    0 10px 10px -5px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(59, 130, 246, 0.3),
-    0 0 20px rgba(59, 130, 246, 0.2);
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-/* File input styling for dark theme */
-input[type="file"]::file-selector-button {
-  margin-right: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  background: black;
-  color: rgb(147, 197, 253);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-input[type="file"]::file-selector-button:hover {
-  background: rgba(59, 130, 246, 0.3);
-  color: rgb(165, 208, 255);
-}
-
-/* Glassmorphism effect enhancement */
-.bg-white\/10 {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* Button hover effects */
-button:hover {
-  box-shadow: 
-    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
-    0 10px 10px -5px rgba(0, 0, 0, 0.04),
-    0 0 30px rgba(59, 130, 246, 0.3);
-}
-
-/* Loading spinner animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-/* Enhanced gradient text */
-.bg-clip-text {
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Form section spacing and visual hierarchy */
-.space-y-4 > * + * {
-  margin-top: 1rem;
-}
-
-.space-y-6 > * + * {
-  margin-top: 1.5rem;
-}
-
-/* Enhanced input group hover effects */
-.group:hover .group-hover\:border-white\/30 {
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.group:hover .group-hover\:text-gray-300 {
-  color: rgb(209, 213, 219);
-}
-
-/* Responsive design improvements */
-@media (max-width: 768px) {
-  .grid-cols-1.md\:grid-cols-2 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  
-  .text-4xl {
-    font-size: 2.5rem;
-    line-height: 1;
-  }
-  
-  .p-8 {
-    padding: 1.5rem;
-  }
-}
-
-/* Success and error state animations */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-shake {
-  animation: shake 0.5s ease-in-out;
-}
-
-.animate-bounce {
-  animation: bounce 0.5s ease-in-out;
-}
-
-/* Custom date input styling for dark theme */
-input[type="date"] {
-  color-scheme: dark;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  cursor: pointer;
-}
-
-/* Enhanced backdrop blur for better glass effect */
-@supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
-  .backdrop-blur-md {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-}
-
-/* Fallback for browsers that don't support backdrop-filter */
-@supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
-  .backdrop-blur-md {
-    background: rgba(31, 41, 55, 0.8);
-  }
-}
-
-
-
-/* Enhanced form validation styles */
-input:invalid {
-  border-color: rgba(239, 68, 68, 0.5);
-}
-
-input:valid {
-  border-color: rgba(16, 185, 129, 0.5);
-}
-
-/* Custom tooltip styles */
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 8px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Enhanced mobile responsiveness */
-@media (max-width: 640px) {
-  .fixed.top-6.right-6 {
-    top: 1rem;
-    right: 1rem;
-  }
-  
-  .p-4 {
-    padding: 1rem;
-  }
-  
-  .rounded-3xl {
-    border-radius: 1.5rem;
-  }
-  
-  .text-center.mb-8 {
-    margin-bottom: 2rem;
-  }
-}
-
-/* Print styles for form */
-@media print {
-  .fixed, .bg-gradient-to-br, .animate-pulse {
-    display: none !important;
-  }
-  
-  .bg-white\/10 {
-    background: white !important;
-    border: 1px solid #ccc !important;
-  }
-  
-  .text-white, .text-gray-200, .text-gray-300 {
-    color: black !important;
-  }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .animate-pulse,
-  .animate-spin,
-  .animate-float,
-  .transition-all {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .bg-white\/10 {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 2px solid rgba(255, 255, 255, 0.5) !important;
-  }
-  
-  input {
-    border-width: 2px !important;
-  }
-}
-
-/* Focus visible for keyboard navigation */
-input:focus-visible,
-button:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* Loading state for form */
-.form-loading {
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.form-loading * {
-  cursor: wait !important;
-}
-
-/* Success state animations */
-@keyframes checkmark {
-  0% { stroke-dashoffset: 50; }
-  100% { stroke-dashoffset: 0; }
-}
-
-.checkmark {
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
-  animation: checkmark 0.5s ease-in-out forwards;
-}
-
-/* Form field error states */
-.field-error {
-  border-color: #ef4444 !important;
-  box-shadow: 0 0 0 1px #ef4444 !important;
-}
-
-.field-error:focus {
-  border-color: #ef4444 !important;
-  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3) !important;
-}
-
-/* Success field states */
-.field-success {
-  border-color: #10b981 !important;
-}
-
-.field-success:focus {
-  border-color: #10b981 !important;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3) !important;
-}
-
-/* Progress indicator */
-.progress-bar {
-  height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  border-radius: 2px;
-  animation: progress 2s ease-in-out;
-}
-
-@keyframes progress {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-
-/* Enhanced button states */
-.btn-primary {
-  background: linear-gradient(135deg, #3b82f6, #6366f1);
-  transform: translateY(0);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 5px 10px rgba(59, 130, 246, 0.3);
-}
-
-/* Floating labels effect */
-.floating-label {
-  position: relative;
-}
-
-.floating-label input:focus + label,
-.floating-label input:not(:placeholder-shown) + label {
-  transform: translateY(-24px) scale(0.85);
-  color: #3b82f6;
-}
-
-.floating-label label {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  transition: all 0.2s ease;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(31, 41, 55, 1) 50%);
-  padding: 0 4px;
-}
-
-/* File upload drag and drop styles */
-.file-upload-area {
-  position: relative;
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.file-upload-area:hover {
-  border-color: rgba(59, 130, 246, 0.5);
-  background: rgba(59, 130, 246, 0.1);
-}
-
-.file-upload-area.drag-over {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.2);
-  transform: scale(1.02);
-}
-
-/* Enhanced notification styles */
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
     opacity: 1;
   }
 }
 
-.notification.success {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: white;
+/* Input Icons */
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: currentColor;
+  opacity: 0.7;
+  transition: all 0.2s ease;
 }
 
-.notification.error {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: white;
+.input-with-icon {
+  padding-left: 2.5rem;
 }
 
-/* Form step indicator */
-.step-indicator {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+.input-with-icon:focus + .input-icon {
+  opacity: 1;
+  color: #8b5cf6;
 }
-
-.step {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 8px;
-  background: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.6);
-  transition: all 0.3s ease;
-}
-
-.step.active {
-  background: #3b82f6;
-  color: white;
-  transform: scale(1.1);
-}
-
-.step.completed {
-  background: #10b981;
-  color: white;
-}
-
-/* Enhanced form sections */
-.form-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.form-section:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Dark mode specific adjustments */
-@media (prefers-color-scheme: dark) {
-  .form-section {
-    background: rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
 </style>

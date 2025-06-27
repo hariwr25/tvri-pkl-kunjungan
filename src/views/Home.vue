@@ -717,128 +717,166 @@
 </section>
 
 
-<!-- Gallery Section -->
-<section id="gallery" class="py-16 px-6 bg-gray-950">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4 text-rose-400">
-        Gallery Kegiatan
+s semua method yang berkaitan dengan lightbox di script (seperti openLightbox, closeLightbox, nextImage, prevImage, dll).
+
+
+
+
+
+
+
+
+<!-- Enhanced Gallery Section - No Modal -->
+<section id="gallery" class="py-20 px-6 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-rose-500 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-block mb-4">
+        <span class="px-4 py-2 bg-rose-500/20 text-rose-400 rounded-full text-sm font-medium border border-rose-500/30">
+          📸 Gallery Kegiatan
+        </span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+        Dokumentasi PKL
       </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Dokumentasi kegiatan PKL dan kunjungan sebelumnya
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        Momen berharga dari kegiatan PKL dan kunjungan yang telah dilaksanakan bersama para peserta
       </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <!-- Item 1 - PKL 1 -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
-        <img :src="require('@/assets/pkl01.jpg')" alt="PKL 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Sesi Pelatihan Kamera</h3>
-            <p class="text-gray-300 text-sm">Angkatan PKL 2024</p>
+    <!-- Gallery Filter Tabs -->
+    <div class="flex justify-center mb-8">
+      <div class="inline-flex bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 border border-gray-700">
+        <button 
+          v-for="(filter, index) in galleryFilters" 
+          :key="index"
+          @click="activeFilter = filter.id"
+          :class="[
+            'px-6 py-3 rounded-xl font-medium transition-all duration-300',
+            activeFilter === filter.id 
+              ? 'bg-rose-500 text-white shadow-lg' 
+              : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+          ]"
+        >
+          {{ filter.name }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+      
+      <!-- Featured Video - Spans 2 columns -->
+      <div 
+        class="lg:col-span-2 xl:row-span-2 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-rose-500/20"
+      >
+        <div class="aspect-video lg:aspect-[4/3] relative h-full">
+          <img :src="featuredVideo.thumbnail" 
+               :alt="featuredVideo.title" 
+               class="w-full h-full object-cover">
+          
+          <!-- Play button -->
+          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <div class="w-20 h-20 bg-rose-500/90 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-400 transition-all duration-300 shadow-lg hover:shadow-rose-500/50">
+              <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Content overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">{{ featuredVideo.title }}</h3>
+              <p class="text-gray-300 mb-3">{{ featuredVideo.description }}</p>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 bg-rose-500/80 text-white text-sm rounded-full backdrop-blur-sm">Video</span>
+                <span class="text-gray-400 text-sm">{{ featuredVideo.duration }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      <!-- Item 2 - Kunjungan 1 -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
-        <img :src="require('@/assets/kunjungan1.jpg')" alt="Kunjungan 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Tour Studio TV</h3>
-            <p class="text-gray-300 text-sm">SMKN 1 Yogyakarta</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Item 3 - PKL 2 -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
-        <img :src="require('@/assets/pkl2.jpg')" alt="PKL 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Praktik Live Reporting</h3>
-            <p class="text-gray-300 text-sm">PKL Jurnalistik</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Item 4 - Kunjungan 2 -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
-        <img :src="require('@/assets/kunjungan2.jpg')" alt="Kunjungan 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Demo Peralatan</h3>
-            <p class="text-gray-300 text-sm">Siswa SMP</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Video Preview -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300 col-span-2">
-        <img :src="require('@/assets/video-thumbnail.jpg')" alt="Video Testimoni" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-100 group-hover:opacity-80 transition-opacity duration-300">
-          <div class="w-16 h-16 bg-rose-500/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-        </div>
-        <div class="absolute inset-0 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Testimoni Peserta PKL</h3>
-            <p class="text-gray-300 text-sm">Tonton pengalaman mereka</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Item 5 - PKL 3 -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
-        <img :src="require('@/assets/pkl3.jpg')" alt="PKL 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Editing Video</h3>
-            <p class="text-gray-300 text-sm">Workshop Post-Produksi</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Item 6 - Kunjungan 3 -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
-        <img :src="require('@/assets/kunjungan3.jpg')" alt="Kunjungan 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Sesi Tanya Jawab</h3>
-            <p class="text-gray-300 text-sm">Dengan Tim Produksi</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Item 7 - PKL 4 -->
-      <div class="group relative aspect-square overflow-hidden rounded-xl hover:rounded-none transition-all duration-300">
-        <img :src="require('@/assets/pkl5.jpg')" alt="PKL 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <div>
-            <h3 class="font-bold text-white">Penyerahan Sertifikat</h3>
-            <p class="text-gray-300 text-sm">Wisuda PKL 2024</p>
+
+      <!-- Gallery Items - Simple Display -->
+      <div 
+        v-for="(item, index) in filteredGalleryItems.slice(0, 8)" 
+        :key="index"
+        :class="`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-${item.color}-500/20`"
+      >
+        <div class="aspect-square relative">
+          <img :src="item.image" 
+               :alt="item.title" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+               loading="lazy">
+          
+          <!-- Hover overlay with info -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+            <div class="w-full">
+              <h3 class="font-bold text-white text-lg mb-1">{{ item.title }}</h3>
+              <p class="text-gray-300 text-sm mb-2 line-clamp-2">{{ item.description }}</p>
+              
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1 mb-2">
+                <span 
+                  v-for="(tag, tagIndex) in item.tags" 
+                  :key="tagIndex"
+                  :class="`px-2 py-1 bg-${item.color}-500/80 text-white text-xs rounded-full`"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+              
+              <!-- Category badge -->
+              <span :class="`inline-block px-2 py-1 bg-${item.color}-500/60 text-white text-xs rounded-full capitalize`">
+                {{ item.category }}
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="text-center mt-12">
-      <button class="px-6 py-3 bg-rose-500 hover:bg-rose-400 text-white font-medium rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-rose-500/30 flex items-center gap-2 mx-auto">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-        </svg>
+    <!-- Load More Button -->
+    <div class="text-center mb-12">
+      <button 
+        v-if="filteredGalleryItems.length > 8"
+        @click="loadMoreImages"
+        class="px-8 py-4 bg-gradient-to-r from-rose-500 to-purple-500 hover:from-rose-400 hover:to-purple-400 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-rose-500/40"
+      >
         Lihat Lebih Banyak Foto
       </button>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-rose-500/10 to-pink-500/10 border border-rose-500/20 backdrop-blur-sm">
+        <div class="text-3xl font-bold text-rose-400 mb-2">150+</div>
+        <div class="text-gray-300 text-sm">Peserta PKL</div>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-sm">
+        <div class="text-3xl font-bold text-blue-400 mb-2">25</div>
+        <div class="text-gray-300 text-sm">Batch Pelatihan</div>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 backdrop-blur-sm">
+        <div class="text-3xl font-bold text-green-400 mb-2">50+</div>
+        <div class="text-gray-300 text-sm">Sekolah Partner</div>
+      </div>
+      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/20 backdrop-blur-sm">
+        <div class="text-3xl font-bold text-purple-400 mb-2">95%</div>
+        <div class="text-gray-300 text-sm">Tingkat Kepuasan</div>
+      </div>
     </div>
   </div>
 </section>
 
-    <!-- Why Choose Us Section -->
+<!-- Why Choose Us Section -->
     <section id="program" class="py-20 px-6 bg-gray-900">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
@@ -1151,14 +1189,25 @@
 
 <script>
 export default {
-  name: 'ModernTVRILanding',
+  name: 'ModernGalleryTVRI',
   data() {
     return {
+      // Gallery specific data
+      activeFilter: 'all',
+      lightboxOpen: false,
+      videoPlayerOpen: false,
+      currentLightboxIndex: 0,
+      currentVideo: null,
+      imagesDisplayCount: 8,
+      
+      // Stats from original code
       stats: {
         students: 500,
         visits: 150,
         years: 25
       },
+      
+      // Image carousel from original code
       images: [
         require('@/assets/foto.jpg'),
         require('@/assets/kunjungan3.jpeg'),
@@ -1167,6 +1216,110 @@ export default {
       ],
       currentImageIndex: 0,
       currentSlide: 0,
+      
+      // Gallery filters
+      galleryFilters: [
+        { id: 'all', name: 'Semua' },
+        { id: 'pkl', name: 'PKL' },
+        { id: 'kunjungan', name: 'Kunjungan' },
+        { id: 'acara', name: 'Acara Khusus' },
+        { id: 'fasilitas', name: 'Fasilitas' }
+      ],
+
+      // Featured video
+      featuredVideo: {
+        title: 'Dokumentasi PKL TVRI Yogyakarta 2024',
+        description: 'Highlight kegiatan PKL dan kunjungan edukatif ke TVRI Yogyakarta dengan berbagai aktivitas menarik',
+        thumbnail: require('@/assets/foto.jpg'),
+        src: '#', // Placeholder for video
+        duration: '5:30'
+      },
+
+      // Gallery items - using only existing images
+      galleryItems: [
+        {
+          id: 1,
+          title: 'Studio Produksi TVRI',
+          description: 'Peserta PKL belajar operasional studio produksi dengan peralatan broadcasting profesional',
+          image: require('@/assets/foto.jpg'),
+          thumbnail: require('@/assets/foto.jpg'),
+          category: 'pkl',
+          color: 'rose',
+          tags: ['Studio', 'Produksi', 'Broadcasting']
+        },
+        {
+          id: 2,
+          title: 'Kunjungan Edukatif SMA',
+          description: 'Siswa SMA mengunjungi fasilitas TVRI untuk memahami proses produksi televisi',
+          image: require('@/assets/kunjungan3.jpeg'),
+          thumbnail: require('@/assets/kunjungan3.jpeg'),
+          category: 'kunjungan',
+          color: 'blue',
+          tags: ['Edukasi', 'Siswa', 'Study Tour']
+        },
+        {
+          id: 3,
+          title: 'Pelatihan Jurnalistik',
+          description: 'Sesi pelatihan intensif jurnalistik televisi dan teknik wawancara profesional',
+          image: require('@/assets/pkl1.jpg'),
+          thumbnail: require('@/assets/pkl1.jpg'),
+          category: 'pkl',
+          color: 'green',
+          tags: ['Jurnalistik', 'Wawancara', 'Pelatihan']
+        },
+        {
+          id: 4,
+          title: 'Workshop Editing Video',
+          description: 'Peserta belajar teknik editing video profesional menggunakan software terkini',
+          image: require('@/assets/pkl2.jpg'),
+          thumbnail: require('@/assets/pkl2.jpg'),
+          category: 'pkl',
+          color: 'purple',
+          tags: ['Editing', 'Video', 'Post Production']
+        },
+        {
+          id: 5,
+          title: 'Ruang Master Control',
+          description: 'Peserta mengamati proses kontrol siaran dari ruang master control TVRI',
+          image: require('@/assets/foto.jpg'),
+          thumbnail: require('@/assets/foto.jpg'),
+          category: 'fasilitas',
+          color: 'cyan',
+          tags: ['MCR', 'Siaran', 'Kontrol']
+        },
+        {
+          id: 6,
+          title: 'Acara Perpisahan PKL',
+          description: 'Acara penutupan dan perpisahan peserta PKL batch 2024 dengan pemberian sertifikat',
+          image: require('@/assets/pkl1.jpg'),
+          thumbnail: require('@/assets/pkl1.jpg'),
+          category: 'acara',
+          color: 'amber',
+          tags: ['Perpisahan', 'Sertifikat', 'Graduation']
+        },
+        {
+          id: 7,
+          title: 'Kunjungan SMK Multimedia',
+          description: 'Kunjungan khusus siswa SMK jurusan multimedia untuk mempelajari teknologi broadcasting',
+          image: require('@/assets/kunjungan3.jpeg'),
+          thumbnail: require('@/assets/kunjungan3.jpeg'),
+          category: 'kunjungan',
+          color: 'indigo',
+          tags: ['SMK', 'Multimedia', 'Teknologi']
+        },
+        {
+          id: 8,
+          title: 'Live Streaming Setup',
+          description: 'Peserta mempelajari setup peralatan untuk live streaming dan siaran langsung',
+          image: require('@/assets/pkl2.jpg'),
+          thumbnail: require('@/assets/pkl2.jpg'),
+          category: 'pkl',
+          color: 'red',
+          tags: ['Live Stream', 'Setup', 'Broadcasting']
+        }
+      ],
+
+      // Testimonials from original code
       testimonials: [
         {
           initials: "AS",
@@ -1205,6 +1358,8 @@ export default {
           color: "sky"
         }
       ],
+
+      // Features from original code
       features: [
         {
           icon: '🎥',
@@ -1241,27 +1396,55 @@ export default {
   },
   
   computed: {
+    // From original code
     currentImage() {
       return this.images[this.currentImageIndex];
+    },
+    
+    // Gallery computed properties
+    filteredGalleryItems() {
+      if (this.activeFilter === 'all') {
+        return this.galleryItems;
+      }
+      return this.galleryItems.filter(item => item.category === this.activeFilter);
+    },
+    
+    currentLightboxItem() {
+      return this.filteredGalleryItems[this.currentLightboxIndex];
+    },
+    
+    visibleGalleryItems() {
+      return this.filteredGalleryItems.slice(0, this.imagesDisplayCount);
     }
   },
+  
   mounted() {
-    // Auto-rotate images
+    // Auto-rotate images from original code
     setInterval(() => {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
     }, 4000);
 
-    // Animate stats counter
+    // Animate stats counter from original code
     this.animateStats();
+    
+    // Add keyboard event listeners for lightbox
+    document.addEventListener('keydown', this.handleKeydown);
+  },
+  
+  beforeUnmount() {
+    // Remove event listeners for Vue 3
+    document.removeEventListener('keydown', this.handleKeydown);
   },
   
   methods: {
+    // Methods from original code
     scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     },
+    
     animateStats() {
       const counters = [
         { key: 'students', target: 500, current: 0 },
@@ -1281,14 +1464,160 @@ export default {
         }, 20);
       });
     },
+    
     nextSlide() {
       this.currentSlide = (this.currentSlide + 1) % this.testimonials.length;
     },
+    
     prevSlide() {
       this.currentSlide = (this.currentSlide - 1 + this.testimonials.length) % this.testimonials.length;
     },
+    
     goToSlide(index) {
       this.currentSlide = index;
+    },
+    
+    // Gallery specific methods
+    openLightbox(index) {
+      this.currentLightboxIndex = index;
+      this.lightboxOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+    
+    closeLightbox() {
+      this.lightboxOpen = false;
+      document.body.style.overflow = 'auto';
+    },
+    
+    nextImage() {
+      this.currentLightboxIndex = (this.currentLightboxIndex + 1) % this.filteredGalleryItems.length;
+    },
+    
+    prevImage() {
+      this.currentLightboxIndex = (this.currentLightboxIndex - 1 + this.filteredGalleryItems.length) % this.filteredGalleryItems.length;
+    },
+    
+    openVideoPlayer(video) {
+      this.currentVideo = video;
+      this.videoPlayerOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+    
+    closeVideoPlayer() {
+      this.videoPlayerOpen = false;
+      this.currentVideo = null;
+      document.body.style.overflow = 'auto';
+      
+      // Stop video if playing
+      if (this.$refs.videoPlayer) {
+        this.$refs.videoPlayer.pause();
+        this.$refs.videoPlayer.currentTime = 0;
+      }
+    },
+    
+    loadMoreImages() {
+      this.imagesDisplayCount += 8;
+    },
+    
+    downloadImage(item) {
+      try {
+        // Create download link
+        const link = document.createElement('a');
+        link.href = item.image;
+        link.download = `${item.title.replace(/\s+/g, '_')}.jpg`;
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (error) {
+        console.log('Download error:', error);
+        alert('Maaf, tidak dapat mengunduh gambar ini.');
+      }
+    },
+    
+    async shareImage(item) {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: item.title,
+            text: item.description,
+            url: window.location.href
+          });
+        } catch (error) {
+          if (error.name !== 'AbortError') {
+            console.log('Error sharing:', error);
+            this.fallbackShare(item);
+          }
+        }
+      } else {
+        this.fallbackShare(item);
+      }
+    },
+    
+    fallbackShare(item) {
+      try {
+        // Fallback share method
+        const url = window.location.href;
+        const text = `${item.title} - ${item.description}`;
+        
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(`${text}\n${url}`);
+          alert('Link berhasil disalin ke clipboard!');
+        } else {
+          // Create temporary input for copying
+          const tempInput = document.createElement('input');
+          tempInput.value = `${text}\n${url}`;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          alert('Link berhasil disalin ke clipboard!');
+        }
+      } catch (error) {
+        console.log('Share fallback error:', error);
+        alert('Maaf, tidak dapat membagikan gambar ini.');
+      }
+    },
+    
+    toggleFullscreen() {
+      try {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      } catch (error) {
+        console.log('Fullscreen error:', error);
+      }
+    },
+    
+    handleKeydown(event) {
+      if (this.lightboxOpen) {
+        switch (event.key) {
+          case 'Escape':
+            this.closeLightbox();
+            break;
+          case 'ArrowLeft':
+            this.prevImage();
+            break;
+          case 'ArrowRight':
+            this.nextImage();
+            break;
+        }
+      }
+      
+      if (this.videoPlayerOpen && event.key === 'Escape') {
+        this.closeVideoPlayer();
+      }
+    },
+    
+    // Filter methods
+    setActiveFilter(filterId) {
+      this.activeFilter = filterId;
+      this.currentLightboxIndex = 0;
+      this.imagesDisplayCount = 8;
     }
   }
 };
@@ -1320,6 +1649,545 @@ html {
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* Gallery item animations */
+.gallery-item {
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Video player styling */
+video::-webkit-media-controls {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Custom scrollbar for thumbnail navigation */
+.thumbnail-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.thumbnail-nav::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.thumbnail-nav::-webkit-scrollbar-thumb {
+  background: rgba(244, 63, 94, 0.6);
+  border-radius: 2px;
+}
+
+.thumbnail-nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 63, 94, 0.8);
+}
+
+/* Gallery specific styles */
+.gallery-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgb(31, 41, 55), rgb(17, 24, 39));
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-content {
+  width: 100%;
+  color: white;
+}
+
+.gallery-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.gallery-description {
+  font-size: 0.875rem;
+  color: rgb(209, 213, 219);
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gallery-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-tag {
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.gallery-category {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: white;
+}
+
+/* Featured video styling */
+.featured-video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgb(31, 41, 55), rgb(17, 24, 39));
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.featured-video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(244, 63, 94, 0.2);
+}
+
+.featured-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.featured-video-content {
+  width: 100%;
+  color: white;
+}
+
+.featured-video-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.featured-video-description {
+  color: rgb(209, 213, 219);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  background: rgba(244, 63, 94, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.5);
+}
+
+.featured-video:hover .video-play-button {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(244, 63, 94, 1);
+  box-shadow: 0 12px 35px rgba(244, 63, 94, 0.6);
+}
+
+/* Gallery filter styling */
+.gallery-filters {
+  display: inline-flex;
+  background: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 0.25rem;
+  border: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+.gallery-filter {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: rgb(209, 213, 219);
+  background: transparent;
+  border: none;
+}
+
+.gallery-filter:hover {
+  color: white;
+  background: rgba(75, 85, 99, 0.5);
+}
+
+.gallery-filter-active {
+  background: #f43f5e;
+  color: white;
+  box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
+}
+
+/* Load more button */
+.load-more-btn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #f43f5e, #a855f7);
+  color: white;
+  font-weight: 600;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.4);
+}
+
+.load-more-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f87171, #c084fc);
+  box-shadow: 0 12px 35px rgba(244, 63, 94, 0.5);
+}
+
+/* Statistics cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: rgb(209, 213, 219);
+}
+
+/* Star Animation Enhancements */
+@keyframes starGlow {
+  0%, 100% { 
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 0 0px rgba(251, 191, 36, 0.3));
+  }
+  50% { 
+    transform: scale(1.1);
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(251, 191, 36, 0.8));
+  }
+}
+
+.star-animation {
+  animation: starGlow 2s ease-in-out infinite;
+}
+
+/* Testimonial Enhanced Animations */
+@keyframes testimonialSlide {
+  0% { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.testimonial-slide-enter {
+  animation: testimonialSlide 0.7s ease-out;
+}
+
+/* Enhanced backdrop blur */
+.enhanced-blur {
+  backdrop-filter: blur(20px) saturate(120%) brightness(110%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%) brightness(110%);
+}
+
+/* Gradient text effects */
+.gradient-text {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Utility classes untuk text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enhanced hover effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow effects */
+.glow-amber {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.glow-rose {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+/* Testimonial specific styles */
+.testimonial-card {
+  backdrop-filter: blur(10px);
+  background: rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-avatar {
+  background: linear-gradient(135deg, var(--color-start), var(--color-end));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-quote {
+  position: relative;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  font-size: 4rem;
+  opacity: 0.1;
+  color: #fbbf24;
+  font-family: Georgia, serif;
+}
+
+.testimonial-quote::after {
+  content: '"';
+  position: absolute;
+  bottom: -2rem;
+  right: -1rem;
+  font-size: 4rem;
+  opacity: 0.1;
+  color: #fbbf24;
+  font-family: Georgia, serif;
+}
+
+/* Rating specific styles */
+.rating-stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.rating-star {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.rating-star-bg {
+  position: absolute;
+  inset: 0;
+  color: rgb(75, 85, 99);
+}
+
+.rating-star-fill {
+  position: absolute;
+  inset: 0;
+  color: #fbbf24;
+  animation: starGlow 2s ease-in-out infinite;
+}
+
+.rating-text {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+/* Stats animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-number {
+  animation: countUp 0.6s ease-out;
+}
+
+/* Section transitions */
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.8);
+}
+
+/* Pulse animation for loading states */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Shimmer effect for loading */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Loading animation for images */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 /* Responsive design enhancements */
 @media (max-width: 768px) {
   .text-7xl {
@@ -1329,5 +2197,209 @@ html {
   .text-5xl {
     font-size: 2.5rem;
   }
+  
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .lg\\:col-span-2 {
+    grid-column: span 2;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-filter {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .featured-video-title {
+    font-size: 1.25rem;
+  }
+
+  .gallery-title {
+    font-size: 1rem;
+  }
+
+  .video-play-button {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-filters {
+    padding: 0.125rem;
+  }
+
+  .gallery-filter {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Focus states for accessibility */
+button:focus,
+.gallery-item:focus {
+  outline: 2px solid #f43f5e;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gradient-to-br {
+    background: #000;
+  }
+  
+  .text-gray-300 {
+    color: #fff;
+  }
+
+  .gallery-item {
+    background: #000;
+    border: 1px solid #fff;
+  }
+
+  .gallery-filter {
+    border: 1px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .transition-all,
+  .group-hover\\:scale-110,
+  .star-animation,
+  .testimonial-slide-enter,
+  .gallery-item,
+  .gallery-image,
+  .video-play-button,
+  .load-more-btn,
+  .stat-card {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+
+  .gallery-item:hover,
+  .featured-video:hover,
+  .load-more-btn:hover,
+  .stat-card:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .gallery-filters,
+  .load-more-btn {
+    display: none;
+  }
+  
+  .fixed {
+    position: static;
+  }
+
+  .gallery-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .gallery-item {
+    background: linear-gradient(135deg, rgb(17, 24, 39), rgb(0, 0, 0));
+  }
+
+  .featured-video {
+    background: linear-gradient(135deg, rgb(17, 24, 39), rgb(0, 0, 0));
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom gradients */
+.gradient-border {
+  background: linear-gradient(135deg, transparent, rgba(251, 191, 36, 0.1), transparent);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Scroll improvements */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom selection colors */
+::selection {
+  background-color: rgba(251, 191, 36, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: rgba(251, 191, 36, 0.3);
+  color: #ffffff;
+}
+
+/* Custom focus ring */
+.focus-ring:focus {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+  border-radius: 0.375rem;
+}
+
+/* Backdrop filters for better performance */
+.backdrop-blur-custom {
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
 }
 </style>
