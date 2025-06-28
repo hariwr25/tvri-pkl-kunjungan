@@ -21,7 +21,8 @@
     "sweetalert2": "^11.22.1",
     "vue": "^3.2.13",
     "vue-router": "^4.5.1",
-    "vuetify": "^3.8.10"
+    "vuetify": "^3.8.10",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
