@@ -5,7 +5,7 @@
       <div class="max-w-7xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center shadow-lg animate-pulse">
+            <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center shadow-lg animate-pulse logo-circle">
               <span class="text-white font-bold">TV</span>
             </div>
             <span class="text-xl font-bold text-amber-400">TVRI Yogyakarta</span>
@@ -35,11 +35,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 hero-content">
       <!-- Animated Background -->
       <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse bg-blob-1"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse bg-blob-2" style="animation-delay: 2s;"></div>
         <div class="absolute top-3/4 left-1/2 w-64 h-64 bg-rose-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
       </div>
 
@@ -84,15 +84,15 @@
 
           <!-- Stats -->
           <div class="grid grid-cols-3 gap-6 text-center">
-            <div class="bg-amber-900/40 backdrop-blur-sm rounded-xl p-4 border border-amber-400/30 shadow-lg hover:border-amber-400/60 transition-all">
+            <div class="bg-amber-900/40 backdrop-blur-sm rounded-xl p-4 border border-amber-400/30 shadow-lg hover:border-amber-400/60 transition-all stat-item">
               <div class="text-2xl font-bold text-amber-400">{{ stats.students }}+</div>
               <div class="text-sm text-amber-200">Peserta PKL</div>
             </div>
-            <div class="bg-emerald-900/40 backdrop-blur-sm rounded-xl p-4 border border-emerald-400/30 shadow-lg hover:border-emerald-400/60 transition-all">
+            <div class="bg-emerald-900/40 backdrop-blur-sm rounded-xl p-4 border border-emerald-400/30 shadow-lg hover:border-emerald-400/60 transition-all stat-item">
               <div class="text-2xl font-bold text-emerald-400">{{ stats.visits }}+</div>
               <div class="text-sm text-emerald-200">Kunjungan</div>
             </div>
-            <div class="bg-rose-900/40 backdrop-blur-sm rounded-xl p-4 border border-rose-400/30 shadow-lg hover:border-rose-400/60 transition-all">
+            <div class="bg-rose-900/40 backdrop-blur-sm rounded-xl p-4 border border-rose-400/30 shadow-lg hover:border-rose-400/60 transition-all stat-item">
               <div class="text-2xl font-bold text-rose-400">{{ stats.years }}</div>
               <div class="text-sm text-rose-200">Tahun Pengalaman</div>
             </div>
@@ -113,12 +113,12 @@
             </div>
             
             <!-- Floating Cards -->
-            <div class="absolute -top-4 -right-4 bg-amber-600/80 backdrop-blur-sm rounded-xl p-4 border border-amber-400/30 animate-bounce shadow-lg">
+            <div class="absolute -top-4 -right-4 bg-amber-600/80 backdrop-blur-sm rounded-xl p-4 border border-amber-400/30 animate-bounce shadow-lg floating-element">
               <div class="text-2xl">🎬</div>
               <div class="text-xs text-amber-100">Live Studio</div>
             </div>
             
-            <div class="absolute -bottom-4 -left-4 bg-rose-600/80 backdrop-blur-sm rounded-xl p-4 border border-rose-400/30 animate-bounce shadow-lg" style="animation-delay: 1s;">
+            <div class="absolute -bottom-4 -left-4 bg-rose-600/80 backdrop-blur-sm rounded-xl p-4 border border-rose-400/30 animate-bounce shadow-lg floating-element" style="animation-delay: 1s;">
               <div class="text-2xl">📺</div>
               <div class="text-xs text-rose-100">Broadcasting</div>
             </div>
@@ -140,7 +140,7 @@
       </div>
 
       <!-- Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce scroll-indicator">
         <div class="w-6 h-10 border-2 border-amber-400/30 rounded-full flex justify-center">
           <div class="w-1 h-3 bg-amber-400 rounded-full mt-2 animate-pulse"></div>
         </div>
@@ -148,7 +148,7 @@
     </section>
 
     <!-- Info Section -->
-    <section id="info" class="py-20 px-6 bg-gray-800">
+    <section id="info" class="py-20 px-6 bg-gray-800 animate-section">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl lg:text-5xl font-bold mb-6">
@@ -163,7 +163,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <!-- PKL Card -->
-          <div id="pkl" class="group relative bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 border border-amber-400/30 hover:border-amber-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-xl hover:shadow-amber-500/30">
+          <div id="pkl" class="group relative bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 border border-amber-400/30 hover:border-amber-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-xl hover:shadow-amber-500/30 feature-card">
             <div class="absolute inset-0 bg-amber-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             <div class="relative z-10">
@@ -220,7 +220,7 @@
           </div>
 
           <!-- Kunjungan Card -->
-          <div id="kunjungan" class="group relative bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 border border-emerald-400/30 hover:border-emerald-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-xl hover:shadow-emerald-500/30">
+          <div id="kunjungan" class="group relative bg-gray-800/60 backdrop-blur-sm rounded-3xl p-8 border border-emerald-400/30 hover:border-emerald-400/60 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-xl hover:shadow-emerald-500/30 feature-card">
             <div class="absolute inset-0 bg-emerald-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             <div class="relative z-10">
@@ -280,604 +280,594 @@
     </section>
 
     <!-- Dokumen Section -->
-<section id="dokumen" class="py-16 px-6 bg-gray-900/50">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4 text-amber-400">
-        Persyaratan Dokumen
-      </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Siapkan dokumen-dokumen berikut sebelum mendaftar
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Dokumen PKL -->
-      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 hover:border-amber-400/60 transition-all">
-        <div class="text-4xl mb-4 text-amber-400">📄</div>
-        <h3 class="text-xl font-bold mb-3">PKL (Siswa/Mahasiswa)</h3>
-        <ul class="space-y-2 text-gray-300">
-          <li class="flex items-start gap-2">
-            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Surat Pengantar dari Sekolah/Kampus</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>CV/Riwayat Pendidikan</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Fotokopi KTP/Kartu Pelajar</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Pas Foto 3x4 (Latar Merah)</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Dokumen Kunjungan -->
-      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all">
-        <div class="text-4xl mb-4 text-emerald-400">📑</div>
-        <h3 class="text-xl font-bold mb-3">Kunjungan Edukatif</h3>
-        <ul class="space-y-2 text-gray-300">
-          <li class="flex items-start gap-2">
-            <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Surat Permohonan Resmi</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Daftar Peserta (Min. 10 Orang)</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Fotokopi Identitas Pendamping</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Contoh Dokumen -->
-      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-sky-400/30 hover:border-sky-400/60 transition-all">
-        <div class="text-4xl mb-4 text-sky-400">📝</div>
-        <h3 class="text-xl font-bold mb-3">Contoh Dokumen</h3>
-        <div class="space-y-3">
-          <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
-            <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-            </svg>
-            <span>Contoh Surat Pengantar PKL</span>
-          </a>
-          <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
-            <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-            </svg>
-            <span>Template Daftar Peserta</span>
-          </a>
-          <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
-            <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-            </svg>
-            <span>Panduan Pengisian Formulir</span>
-          </a>
+    <section id="dokumen" class="py-16 px-6 bg-gray-900/50 animate-section">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4 text-amber-400">
+            Persyaratan Dokumen
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Siapkan dokumen-dokumen berikut sebelum mendaftar
+          </p>
         </div>
-      </div>
 
-      <!-- Upload Guidelines -->
-      <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-400/30 hover:border-rose-400/60 transition-all">
-        <div class="text-4xl mb-4 text-rose-400">⚠️</div>
-        <h3 class="text-xl font-bold mb-3">Panduan Upload</h3>
-        <ul class="space-y-2 text-gray-300">
-          <li class="flex items-start gap-2">
-            <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
-            <span>Format file: PDF/JPG/PNG (max. 2MB)</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
-            <span>Nama file: NAMA_JENIS_DOKUMEN (contoh: ANDI_SURAT_PENGANTAR.pdf)</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
-            <span>Dokumen harus terbaca jelas</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Proses Pendaftaran Responsif - TVRI Yogyakarta -->
-<section id="proses" class="py-12 px-4 sm:px-6 bg-gradient-to-b from-gray-800 to-gray-900">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">
-        Proses Pendaftaran TVRI Yogyakarta
-      </h2>
-      <div class="w-20 h-1 bg-amber-500 mx-auto mb-6"></div>
-    </div>
-
-    <!-- Mobile Timeline (horizontal) -->
-    <div class="md:hidden overflow-x-auto pb-6">
-      <div class="flex w-[700px] min-w-full space-x-8 px-4">
-        <!-- Step 1 -->
-        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
-          <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-blue-300 font-bold mb-4">1</div>
-          <h3 class="text-lg font-semibold text-white mb-2">Isi Formulir Online</h3>
-          <p class="text-gray-300 text-sm mb-3">Lengkapi data diri dan pilih program</p>
-          <div class="text-xs text-blue-400">Waktu: ±15 menit</div>
-        </div>
-        
-        <!-- Step 2 -->
-        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
-          <div class="w-12 h-12 bg-amber-900 rounded-full flex items-center justify-center text-amber-300 font-bold mb-4">2</div>
-          <h3 class="text-lg font-semibold text-white mb-2">Upload Dokumen</h3>
-          <p class="text-gray-300 text-sm mb-3">Format: PDF/JPG (max. 2MB)</p>
-          <div class="text-xs text-amber-400">Resolusi min. 300dpi</div>
-        </div>
-        
-        <!-- Step 3 -->
-        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
-          <div class="w-12 h-12 bg-green-900 rounded-full flex items-center justify-center text-green-300 font-bold mb-4">3</div>
-          <h3 class="text-lg font-semibold text-white mb-2">Verifikasi Admin</h3>
-          <p class="text-gray-300 text-sm mb-3">Proses: 1-3 hari kerja</p>
-          <div class="text-xs text-green-400">Cek email</div>
-        </div>
-        
-        <!-- Step 4 -->
-        <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
-          <div class="w-12 h-12 bg-purple-900 rounded-full flex items-center justify-center text-purple-300 font-bold mb-4">4</div>
-          <h3 class="text-lg font-semibold text-white mb-2">Keputusan</h3>
-          <p class="text-gray-300 text-sm mb-3">Notifikasi real-time</p>
-          <div class="text-xs text-purple-400">Unduh surat</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Desktop Timeline (vertical) -->
-    <div class="hidden md:block relative">
-      <!-- Timeline line -->
-      <div class="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 via-amber-400 to-purple-400 transform -translate-x-1/2 z-0"></div>
-
-      <div class="space-y-16">
-        <!-- Step 1 -->
-        <div class="relative flex justify-between items-center">
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
-            <h3 class="text-xl font-bold text-blue-400 mb-3">Isi Formulir Online</h3>
-            <p class="text-gray-300 mb-4">Lengkapi data diri secara lengkap dan pilih program</p>
-            <div class="text-sm text-blue-400 font-medium">⏳ Waktu: ±15 menit</div>
-          </div>
-          
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-blue-500 flex items-center justify-center text-blue-400 font-bold text-xl z-10 shadow-lg">
-            1
-          </div>
-          
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
-            <h4 class="text-lg font-semibold text-white mb-3">PERSYARATAN:</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Dokumen PKL -->
+          <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 hover:border-amber-400/60 transition-all feature-card">
+            <div class="text-4xl mb-4 text-amber-400">📄</div>
+            <h3 class="text-xl font-bold mb-3">PKL (Siswa/Mahasiswa)</h3>
             <ul class="space-y-2 text-gray-300">
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Scan KTP/Kartu Pelajar
+                <span>Surat Pengantar dari Sekolah/Kampus</span>
               </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Surat pengantar institusi
+                <span>CV/Riwayat Pendidikan</span>
               </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                CV terbaru (format PDF)
+                <span>Fotokopi KTP/Kartu Pelajar</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Pas Foto 3x4 (Latar Merah)</span>
               </li>
             </ul>
           </div>
-        </div>
 
-        <!-- Step 2 -->
-        <div class="relative flex justify-between items-center">
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
-            <h3 class="text-xl font-bold text-amber-400 mb-3">Upload Dokumen</h3>
-            <p class="text-gray-300 mb-4">Unggah persyaratan dokumen sesuai ketentuan</p>
-            <div class="text-sm text-amber-400 font-medium">📁 Format: PDF/JPG (max. 2MB)</div>
-          </div>
-          
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-amber-500 flex items-center justify-center text-amber-400 font-bold text-xl z-10 shadow-lg">
-            2
-          </div>
-          
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
-            <h4 class="text-lg font-semibold text-white mb-3">TIPS UPLOAD:</h4>
+          <!-- Dokumen Kunjungan -->
+          <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all feature-card">
+            <div class="text-4xl mb-4 text-emerald-400">📑</div>
+            <h3 class="text-xl font-bold mb-3">Kunjungan Edukatif</h3>
             <ul class="space-y-2 text-gray-300">
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Gunakan resolusi minimal 300dpi
+                <span>Surat Permohonan Resmi</span>
               </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Pastikan dokumen terbaca jelas
+                <span>Daftar Peserta (Min. 10 Orang)</span>
               </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Nama file sesuai jenis dokumen
+                <span>Fotokopi Identitas Pendamping</span>
               </li>
             </ul>
           </div>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="relative flex justify-between items-center">
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
-            <h3 class="text-xl font-bold text-green-400 mb-3">Verifikasi Admin</h3>
-            <p class="text-gray-300 mb-4">Tim kami akan memverifikasi kelengkapan dokumen</p>
-            <div class="text-sm text-green-400 font-medium">⏱️ Proses: 1-3 hari kerja</div>
-          </div>
-          
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-green-500 flex items-center justify-center text-green-400 font-bold text-xl z-10 shadow-lg">
-            3
-          </div>
-          
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
-            <h4 class="text-lg font-semibold text-white mb-3">YANG DIPERIKSA:</h4>
-            <ul class="space-y-2 text-gray-300">
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <!-- Contoh Dokumen -->
+          <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-sky-400/30 hover:border-sky-400/60 transition-all feature-card">
+            <div class="text-4xl mb-4 text-sky-400">📝</div>
+            <h3 class="text-xl font-bold mb-3">Contoh Dokumen</h3>
+            <div class="space-y-3">
+              <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
+                <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
-                Kelengkapan dokumen persyaratan
-              </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <span>Contoh Surat Pengantar PKL</span>
+              </a>
+              <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
+                <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
-                Validitas dan keaslian dokumen
-              </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <span>Template Daftar Peserta</span>
+              </a>
+              <a href="#" class="flex items-center gap-2 text-sky-300 hover:text-sky-200 group">
+                <svg class="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
-                Kesesuaian dengan program
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="relative flex justify-between items-center">
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
-            <h3 class="text-xl font-bold text-purple-400 mb-3">Keputusan Penerimaan</h3>
-            <p class="text-gray-300 mb-4">Hasil verifikasi via halaman cek status</p>
-            <div class="text-sm text-purple-400 font-medium">🔔 Status update real-time</div>
-          </div>
-          
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-purple-500 flex items-center justify-center text-purple-400 font-bold text-xl z-10 shadow-lg">
-            4
-          </div>
-          
-          <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
-            <h4 class="text-lg font-semibold text-white mb-3">JIKA DITERIMA:</h4>
-            <ul class="space-y-2 text-gray-300">
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Unduh surat penerimaan
-              </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Konfirmasi kehadiran
-              </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Terima panduan peserta
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Divisi Section -->
-<section id="divisi" class="py-16 px-6 bg-gray-900/50">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4 text-amber-400">
-        Divisi PKL Tersedia
-      </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Pilih divisi yang sesuai dengan minat dan kompetensi Anda
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Produksi (PROGRAM) -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 hover:border-amber-400/60 transition-all hover:shadow-lg hover:shadow-amber-500/20">
-        <div class="text-4xl mb-4 text-amber-400 group-hover:animate-bounce">🎬</div>
-        <h3 class="text-xl font-bold mb-2">Program</h3>
-        <p class="text-gray-400 mb-4">Berfokus pada produksi program televisi dalam dan luar studio yang membutuhkan keahlian broadcasting dan pengelolaan tayangan.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Produksi</span>
-          <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Broadcast</span>
-          <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Studio</span>
-        </div>
-      </div>
-
-      <!-- Jurnalistik (BERITA) -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all hover:shadow-lg hover:shadow-emerald-500/20">
-        <div class="text-4xl mb-4 text-emerald-400 group-hover:animate-bounce">📰</div>
-        <h3 class="text-xl font-bold mb-2">Berita</h3>
-        <p class="text-gray-400 mb-4">Produksi berita dalam dan luar studio yang membutuhkan pengalaman jurnalistik dan komunikasi yang baik.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Jurnalistik</span>
-          <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Newsroom</span>
-          <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Peliputan</span>
-        </div>
-      </div>
-
-      <!-- Teknik -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-sky-400/30 hover:border-sky-400/60 transition-all hover:shadow-lg hover:shadow-sky-500/20">
-        <div class="text-4xl mb-4 text-sky-400 group-hover:animate-bounce">📡</div>
-        <h3 class="text-xl font-bold mb-2">Teknik</h3>
-        <p class="text-gray-400 mb-4">Fokus pada operasional produksi studio serta editing video dan pengetahuan teknis broadcasting.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">Transmisi</span>
-          <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">MCR</span>
-          <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">Editing</span>
-        </div>
-      </div>
-
-      <!-- Digital Media (KONTEN MEDIA BARU) -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/30 hover:border-purple-400/60 transition-all hover:shadow-lg hover:shadow-purple-500/20">
-        <div class="text-4xl mb-4 text-purple-400 group-hover:animate-bounce">💻</div>
-        <h3 class="text-xl font-bold mb-2">Konten Media Baru</h3>
-        <p class="text-gray-400 mb-4">Pengelolaan konten di media sosial dan produksi luar studio sesuai dengan SOP yang berlaku.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">Instagram</span>
-          <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">YouTube</span>
-          <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">Website</span>
-        </div>
-      </div>
-
-      <!-- Tata Artistik (Pindah ke PROMO) -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-red-400/30 hover:border-red-400/60 transition-all hover:shadow-lg hover:shadow-red-500/20">
-        <div class="text-4xl mb-4 text-red-400 group-hover:animate-bounce">🎨</div>
-        <h3 class="text-xl font-bold mb-2">Promo</h3>
-        <p class="text-gray-400 mb-4">Pengelolaan promosi konten TV melalui siaran maupun media sosial TVRI Yogyakarta.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Promosi</span>
-          <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Konten</span>
-          <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Media Sosial</span>
-        </div>
-      </div>
-
-      <!-- Keuangan -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-green-400/30 hover:border-green-400/60 transition-all hover:shadow-lg hover:shadow-green-500/20">
-        <div class="text-4xl mb-4 text-green-400 group-hover:animate-bounce">💰</div>
-        <h3 class="text-xl font-bold mb-2">Keuangan</h3>
-        <p class="text-gray-400 mb-4">Mengelola anggaran, pelaporan, arsip dokumen penting, dan aplikasi keuangan lembaga.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Anggaran</span>
-          <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Laporan</span>
-          <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Kearsipan</span>
-        </div>
-      </div>
-
-      <!-- SDM (UMUM) -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30 hover:border-yellow-400/60 transition-all hover:shadow-lg hover:shadow-yellow-500/20">
-        <div class="text-4xl mb-4 text-yellow-400 group-hover:animate-bounce">👥</div>
-        <h3 class="text-xl font-bold mb-2">Umum</h3>
-        <p class="text-gray-400 mb-4">Unit SDM & BMN, melayani administrasi kepegawaian, IT, dan pengelolaan barang milik negara.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">Kepegawaian</span>
-          <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">Aplikasi</span>
-          <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">IT</span>
-        </div>
-      </div>
-
-      <!-- Sekretariat (PENGEMBANGAN USAHA) -->
-      <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-teal-400/30 hover:border-teal-400/60 transition-all hover:shadow-lg hover:shadow-teal-500/20">
-        <div class="text-4xl mb-4 text-teal-400 group-hover:animate-bounce">📝</div>
-        <h3 class="text-xl font-bold mb-2">Pengembangan Usaha</h3>
-        <p class="text-gray-400 mb-4">Mengelola kerjasama siaran & non-siaran, baik dari klien pemerintah maupun non-pemerintah.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Kerjasama</span>
-          <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Usaha</span>
-          <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Relasi</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-s semua method yang berkaitan dengan lightbox di script (seperti openLightbox, closeLightbox, nextImage, prevImage, dll).
-
-
-
-
-
-
-
-
-<!-- Enhanced Gallery Section - No Modal -->
-<section id="gallery" class="py-20 px-6 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
-  <!-- Background decoration -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-rose-500 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-  </div>
-
-  <div class="max-w-7xl mx-auto relative z-10">
-    <!-- Header -->
-    <div class="text-center mb-16">
-      <div class="inline-block mb-4">
-        <span class="px-4 py-2 bg-rose-500/20 text-rose-400 rounded-full text-sm font-medium border border-rose-500/30">
-          📸 Gallery Kegiatan
-        </span>
-      </div>
-      <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-        Dokumentasi PKL
-      </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        Momen berharga dari kegiatan PKL dan kunjungan yang telah dilaksanakan bersama para peserta
-      </p>
-    </div>
-
-    <!-- Gallery Filter Tabs -->
-    <div class="flex justify-center mb-8">
-      <div class="inline-flex bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 border border-gray-700">
-        <button 
-          v-for="(filter, index) in galleryFilters" 
-          :key="index"
-          @click="activeFilter = filter.id"
-          :class="[
-            'px-6 py-3 rounded-xl font-medium transition-all duration-300',
-            activeFilter === filter.id 
-              ? 'bg-rose-500 text-white shadow-lg' 
-              : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
-          ]"
-        >
-          {{ filter.name }}
-        </button>
-      </div>
-    </div>
-
-    <!-- Main Gallery Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-      
-      <!-- Featured Video - Spans 2 columns -->
-      <div 
-        class="lg:col-span-2 xl:row-span-2 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-rose-500/20"
-      >
-        <div class="aspect-video lg:aspect-[4/3] relative h-full">
-          <img :src="featuredVideo.thumbnail" 
-               :alt="featuredVideo.title" 
-               class="w-full h-full object-cover">
-          
-          <!-- Play button -->
-          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-            <div class="w-20 h-20 bg-rose-500/90 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-400 transition-all duration-300 shadow-lg hover:shadow-rose-500/50">
-              <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+                <span>Panduan Pengisian Formulir</span>
+              </a>
             </div>
           </div>
-          
-          <!-- Content overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
-            <div>
-              <h3 class="text-2xl font-bold text-white mb-2">{{ featuredVideo.title }}</h3>
-              <p class="text-gray-300 mb-3">{{ featuredVideo.description }}</p>
-              <div class="flex items-center gap-2">
-                <span class="px-3 py-1 bg-rose-500/80 text-white text-sm rounded-full backdrop-blur-sm">Video</span>
-                <span class="text-gray-400 text-sm">{{ featuredVideo.duration }}</span>
+
+          <!-- Upload Guidelines -->
+          <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-400/30 hover:border-rose-400/60 transition-all feature-card">
+            <div class="text-4xl mb-4 text-rose-400">⚠️</div>
+            <h3 class="text-xl font-bold mb-3">Panduan Upload</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start gap-2">
+                <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
+                <span>Format file: PDF/JPG/PNG (max. 2MB)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
+                <span>Nama file: NAMA_JENIS_DOKUMEN (contoh: ANDI_SURAT_PENGANTAR.pdf)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <div class="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0">•</div>
+                <span>Dokumen harus terbaca jelas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proses Pendaftaran Responsif - TVRI Yogyakarta -->
+    <section id="proses" class="py-12 px-4 sm:px-6 bg-gradient-to-b from-gray-800 to-gray-900 animate-section">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">
+            Proses Pendaftaran TVRI Yogyakarta
+          </h2>
+          <div class="w-20 h-1 bg-amber-500 mx-auto mb-6"></div>
+        </div>
+
+        <!-- Mobile Timeline (horizontal) -->
+        <div class="md:hidden overflow-x-auto pb-6">
+          <div class="flex w-[700px] min-w-full space-x-8 px-4">
+            <!-- Step 1 -->
+            <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+              <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-blue-300 font-bold mb-4">1</div>
+              <h3 class="text-lg font-semibold text-white mb-2">Isi Formulir Online</h3>
+              <p class="text-gray-300 text-sm mb-3">Lengkapi data diri dan pilih program</p>
+              <div class="text-xs text-blue-400">Waktu: ±15 menit</div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+              <div class="w-12 h-12 bg-amber-900 rounded-full flex items-center justify-center text-amber-300 font-bold mb-4">2</div>
+              <h3 class="text-lg font-semibold text-white mb-2">Upload Dokumen</h3>
+              <p class="text-gray-300 text-sm mb-3">Format: PDF/JPG (max. 2MB)</p>
+              <div class="text-xs text-amber-400">Resolusi min. 300dpi</div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+              <div class="w-12 h-12 bg-green-900 rounded-full flex items-center justify-center text-green-300 font-bold mb-4">3</div>
+              <h3 class="text-lg font-semibold text-white mb-2">Verifikasi Admin</h3>
+              <p class="text-gray-300 text-sm mb-3">Proses: 1-3 hari kerja</p>
+              <div class="text-xs text-green-400">Cek email</div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="flex-shrink-0 w-64 bg-gray-700 p-6 rounded-xl shadow-md border border-gray-600">
+              <div class="w-12 h-12 bg-purple-900 rounded-full flex items-center justify-center text-purple-300 font-bold mb-4">4</div>
+              <h3 class="text-lg font-semibold text-white mb-2">Keputusan</h3>
+              <p class="text-gray-300 text-sm mb-3">Notifikasi real-time</p>
+              <div class="text-xs text-purple-400">Unduh surat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop Timeline (vertical) -->
+        <div class="hidden md:block relative">
+          <!-- Timeline line -->
+          <div class="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 via-amber-400 to-purple-400 transform -translate-x-1/2 z-0"></div>
+
+          <div class="space-y-16">
+            <!-- Step 1 -->
+            <div class="relative flex justify-between items-center">
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+                <h3 class="text-xl font-bold text-blue-400 mb-3">Isi Formulir Online</h3>
+                <p class="text-gray-300 mb-4">Lengkapi data diri secara lengkap dan pilih program</p>
+                <div class="text-sm text-blue-400 font-medium">⏳ Waktu: ±15 menit</div>
+              </div>
+              
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-blue-500 flex items-center justify-center text-blue-400 font-bold text-xl z-10 shadow-lg">
+                1
+              </div>
+              
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+                <h4 class="text-lg font-semibold text-white mb-3">PERSYARATAN:</h4>
+                <ul class="space-y-2 text-gray-300">
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Scan KTP/Kartu Pelajar
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Surat pengantar institusi
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-blue-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    CV terbaru (format PDF)
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative flex justify-between items-center">
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+                <h3 class="text-xl font-bold text-amber-400 mb-3">Upload Dokumen</h3>
+                <p class="text-gray-300 mb-4">Unggah persyaratan dokumen sesuai ketentuan</p>
+                <div class="text-sm text-amber-400 font-medium">📁 Format: PDF/JPG (max. 2MB)</div>
+              </div>
+              
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-amber-500 flex items-center justify-center text-amber-400 font-bold text-xl z-10 shadow-lg">
+                2
+              </div>
+              
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+                <h4 class="text-lg font-semibold text-white mb-3">TIPS UPLOAD:</h4>
+                <ul class="space-y-2 text-gray-300">
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Gunakan resolusi minimal 300dpi
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Pastikan dokumen terbaca jelas
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Nama file sesuai jenis dokumen
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative flex justify-between items-center">
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+                <h3 class="text-xl font-bold text-green-400 mb-3">Verifikasi Admin</h3>
+                <p class="text-gray-300 mb-4">Tim kami akan memverifikasi kelengkapan dokumen</p>
+                <div class="text-sm text-green-400 font-medium">⏱️ Proses: 1-3 hari kerja</div>
+              </div>
+              
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-green-500 flex items-center justify-center text-green-400 font-bold text-xl z-10 shadow-lg">
+                3
+              </div>
+              
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+                <h4 class="text-lg font-semibold text-white mb-3">YANG DIPERIKSA:</h4>
+                <ul class="space-y-2 text-gray-300">
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Kelengkapan dokumen persyaratan
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Validitas dan keaslian dokumen
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Kesesuaian dengan program
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative flex justify-between items-center">
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 mr-6">
+                <h3 class="text-xl font-bold text-purple-400 mb-3">Keputusan Penerimaan</h3>
+                <p class="text-gray-300 mb-4">Hasil verifikasi via halaman cek status</p>
+                <div class="text-sm text-purple-400 font-medium">🔔 Status update real-time</div>
+              </div>
+              
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gray-800 border-4 border-purple-500 flex items-center justify-center text-purple-400 font-bold text-xl z-10 shadow-lg">
+                4
+              </div>
+              
+              <div class="w-5/12 bg-gray-700 p-8 rounded-xl shadow-lg border border-gray-600 ml-6">
+                <h4 class="text-lg font-semibold text-white mb-3">JIKA DITERIMA:</h4>
+                <ul class="space-y-2 text-gray-300">
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Unduh surat penerimaan
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Konfirmasi kehadiran
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-purple-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Terima panduan peserta
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Gallery Items - Simple Display -->
-      <div 
-        v-for="(item, index) in filteredGalleryItems.slice(0, 8)" 
-        :key="index"
-        :class="`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-${item.color}-500/20`"
-      >
-        <div class="aspect-square relative">
-          <img :src="item.image" 
-               :alt="item.title" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-               loading="lazy">
-          
-          <!-- Hover overlay with info -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
-            <div class="w-full">
-              <h3 class="font-bold text-white text-lg mb-1">{{ item.title }}</h3>
-              <p class="text-gray-300 text-sm mb-2 line-clamp-2">{{ item.description }}</p>
-              
-              <!-- Tags -->
-              <div class="flex flex-wrap gap-1 mb-2">
-                <span 
-                  v-for="(tag, tagIndex) in item.tags" 
-                  :key="tagIndex"
-                  :class="`px-2 py-1 bg-${item.color}-500/80 text-white text-xs rounded-full`"
-                >
-                  {{ tag }}
-                </span>
-              </div>
-              
-              <!-- Category badge -->
-              <span :class="`inline-block px-2 py-1 bg-${item.color}-500/60 text-white text-xs rounded-full capitalize`">
-                {{ item.category }}
-              </span>
+    <!-- Divisi Section -->
+    <section id="divisi" class="py-16 px-6 bg-gray-900/50 animate-section">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4 text-amber-400">
+            Divisi PKL Tersedia
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Pilih divisi yang sesuai dengan minat dan kompetensi Anda
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Produksi (PROGRAM) -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 hover:border-amber-400/60 transition-all hover:shadow-lg hover:shadow-amber-500/20 feature-card">
+            <div class="text-4xl mb-4 text-amber-400 group-hover:animate-bounce">🎬</div>
+            <h3 class="text-xl font-bold mb-2">Program</h3>
+            <p class="text-gray-400 mb-4">Berfokus pada produksi program televisi dalam dan luar studio yang membutuhkan keahlian broadcasting dan pengelolaan tayangan.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Produksi</span>
+              <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Broadcast</span>
+              <span class="px-2 py-1 bg-amber-900/40 text-amber-300 text-xs rounded-full">Studio</span>
+            </div>
+          </div>
+
+          <!-- Jurnalistik (BERITA) -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all hover:shadow-lg hover:shadow-emerald-500/20 feature-card">
+            <div class="text-4xl mb-4 text-emerald-400 group-hover:animate-bounce">📰</div>
+            <h3 class="text-xl font-bold mb-2">Berita</h3>
+            <p class="text-gray-400 mb-4">Produksi berita dalam dan luar studio yang membutuhkan pengalaman jurnalistik dan komunikasi yang baik.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Jurnalistik</span>
+              <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Newsroom</span>
+              <span class="px-2 py-1 bg-emerald-900/40 text-emerald-300 text-xs rounded-full">Peliputan</span>
+            </div>
+          </div>
+
+          <!-- Teknik -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-sky-400/30 hover:border-sky-400/60 transition-all hover:shadow-lg hover:shadow-sky-500/20 feature-card">
+            <div class="text-4xl mb-4 text-sky-400 group-hover:animate-bounce">📡</div>
+            <h3 class="text-xl font-bold mb-2">Teknik</h3>
+            <p class="text-gray-400 mb-4">Fokus pada operasional produksi studio serta editing video dan pengetahuan teknis broadcasting.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">Transmisi</span>
+              <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">MCR</span>
+              <span class="px-2 py-1 bg-sky-900/40 text-sky-300 text-xs rounded-full">Editing</span>
+            </div>
+          </div>
+
+          <!-- Digital Media (KONTEN MEDIA BARU) -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/30 hover:border-purple-400/60 transition-all hover:shadow-lg hover:shadow-purple-500/20 feature-card">
+            <div class="text-4xl mb-4 text-purple-400 group-hover:animate-bounce">💻</div>
+            <h3 class="text-xl font-bold mb-2">Konten Media Baru</h3>
+            <p class="text-gray-400 mb-4">Pengelolaan konten di media sosial dan produksi luar studio sesuai dengan SOP yang berlaku.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">Instagram</span>
+              <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">YouTube</span>
+              <span class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full">Website</span>
+            </div>
+          </div>
+
+          <!-- Tata Artistik (Pindah ke PROMO) -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-red-400/30 hover:border-red-400/60 transition-all hover:shadow-lg hover:shadow-red-500/20 feature-card">
+            <div class="text-4xl mb-4 text-red-400 group-hover:animate-bounce">🎨</div>
+            <h3 class="text-xl font-bold mb-2">Promo</h3>
+            <p class="text-gray-400 mb-4">Pengelolaan promosi konten TV melalui siaran maupun media sosial TVRI Yogyakarta.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Promosi</span>
+              <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Konten</span>
+              <span class="px-2 py-1 bg-red-900/40 text-red-300 text-xs rounded-full">Media Sosial</span>
+            </div>
+          </div>
+
+          <!-- Keuangan -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-green-400/30 hover:border-green-400/60 transition-all hover:shadow-lg hover:shadow-green-500/20 feature-card">
+            <div class="text-4xl mb-4 text-green-400 group-hover:animate-bounce">💰</div>
+            <h3 class="text-xl font-bold mb-2">Keuangan</h3>
+            <p class="text-gray-400 mb-4">Mengelola anggaran, pelaporan, arsip dokumen penting, dan aplikasi keuangan lembaga.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Anggaran</span>
+              <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Laporan</span>
+              <span class="px-2 py-1 bg-green-900/40 text-green-300 text-xs rounded-full">Kearsipan</span>
+            </div>
+          </div>
+
+          <!-- SDM (UMUM) -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30 hover:border-yellow-400/60 transition-all hover:shadow-lg hover:shadow-yellow-500/20 feature-card">
+            <div class="text-4xl mb-4 text-yellow-400 group-hover:animate-bounce">👥</div>
+            <h3 class="text-xl font-bold mb-2">Umum</h3>
+            <p class="text-gray-400 mb-4">Unit SDM & BMN, melayani administrasi kepegawaian, IT, dan pengelolaan barang milik negara.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">Kepegawaian</span>
+              <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">Aplikasi</span>
+              <span class="px-2 py-1 bg-yellow-900/40 text-yellow-300 text-xs rounded-full">IT</span>
+            </div>
+          </div>
+
+          <!-- Sekretariat (PENGEMBANGAN USAHA) -->
+          <div class="group bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-teal-400/30 hover:border-teal-400/60 transition-all hover:shadow-lg hover:shadow-teal-500/20 feature-card">
+            <div class="text-4xl mb-4 text-teal-400 group-hover:animate-bounce">📝</div>
+            <h3 class="text-xl font-bold mb-2">Pengembangan Usaha</h3>
+            <p class="text-gray-400 mb-4">Mengelola kerjasama siaran & non-siaran, baik dari klien pemerintah maupun non-pemerintah.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Kerjasama</span>
+              <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Usaha</span>
+              <span class="px-2 py-1 bg-teal-900/40 text-teal-300 text-xs rounded-full">Relasi</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Load More Button -->
-    <div class="text-center mb-12">
-      <button 
-        v-if="filteredGalleryItems.length > 8"
-        @click="loadMoreImages"
-        class="px-8 py-4 bg-gradient-to-r from-rose-500 to-purple-500 hover:from-rose-400 hover:to-purple-400 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-rose-500/40"
-      >
-        Lihat Lebih Banyak Foto
-      </button>
-    </div>
+    <!-- Enhanced Gallery Section - No Modal -->
+    <section id="gallery" class="py-20 px-6 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden animate-section">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-rose-500 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+      </div>
 
-    <!-- Statistics Cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-rose-500/10 to-pink-500/10 border border-rose-500/20 backdrop-blur-sm">
-        <div class="text-3xl font-bold text-rose-400 mb-2">150+</div>
-        <div class="text-gray-300 text-sm">Peserta PKL</div>
-      </div>
-      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-sm">
-        <div class="text-3xl font-bold text-blue-400 mb-2">25</div>
-        <div class="text-gray-300 text-sm">Batch Pelatihan</div>
-      </div>
-      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 backdrop-blur-sm">
-        <div class="text-3xl font-bold text-green-400 mb-2">50+</div>
-        <div class="text-gray-300 text-sm">Sekolah Partner</div>
-      </div>
-      <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/20 backdrop-blur-sm">
-        <div class="text-3xl font-bold text-purple-400 mb-2">95%</div>
-        <div class="text-gray-300 text-sm">Tingkat Kepuasan</div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-block mb-4">
+            <span class="px-4 py-2 bg-rose-500/20 text-rose-400 rounded-full text-sm font-medium border border-rose-500/30">
+              📸 Gallery Kegiatan
+            </span>
+          </div>
+          <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            Dokumentasi
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Momen berharga dari kegiatan PKL dan kunjungan yang telah dilaksanakan bersama para peserta
+          </p>
+        </div>
 
-<!-- Why Choose Us Section -->
-    <section id="program" class="py-20 px-6 bg-gray-900">
+        <!-- Gallery Filter Tabs -->
+        <div class="flex justify-center mb-8">
+          <div class="inline-flex bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 border border-gray-700">
+            <button 
+              v-for="(filter, index) in galleryFilters" 
+              :key="index"
+              @click="activeFilter = filter.id"
+              :class="[
+                'px-6 py-3 rounded-xl font-medium transition-all duration-300',
+                activeFilter === filter.id 
+                  ? 'bg-rose-500 text-white shadow-lg' 
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+              ]"
+            >
+              {{ filter.name }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+          
+          <!-- Featured Video - Spans 2 columns -->
+          <div 
+            class="lg:col-span-2 xl:row-span-2 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-rose-500/20 gallery-item"
+          >
+            <div class="aspect-video lg:aspect-[4/3] relative h-full">
+              <img :src="featuredVideo.thumbnail" 
+                   :alt="featuredVideo.title" 
+                   class="w-full h-full object-cover">
+              
+              <!-- Play button -->
+              <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                <div class="w-20 h-20 bg-rose-500/90 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-400 transition-all duration-300 shadow-lg hover:shadow-rose-500/50">
+                  <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- Content overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">{{ featuredVideo.title }}</h3>
+                  <p class="text-gray-300 mb-3">{{ featuredVideo.description }}</p>
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 bg-rose-500/80 text-white text-sm rounded-full backdrop-blur-sm">Video</span>
+                    <span class="text-gray-400 text-sm">{{ featuredVideo.duration }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Items - Simple Display -->
+          <div 
+            v-for="(item, index) in filteredGalleryItems.slice(0, 8)" 
+            :key="index"
+            :class="`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-${item.color}-500/20 gallery-item`"
+          >
+            <div class="aspect-square relative">
+              <img :src="item.image" 
+                   :alt="item.title" 
+                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                   loading="lazy">
+              
+              <!-- Hover overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                <div class="w-full">
+                  <h3 class="font-bold text-white text-lg mb-1">{{ item.title }}</h3>
+                  <p class="text-gray-300 text-sm mb-2 line-clamp-2">{{ item.description }}</p>
+                  
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-1 mb-2">
+                    <span 
+                      v-for="(tag, tagIndex) in item.tags" 
+                      :key="tagIndex"
+                      :class="`px-2 py-1 bg-${item.color}-500/80 text-white text-xs rounded-full`"
+                    >
+                      {{ tag }}
+                    </span>
+                  </div>
+                  
+                  <!-- Category badge -->
+                  <span :class="`inline-block px-2 py-1 bg-${item.color}-500/60 text-white text-xs rounded-full capitalize`">
+                    {{ item.category }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mb-12">
+          <button 
+            v-if="filteredGalleryItems.length > 8"
+            @click="loadMoreImages"
+            class="px-8 py-4 bg-gradient-to-r from-rose-500 to-purple-500 hover:from-rose-400 hover:to-purple-400 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-rose-500/40"
+          >
+            Lihat Lebih Banyak Foto
+          </button>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-rose-500/10 to-pink-500/10 border border-rose-500/20 backdrop-blur-sm stat-item">
+            <div class="text-3xl font-bold text-rose-400 mb-2">150+</div>
+            <div class="text-gray-300 text-sm">Peserta PKL</div>
+          </div>
+          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-sm stat-item">
+            <div class="text-3xl font-bold text-blue-400 mb-2">25</div>
+            <div class="text-gray-300 text-sm">Batch Pelatihan</div>
+          </div>
+          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 backdrop-blur-sm stat-item">
+            <div class="text-3xl font-bold text-green-400 mb-2">50+</div>
+            <div class="text-gray-300 text-sm">Sekolah Partner</div>
+          </div>
+          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/20 backdrop-blur-sm stat-item">
+            <div class="text-3xl font-bold text-purple-400 mb-2">95%</div>
+            <div class="text-gray-300 text-sm">Tingkat Kepuasan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="program" class="py-20 px-6 bg-gray-900 animate-section">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl lg:text-5xl font-bold mb-6">
@@ -894,7 +884,7 @@ s semua method yang berkaitan dengan lightbox di script (seperti openLightbox, c
           <div
             v-for="(feature, index) in features"
             :key="index"
-            class="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-amber-400/60 transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-amber-500/20"
+            class="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-amber-400/60 transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-amber-500/20 feature-card"
           >
             <div class="text-4xl mb-4">{{ feature.icon }}</div>
             <h3 class="text-xl font-bold text-white mb-3">{{ feature.title }}</h3>
@@ -906,288 +896,292 @@ s semua method yang berkaitan dengan lightbox di script (seperti openLightbox, c
       </div>
     </section>
 
-   <!-- Testimonial Section -->
-<section id="testimoni" class="py-28 px-6 bg-gray-800 relative overflow-hidden">
-  <!-- Floating decorative elements -->
-  <div class="absolute -top-32 -left-32 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-  
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-6xl font-bold mb-6">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">
-          Apa Kata Mereka?
-        </span>
-      </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Pengalaman nyata dari peserta yang telah merasakan program kami
-      </p>
-    </div>
+    <!-- Testimonial Section -->
+    <section id="testimoni" class="py-28 px-6 bg-gray-800 relative overflow-hidden animate-section">
+      <!-- Floating decorative elements -->
+      <div class="absolute -top-32 -left-32 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+      
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">
+              Apa Kata Mereka?
+            </span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Pengalaman nyata dari peserta yang telah merasakan program kami
+          </p>
+        </div>
 
-    <!-- Modern Testimonial Carousel -->
-    <div class="relative">
-      <!-- Testimonial Cards Container -->
-      <div class="relative h-[500px] md:h-[400px] w-full overflow-hidden rounded-3xl">
-        <!-- Testimonial Cards -->
-        <div 
-          v-for="(testimonial, index) in testimonials"
-          :key="index"
-          :class="[
-            'absolute inset-0 transition-all duration-700 ease-in-out transform',
-            currentSlide === index ? 'opacity-100 translate-x-0' : 
-            (index > currentSlide ? 'opacity-0 translate-x-full' : 'opacity-0 -translate-x-full')
-          ]"
-        >
-          <div :class="`relative h-full w-full bg-gradient-to-br from-gray-800/60 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-${testimonial.color}-400/30 overflow-hidden`">
-            <!-- Floating avatar -->
-            <div :class="`absolute -top-8 -left-8 w-32 h-32 bg-${testimonial.color}-500/20 rounded-full z-0`"></div>
-            
-            <!-- Content -->
-            <div class="relative z-10 h-full flex flex-col">
-              <!-- Header with rating -->
-              <div class="flex items-start gap-6 mb-6">
-                <div :class="`w-20 h-20 bg-${testimonial.color}-500 rounded-2xl flex items-center justify-center text-3xl font-bold text-white shadow-lg`">
-                  {{ testimonial.initials }}
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold text-white">{{ testimonial.name }}</h3>
-                  <p :class="`text-${testimonial.color}-300 text-sm`">{{ testimonial.role }}</p>
-                  <div class="flex mt-2">
-                    <span v-for="i in 5" :key="i" class="text-xl">
-                      <span :class="i <= testimonial.rating ? 'text-yellow-400' : 'text-gray-500'">★</span>
+        <!-- Modern Testimonial Carousel -->
+        <div class="relative">
+          <!-- Testimonial Cards Container -->
+          <div class="relative h-[500px] md:h-[400px] w-full overflow-hidden rounded-3xl">
+            <!-- Testimonial Cards -->
+            <div 
+              v-for="(testimonial, index) in testimonials"
+              :key="index"
+              :class="[
+                'absolute inset-0 transition-all duration-700 ease-in-out transform testimonial-slide',
+                currentSlide === index ? 'opacity-100 translate-x-0' : 
+                (index > currentSlide ? 'opacity-0 translate-x-full' : 'opacity-0 -translate-x-full')
+              ]"
+            >
+              <div :class="`relative h-full w-full bg-gradient-to-br from-gray-800/60 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 border border-${testimonial.color}-400/30 overflow-hidden`">
+                <!-- Floating avatar -->
+                <div :class="`absolute -top-8 -left-8 w-32 h-32 bg-${testimonial.color}-500/20 rounded-full z-0`"></div>
+                
+                <!-- Content -->
+                <div class="relative z-10 h-full flex flex-col">
+                  <!-- Header with rating -->
+                  <div class="flex items-start gap-6 mb-6">
+                    <div :class="`w-20 h-20 bg-${testimonial.color}-500 rounded-2xl flex items-center justify-center text-3xl font-bold text-white shadow-lg`">
+                      {{ testimonial.initials }}
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-bold text-white">{{ testimonial.name }}</h3>
+                      <p :class="`text-${testimonial.color}-300 text-sm`">{{ testimonial.role }}</p>
+                      <div class="flex mt-2">
+                        <span v-for="i in 5" :key="i" class="text-xl">
+                          <span :class="i <= testimonial.rating ? 'text-yellow-400' : 'text-gray-500'">★</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Testimonial text with animated quote marks -->
+                  <div class="relative flex-1">
+                    <span class="absolute -left-2 -top-4 text-7xl text-amber-400/10 font-serif">"</span>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-lg italic relative pl-8 z-10">
+                      {{ testimonial.content }}
+                    </p>
+                    <span class="absolute bottom-0 right-0 text-7xl text-amber-400/10 font-serif">"</span>
+                  </div>
+                  
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <span 
+                      v-for="(tag, tagIndex) in testimonial.tags" 
+                      :key="tagIndex"
+                      :class="`px-3 py-1.5 bg-${testimonial.color}-600/30 text-${testimonial.color}-300 rounded-full text-sm border border-${testimonial.color}-400/30`"
+                    >
+                      {{ tag }}
                     </span>
                   </div>
                 </div>
               </div>
-              
-              <!-- Testimonial text with animated quote marks -->
-              <div class="relative flex-1">
-                <span class="absolute -left-2 -top-4 text-7xl text-amber-400/10 font-serif">"</span>
-                <p class="text-gray-300 mb-6 leading-relaxed text-lg italic relative pl-8 z-10">
-                  {{ testimonial.content }}
-                </p>
-                <span class="absolute bottom-0 right-0 text-7xl text-amber-400/10 font-serif">"</span>
+            </div>
+          </div>
+          
+          <!-- Navigation Arrows -->
+          <button 
+            @click="prevSlide"
+            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-gray-900/80 hover:bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-20"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button 
+            @click="nextSlide"
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-gray-900/80 hover:bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-20"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+          <!-- Indicators -->
+          <div class="flex justify-center gap-2 mt-8">
+            <button
+              v-for="(testimonial, index) in testimonials"
+              :key="index"
+              @click="goToSlide(index)"
+              :class="[
+                'w-3 h-3 rounded-full transition-all duration-300',
+                currentSlide === index ? `bg-${testimonial.color}-400 w-6` : 'bg-gray-500'
+              ]"
+            ></button>
+          </div>
+        </div>
+
+        <!-- Video Testimonials CTA -->
+        <div class="mt-16 text-center">
+          <div class="inline-block relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-emerald-400 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 border-t border-gray-800 bg-gray-900/90 backdrop-blur-sm animate-section">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+          <!-- Logo & Description -->
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg animate-pulse logo-circle">
+                <span class="text-white font-bold text-lg">TV</span>
               </div>
-              
-              <!-- Tags -->
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span 
-                  v-for="(tag, tagIndex) in testimonial.tags" 
-                  :key="tagIndex"
-                  :class="`px-3 py-1.5 bg-${testimonial.color}-600/30 text-${testimonial.color}-300 rounded-full text-sm border border-${testimonial.color}-400/30`"
-                >
-                  {{ tag }}
-                </span>
+              <span class="text-2xl font-bold text-amber-400">TVRI Yogyakarta</span>
+            </div>
+            <p class="text-gray-400 max-w-md mb-6">
+              Stasiun televisi publik yang berkomitmen pada pendidikan dan pengembangan sumber daya manusia di bidang broadcasting dan media.
+            </p>
+            
+            <!-- Social Media -->
+            <div class="flex items-center gap-4">
+              <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-500 rounded-full flex items-center justify-center transition-colors duration-300 group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-sky-500 rounded-full flex items-center justify-center transition-colors duration-300 group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-rose-500 rounded-full flex items-center justify-center transition-colors duration-300 group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-300 group">
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Program Links -->
+          <div>
+            <h3 class="font-semibold text-white mb-4 text-lg flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+              </svg>
+              Program
+            </h3>
+            <div class="space-y-3 text-gray-400">
+              <a href="#" class="block hover:text-amber-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                PKL Broadcasting
+              </a>
+              <a href="#" class="block hover:text-emerald-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Kunjungan Edukatif
+              </a>
+              <a href="#" class="block hover:text-rose-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Workshop
+              </a>
+              <a href="#" class="block hover:text-sky-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Pelatihan
+              </a>
+            </div>
+          </div>
+          
+          <!-- Quick Links -->
+          <div>
+            <h3 class="font-semibold text-white mb-4 text-lg flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+              </svg>
+              Links
+            </h3>
+            <div class="space-y-3 text-gray-400">
+              <a href="#" class="block hover:text-amber-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Tentang Kami
+              </a>
+              <a href="#" class="block hover:text-emerald-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Berita
+              </a>
+              <router-link to="/cek-status" class="block hover:text-rose-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Cek Status
+              </router-link>
+              <a href="#kontak" class="block hover:text-sky-300 transition-colors flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Kontak
+              </a>
+            </div>
+          </div>
+          
+          <!-- Contact Info -->
+          <div>
+            <h3 class="font-semibold text-white mb-4 text-lg flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-rose-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              Kontak
+            </h3>
+            <div class="space-y-3 text-gray-400">
+              <div class="flex items-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                <span>Jl. Magelang KM 4, Sinduadi, Mlati, Sleman, Yogyakarta 55284</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <span>(0274) 868844</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sky-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <span>tvri.yogyakarta@tvri.go.id</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Navigation Arrows -->
-      <button 
-        @click="prevSlide"
-        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-gray-900/80 hover:bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-20"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      
-      <button 
-        @click="nextSlide"
-        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-gray-900/80 hover:bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-20"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-      
-      <!-- Indicators -->
-      <div class="flex justify-center gap-2 mt-8">
-        <button
-          v-for="(testimonial, index) in testimonials"
-          :key="index"
-          @click="goToSlide(index)"
-          :class="[
-            'w-3 h-3 rounded-full transition-all duration-300',
-            currentSlide === index ? `bg-${testimonial.color}-400 w-6` : 'bg-gray-500'
-          ]"
-        ></button>
-      </div>
-    </div>
-
-    <!-- Video Testimonials CTA -->
-    <div class="mt-16 text-center">
-      <div class="inline-block relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-emerald-400 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Footer -->
-<footer class="py-16 px-6 border-t border-gray-800 bg-gray-900/90 backdrop-blur-sm">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
-      <!-- Logo & Description -->
-      <div class="col-span-1 md:col-span-2">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg animate-pulse">
-            <span class="text-white font-bold text-lg">TV</span>
-          </div>
-          <span class="text-2xl font-bold text-amber-400">TVRI Yogyakarta</span>
-        </div>
-        <p class="text-gray-400 max-w-md mb-6">
-          Stasiun televisi publik yang berkomitmen pada pendidikan dan pengembangan sumber daya manusia di bidang broadcasting dan media.
-        </p>
         
-        <!-- Social Media -->
-        <div class="flex items-center gap-4">
-          <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-500 rounded-full flex items-center justify-center transition-colors duration-300 group">
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-sky-500 rounded-full flex items-center justify-center transition-colors duration-300 group">
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-            </svg>
-          </a>
-          <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-rose-500 rounded-full flex items-center justify-center transition-colors duration-300 group">
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center transition-colors duration-300 group">
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-      
-      <!-- Program Links -->
-      <div>
-        <h3 class="font-semibold text-white mb-4 text-lg flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
-          </svg>
-          Program
-        </h3>
-        <div class="space-y-3 text-gray-400">
-          <a href="#" class="block hover:text-amber-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            PKL Broadcasting
-          </a>
-          <a href="#" class="block hover:text-emerald-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            Kunjungan Edukatif
-          </a>
-          <a href="#" class="block hover:text-rose-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            Workshop
-          </a>
-          <a href="#" class="block hover:text-sky-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            Pelatihan
-          </a>
-        </div>
-      </div>
-      
-      <!-- Quick Links -->
-      <div>
-        <h3 class="font-semibold text-white mb-4 text-lg flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
-          </svg>
-          Links
-        </h3>
-        <div class="space-y-3 text-gray-400">
-          <a href="#" class="block hover:text-amber-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            Tentang Kami
-          </a>
-          <a href="#" class="block hover:text-emerald-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            Berita
-          </a>
-          <router-link to="/cek-status" class="block hover:text-rose-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            Cek Status
-          </router-link>
-          <a href="#kontak" class="block hover:text-sky-300 transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            Kontak
-          </a>
-        </div>
-      </div>
-      
-      <!-- Contact Info -->
-      <div>
-        <h3 class="font-semibold text-white mb-4 text-lg flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-rose-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-          </svg>
-          Kontak
-        </h3>
-        <div class="space-y-3 text-gray-400">
-          <div class="flex items-start gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-            </svg>
-            <span>Jl. Magelang KM 4, Sinduadi, Mlati, Sleman, Yogyakarta 55284</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg>
-            <span>(0274) 868844</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sky-400" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-            <span>tvri.yogyakarta@tvri.go.id</span>
+        <!-- Copyright & Additional Links -->
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            &copy; 2025 TVRI Yogyakarta - Divisi New Media. All rights reserved.
+          </p>
+          <div class="flex gap-6">
+            <a href="#" class="text-gray-500 hover:text-amber-400 text-sm transition-colors">Privacy Policy</a>
+            <a href="#" class="text-gray-500 hover:text-emerald-400 text-sm transition-colors">Terms of Service</a>
+            <a href="#" class="text-gray-500 hover:text-sky-400 text-sm transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Copyright & Additional Links -->
-    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-gray-500 text-sm mb-4 md:mb-0">
-        &copy; 2025 TVRI Yogyakarta - Divisi New Media. All rights reserved.
-      </p>
-      <div class="flex gap-6">
-        <a href="#" class="text-gray-500 hover:text-amber-400 text-sm transition-colors">Privacy Policy</a>
-        <a href="#" class="text-gray-500 hover:text-emerald-400 text-sm transition-colors">Terms of Service</a>
-        <a href="#" class="text-gray-500 hover:text-sky-400 text-sm transition-colors">Sitemap</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
   </div>
 </template>
 
 <script>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { TextPlugin } from 'gsap/TextPlugin'
+
 export default {
   name: 'ModernGalleryTVRI',
   data() {
@@ -1419,30 +1413,162 @@ export default {
   },
   
   mounted() {
-    // Auto-rotate images from original code
+    gsap.registerPlugin(ScrollTrigger, TextPlugin)
+    
+    // Initialize animations
+    this.initAnimations()
+    this.animateStats()
+    
+    // Auto-rotate images
     setInterval(() => {
-      this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-    }, 4000);
-
-    // Animate stats counter from original code
-    this.animateStats();
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length
+    }, 4000)
+    
+    // Auto-rotate testimonials
+    setInterval(() => {
+      this.nextSlide()
+    }, 8000)
     
     // Add keyboard event listeners for lightbox
-    document.addEventListener('keydown', this.handleKeydown);
+    document.addEventListener('keydown', this.handleKeydown)
   },
   
   beforeUnmount() {
     // Remove event listeners for Vue 3
-    document.removeEventListener('keydown', this.handleKeydown);
+    document.removeEventListener('keydown', this.handleKeydown)
   },
   
   methods: {
-    // Methods from original code
-    scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    initAnimations() {
+      // Hero section animations
+      gsap.from('.hero-content', {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out',
+        stagger: 0.2
+      })
+      
+      // Logo animation
+      gsap.to('.logo-circle', {
+        rotation: 360,
+        duration: 10,
+        repeat: -1,
+        ease: 'none'
+      })
+      
+      // Background elements animation
+      gsap.to('.bg-blob-1', {
+        x: 50,
+        y: -30,
+        duration: 20,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      })
+      
+      gsap.to('.bg-blob-2', {
+        x: -30,
+        y: 40,
+        duration: 25,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      })
+      
+      // Navbar animation
+      gsap.from('nav', {
+        y: -100,
+        duration: 0.8,
+        ease: 'power3.out'
+      })
+      
+      // Section animations with ScrollTrigger
+      gsap.utils.toArray('.animate-section').forEach(section => {
+        gsap.from(section, {
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out'
+        })
+      })
+      
+      // Feature cards animation
+      gsap.utils.toArray('.feature-card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          delay: i * 0.1,
+          ease: 'back.out'
+        })
+      })
+      
+      // Gallery items animation
+      gsap.utils.toArray('.gallery-item').forEach((item, i) => {
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 90%',
+            toggleActions: 'play none none none'
+          },
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          delay: i * 0.05,
+          ease: 'power3.out'
+        })
+      })
+      
+      // Testimonial cards animation
+      gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          x: i % 2 === 0 ? -50 : 50,
+          opacity: 0,
+          duration: 0.8,
+          delay: i * 0.1,
+          ease: 'back.out'
+        })
+      })
+      
+      // Stats counter animation
+      gsap.utils.toArray('.stat-item').forEach(item => {
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          scale: 0.5,
+          opacity: 0,
+          duration: 1,
+          ease: 'elastic.out(1, 0.5)'
+        })
+      })
+      
+      // Floating elements animation
+      gsap.to('.floating-element', {
+        y: 20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      })
     },
     
     animateStats() {
@@ -1450,188 +1576,102 @@ export default {
         { key: 'students', target: 500, current: 0 },
         { key: 'visits', target: 150, current: 0 },
         { key: 'years', target: 25, current: 0 }
-      ];
+      ]
 
       counters.forEach(counter => {
-        const increment = counter.target / 100;
+        const increment = counter.target / 100
         const timer = setInterval(() => {
-          counter.current += increment;
+          counter.current += increment
           if (counter.current >= counter.target) {
-            counter.current = counter.target;
-            clearInterval(timer);
+            counter.current = counter.target
+            clearInterval(timer)
           }
-          this.stats[counter.key] = Math.floor(counter.current);
-        }, 20);
-      });
+          this.stats[counter.key] = Math.floor(counter.current)
+        }, 20)
+      })
     },
     
     nextSlide() {
-      this.currentSlide = (this.currentSlide + 1) % this.testimonials.length;
+      gsap.to('.testimonial-slide', {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: 'power3.inOut',
+        onComplete: () => {
+          this.currentSlide = (this.currentSlide + 1) % this.testimonials.length
+          this.animateSlideIn()
+        }
+      })
     },
     
     prevSlide() {
-      this.currentSlide = (this.currentSlide - 1 + this.testimonials.length) % this.testimonials.length;
+      gsap.to('.testimonial-slide', {
+        opacity: 0,
+        x: 100,
+        duration: 0.5,
+        ease: 'power3.inOut',
+        onComplete: () => {
+          this.currentSlide = (this.currentSlide - 1 + this.testimonials.length) % this.testimonials.length
+          this.animateSlideIn()
+        }
+      })
+    },
+    
+    animateSlideIn() {
+      gsap.fromTo('.testimonial-slide', 
+        { x: 100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8, ease: 'back.out' }
+      )
     },
     
     goToSlide(index) {
-      this.currentSlide = index;
-    },
-    
-    // Gallery specific methods
-    openLightbox(index) {
-      this.currentLightboxIndex = index;
-      this.lightboxOpen = true;
-      document.body.style.overflow = 'hidden';
-    },
-    
-    closeLightbox() {
-      this.lightboxOpen = false;
-      document.body.style.overflow = 'auto';
-    },
-    
-    nextImage() {
-      this.currentLightboxIndex = (this.currentLightboxIndex + 1) % this.filteredGalleryItems.length;
-    },
-    
-    prevImage() {
-      this.currentLightboxIndex = (this.currentLightboxIndex - 1 + this.filteredGalleryItems.length) % this.filteredGalleryItems.length;
-    },
-    
-    openVideoPlayer(video) {
-      this.currentVideo = video;
-      this.videoPlayerOpen = true;
-      document.body.style.overflow = 'hidden';
-    },
-    
-    closeVideoPlayer() {
-      this.videoPlayerOpen = false;
-      this.currentVideo = null;
-      document.body.style.overflow = 'auto';
-      
-      // Stop video if playing
-      if (this.$refs.videoPlayer) {
-        this.$refs.videoPlayer.pause();
-        this.$refs.videoPlayer.currentTime = 0;
-      }
-    },
-    
-    loadMoreImages() {
-      this.imagesDisplayCount += 8;
-    },
-    
-    downloadImage(item) {
-      try {
-        // Create download link
-        const link = document.createElement('a');
-        link.href = item.image;
-        link.download = `${item.title.replace(/\s+/g, '_')}.jpg`;
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } catch (error) {
-        console.log('Download error:', error);
-        alert('Maaf, tidak dapat mengunduh gambar ini.');
-      }
-    },
-    
-    async shareImage(item) {
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: item.title,
-            text: item.description,
-            url: window.location.href
-          });
-        } catch (error) {
-          if (error.name !== 'AbortError') {
-            console.log('Error sharing:', error);
-            this.fallbackShare(item);
+      if (index === this.currentSlide) return;
+
+      const currentCard = this.$refs[`testimonialCard${this.currentSlide}`];
+      const targetCard = this.$refs[`testimonialCard${index}`];
+
+      if (currentCard && targetCard) {
+        const direction = index > this.currentSlide ? 100 : -100;
+
+        // Animate out current slide
+        gsap.to(currentCard, {
+          x: -direction,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.inOut",
+          onComplete: () => {
+            this.currentSlide = index;
+            
+            // Animate in target slide
+            gsap.fromTo(targetCard,
+              { x: direction, opacity: 0 },
+              { x: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" }
+            );
           }
-        }
+        });
       } else {
-        this.fallbackShare(item);
+        this.currentSlide = index;
       }
-    },
-    
-    fallbackShare(item) {
-      try {
-        // Fallback share method
-        const url = window.location.href;
-        const text = `${item.title} - ${item.description}`;
-        
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(`${text}\n${url}`);
-          alert('Link berhasil disalin ke clipboard!');
-        } else {
-          // Create temporary input for copying
-          const tempInput = document.createElement('input');
-          tempInput.value = `${text}\n${url}`;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
-          alert('Link berhasil disalin ke clipboard!');
-        }
-      } catch (error) {
-        console.log('Share fallback error:', error);
-        alert('Maaf, tidak dapat membagikan gambar ini.');
-      }
-    },
-    
-    toggleFullscreen() {
-      try {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          }
-        }
-      } catch (error) {
-        console.log('Fullscreen error:', error);
-      }
-    },
-    
-    handleKeydown(event) {
-      if (this.lightboxOpen) {
-        switch (event.key) {
-          case 'Escape':
-            this.closeLightbox();
-            break;
-          case 'ArrowLeft':
-            this.prevImage();
-            break;
-          case 'ArrowRight':
-            this.nextImage();
-            break;
-        }
-      }
-      
-      if (this.videoPlayerOpen && event.key === 'Escape') {
-        this.closeVideoPlayer();
-      }
-    },
-    
-    // Filter methods
-    setActiveFilter(filterId) {
-      this.activeFilter = filterId;
-      this.currentLightboxIndex = 0;
-      this.imagesDisplayCount = 8;
     }
   }
 };
 </script>
 
 <style scoped>
-/* Custom animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+/* Import GSAP ScrollTo plugin styles if needed */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+/* Enhanced CSS for better GSAP performance */
+.gallery-item {
+  will-change: transform, opacity;
+}
+
+.testimonial-card {
+  will-change: transform, opacity;
 }
 
 /* Smooth scrolling */
@@ -1639,7 +1679,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hover effects */
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Custom animations that work with GSAP */
 .hover-lift {
   transition: all 0.3s ease;
 }
@@ -1647,39 +1693,6 @@ html {
 .hover-lift:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-/* Gallery item animations */
-.gallery-item {
-  transition: all 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: translateY(-5px);
-}
-
-/* Video player styling */
-video::-webkit-media-controls {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Custom scrollbar for thumbnail navigation */
-.thumbnail-nav::-webkit-scrollbar {
-  height: 4px;
-}
-
-.thumbnail-nav::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-}
-
-.thumbnail-nav::-webkit-scrollbar-thumb {
-  background: rgba(244, 63, 94, 0.6);
-  border-radius: 2px;
-}
-
-.thumbnail-nav::-webkit-scrollbar-thumb:hover {
-  background: rgba(244, 63, 94, 0.8);
 }
 
 /* Gallery specific styles */
@@ -1703,20 +1716,11 @@ video::-webkit-media-controls {
   cursor: pointer;
 }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-}
-
 .gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.7s ease;
-}
-
-.gallery-item:hover .gallery-image {
-  transform: scale(1.1);
 }
 
 .gallery-overlay {
@@ -1734,51 +1738,8 @@ video::-webkit-media-controls {
   opacity: 1;
 }
 
-.gallery-content {
-  width: 100%;
-  color: white;
-}
-
-.gallery-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  color: white;
-}
-
-.gallery-description {
-  font-size: 0.875rem;
-  color: rgb(209, 213, 219);
-  margin-bottom: 0.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.gallery-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.gallery-tag {
-  padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: white;
-}
-
-.gallery-category {
-  display: inline-block;
-  padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: white;
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
 }
 
 /* Featured video styling */
@@ -1791,184 +1752,7 @@ video::-webkit-media-controls {
   cursor: pointer;
 }
 
-.featured-video:hover {
-  transform: scale(1.02);
-  box-shadow: 0 25px 50px rgba(244, 63, 94, 0.2);
-}
-
-.featured-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), transparent);
-  display: flex;
-  align-items: flex-end;
-  padding: 1.5rem;
-}
-
-.featured-video-content {
-  width: 100%;
-  color: white;
-}
-
-.featured-video-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: white;
-}
-
-.featured-video-description {
-  color: rgb(209, 213, 219);
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
-}
-
-.video-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 5rem;
-  height: 5rem;
-  background: rgba(244, 63, 94, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.5);
-}
-
-.featured-video:hover .video-play-button {
-  transform: translate(-50%, -50%) scale(1.1);
-  background: rgba(244, 63, 94, 1);
-  box-shadow: 0 12px 35px rgba(244, 63, 94, 0.6);
-}
-
-/* Gallery filter styling */
-.gallery-filters {
-  display: inline-flex;
-  background: rgba(31, 41, 55, 0.5);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 0.25rem;
-  border: 1px solid rgba(75, 85, 99, 0.5);
-}
-
-.gallery-filter {
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  color: rgb(209, 213, 219);
-  background: transparent;
-  border: none;
-}
-
-.gallery-filter:hover {
-  color: white;
-  background: rgba(75, 85, 99, 0.5);
-}
-
-.gallery-filter-active {
-  background: #f43f5e;
-  color: white;
-  box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
-}
-
-/* Load more button */
-.load-more-btn {
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #f43f5e, #a855f7);
-  color: white;
-  font-weight: 600;
-  border-radius: 1rem;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.4);
-}
-
-.load-more-btn:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #f87171, #c084fc);
-  box-shadow: 0 12px 35px rgba(244, 63, 94, 0.5);
-}
-
-/* Statistics cards */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-.stat-card {
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid;
-  transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.stat-number {
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  color: rgb(209, 213, 219);
-}
-
-/* Star Animation Enhancements */
-@keyframes starGlow {
-  0%, 100% { 
-    transform: scale(1);
-    filter: brightness(1) drop-shadow(0 0 0px rgba(251, 191, 36, 0.3));
-  }
-  50% { 
-    transform: scale(1.1);
-    filter: brightness(1.3) drop-shadow(0 0 8px rgba(251, 191, 36, 0.8));
-  }
-}
-
-.star-animation {
-  animation: starGlow 2s ease-in-out infinite;
-}
-
-/* Testimonial Enhanced Animations */
-@keyframes testimonialSlide {
-  0% { opacity: 0; transform: translateX(100%); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-.testimonial-slide-enter {
-  animation: testimonialSlide 0.7s ease-out;
-}
-
-/* Enhanced backdrop blur */
-.enhanced-blur {
-  backdrop-filter: blur(20px) saturate(120%) brightness(110%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%) brightness(110%);
-}
-
-/* Gradient text effects */
-.gradient-text {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Utility classes untuk text truncation */
+/* Utility classes */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1976,219 +1760,7 @@ video::-webkit-media-controls {
   overflow: hidden;
 }
 
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Enhanced hover effects */
-.hover-scale {
-  transition: transform 0.3s ease;
-}
-
-.hover-scale:hover {
-  transform: scale(1.05);
-}
-
-/* Card hover effects */
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Button hover effects */
-.btn-hover {
-  transition: all 0.3s ease;
-}
-
-.btn-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Glow effects */
-.glow-amber {
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
-}
-
-.glow-emerald {
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-}
-
-.glow-rose {
-  box-shadow: 0 0 20px rgba(244, 63, 94, 0.3);
-}
-
-.glow-purple {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-}
-
-.glow-blue {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-.glow-green {
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
-}
-
-/* Testimonial specific styles */
-.testimonial-card {
-  backdrop-filter: blur(10px);
-  background: rgba(31, 41, 55, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.testimonial-avatar {
-  background: linear-gradient(135deg, var(--color-start), var(--color-end));
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.testimonial-quote {
-  position: relative;
-}
-
-.testimonial-quote::before {
-  content: '"';
-  position: absolute;
-  top: -1rem;
-  left: -1rem;
-  font-size: 4rem;
-  opacity: 0.1;
-  color: #fbbf24;
-  font-family: Georgia, serif;
-}
-
-.testimonial-quote::after {
-  content: '"';
-  position: absolute;
-  bottom: -2rem;
-  right: -1rem;
-  font-size: 4rem;
-  opacity: 0.1;
-  color: #fbbf24;
-  font-family: Georgia, serif;
-}
-
-/* Rating specific styles */
-.rating-stars {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.rating-star {
-  position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.rating-star-bg {
-  position: absolute;
-  inset: 0;
-  color: rgb(75, 85, 99);
-}
-
-.rating-star-fill {
-  position: absolute;
-  inset: 0;
-  color: #fbbf24;
-  animation: starGlow 2s ease-in-out infinite;
-}
-
-.rating-text {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: bold;
-}
-
-/* Stats animation */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.stat-number {
-  animation: countUp 0.6s ease-out;
-}
-
-/* Section transitions */
-.section-fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.section-fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Enhanced scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(251, 191, 36, 0.6);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(251, 191, 36, 0.8);
-}
-
-/* Pulse animation for loading states */
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Shimmer effect for loading */
-@keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-}
-
-.shimmer {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200px 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-/* Loading animation for images */
-.image-loading {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-/* Responsive design enhancements */
+/* Responsive design */
 @media (max-width: 768px) {
   .text-7xl {
     font-size: 3rem;
@@ -2214,42 +1786,6 @@ video::-webkit-media-controls {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
   }
-
-  .gallery-filters {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .gallery-filter {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
-
-  .featured-video-title {
-    font-size: 1.25rem;
-  }
-
-  .gallery-title {
-    font-size: 1rem;
-  }
-
-  .video-play-button {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .stat-card {
-    padding: 1rem;
-  }
-
-  .stat-number {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 640px) {
@@ -2259,19 +1795,6 @@ video::-webkit-media-controls {
 
   .gallery-grid {
     grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-filters {
-    padding: 0.125rem;
-  }
-
-  .gallery-filter {
-    padding: 0.5rem;
-    font-size: 0.75rem;
   }
 }
 
@@ -2296,68 +1819,15 @@ button:focus,
     background: #000;
     border: 1px solid #fff;
   }
-
-  .gallery-filter {
-    border: 1px solid currentColor;
-  }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .animate-float,
   .transition-all,
-  .group-hover\\:scale-110,
-  .star-animation,
-  .testimonial-slide-enter,
   .gallery-item,
-  .gallery-image,
-  .video-play-button,
-  .load-more-btn,
-  .stat-card {
-    animation: none;
+  .gallery-image {
     transition: none;
-    transform: none;
   }
-
-  .gallery-item:hover,
-  .featured-video:hover,
-  .load-more-btn:hover,
-  .stat-card:hover {
-    transform: none;
-  }
-}
-
-/* Print styles */
-@media print {
-  .gallery-filters,
-  .load-more-btn {
-    display: none;
-  }
-  
-  .fixed {
-    position: static;
-  }
-
-  .gallery-overlay {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.7);
-  }
-}
-
-/* Dark mode enhancements */
-@media (prefers-color-scheme: dark) {
-  .gallery-item {
-    background: linear-gradient(135deg, rgb(17, 24, 39), rgb(0, 0, 0));
-  }
-
-  .featured-video {
-    background: linear-gradient(135deg, rgb(17, 24, 39), rgb(0, 0, 0));
-  }
-}
-
-/* Smooth transitions for all interactive elements */
-.smooth-transition {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Custom gradients */
@@ -2365,18 +1835,6 @@ button:focus,
   background: linear-gradient(135deg, transparent, rgba(251, 191, 36, 0.1), transparent);
   border: 1px solid transparent;
   background-clip: padding-box;
-}
-
-/* Performance optimizations */
-.gpu-accelerated {
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-/* Scroll improvements */
-.smooth-scroll {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* Custom selection colors */
@@ -2390,11 +1848,29 @@ button:focus,
   color: #ffffff;
 }
 
-/* Custom focus ring */
-.focus-ring:focus {
-  outline: 2px solid #fbbf24;
-  outline-offset: 2px;
-  border-radius: 0.375rem;
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.8);
+}
+
+/* GSAP specific optimizations */
+.gsap-animated {
+  will-change: transform, opacity;
 }
 
 /* Backdrop filters for better performance */

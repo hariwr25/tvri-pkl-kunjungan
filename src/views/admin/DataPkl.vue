@@ -8,17 +8,6 @@
           <p class="text-gray-400">Kelola data pengajuan Praktik Kerja Lapangan</p>
         </div>
         <div class="flex items-center gap-4">
-          <!-- Refresh Button -->
-          <button 
-            @click="refreshData"
-            :disabled="loading"
-            class="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-            title="Refresh Data"
-          >
-            <i class="fas fa-sync-alt" :class="{'animate-spin': loading}"></i>
-            Refresh
-          </button>
-          
           <!-- Export Button -->
           <button 
             @click="exportData"
@@ -209,6 +198,14 @@
                       <i class="fas fa-image"></i>
                       Foto ID
                     </button>
+                    <button 
+                      v-if="item.surat_balasan"
+                      @click="viewDocument(item.surat_balasan, 'Surat Balasan', 'pkl')"
+                      class="text-xs bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-md transition-colors flex items-center gap-1"
+                    >
+                      <i class="fas fa-reply"></i>
+                      Surat Balasan
+                    </button>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
@@ -222,7 +219,7 @@
                     </button>
                     <button 
                       v-if="item.status === 'pending'"
-                      @click="updateStatus(item.id, 'approved')"
+                      @click="openResponseLetterModal(item.id, 'approved')"
                       :disabled="updating"
                       class="text-green-400 hover:text-green-300 disabled:text-gray-500 transition-colors p-1"
                       title="Approve"
@@ -231,7 +228,7 @@
                     </button>
                     <button 
                       v-if="item.status === 'pending'"
-                      @click="updateStatus(item.id, 'rejected')"
+                      @click="openResponseLetterModal(item.id, 'rejected')"
                       :disabled="updating"
                       class="text-red-400 hover:text-red-300 disabled:text-gray-500 transition-colors p-1"
                       title="Reject"
@@ -403,14 +400,79 @@
         </div>
       </div>
 
-      <!-- Toast Notification Area -->
-      <div v-if="showToast" class="fixed bottom-4 right-4 z-50">
-        <div :class="toastClass" class="px-6 py-4 rounded-lg shadow-lg flex items-center gap-3">
-          <i :class="toastIcon"></i>
-          <span>{{ toastMessage }}</span>
-          <button @click="hideToast" class="ml-2 text-white hover:text-gray-300">
-            <i class="fas fa-times"></i>
-          </button>
+       <!-- Surat Balasan Modal -->
+       <div v-if="showResponseLetterModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-gray-800 rounded-xl max-w-2xl w-full border border-gray-700">
+          <!-- Modal Header -->
+          <div class="flex items-center justify-between p-6 border-b border-gray-700">
+            <h3 class="text-xl font-semibold text-white">
+              {{ actionType === 'approved' ? 'Kirim Surat Balasan Persetujuan' : 'Konfirmasi Penolakan' }}
+            </h3>
+            <button @click="closeResponseLetterModal" class="text-gray-400 hover:text-white">
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          
+          <!-- Modal Body -->
+          <div class="p-6 space-y-4">
+            <div v-if="actionType === 'approved'">
+              <label class="block text-sm font-medium text-gray-400 mb-2">Upload Surat Balasan (PDF)</label>
+              <input 
+                type="file" 
+                ref="responseLetterInput"
+                accept=".pdf"
+                @change="handleFileUpload"
+                class="block w-full text-sm text-gray-400
+                  file:mr-4 file:py-2 file:px-4
+                  file:rounded-lg file:border-0
+                  file:text-sm file:font-semibold
+                  file:bg-indigo-600 file:text-white
+                  hover:file:bg-indigo-700
+                  cursor-pointer
+                  bg-gray-700 rounded-lg"
+              />
+              <p class="mt-1 text-xs text-gray-500">Format file: PDF (maks. 5MB)</p>
+              
+              <div v-if="selectedFileName" class="bg-gray-700 p-3 rounded-lg mt-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-white">{{ selectedFileName }}</span>
+                  <button 
+                    @click="removeSelectedFile"
+                    class="text-red-400 hover:text-red-300"
+                  >
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div v-else class="bg-yellow-900/20 border border-yellow-800 rounded-lg p-4">
+              <div class="flex items-start">
+                <i class="fas fa-exclamation-circle text-yellow-400 mt-1 mr-2"></i>
+                <p class="text-yellow-300 text-sm">
+                  Anda akan menolak pengajuan ini. Pastikan Anda telah berkomunikasi dengan pemohon
+                  sebelum melakukan penolakan.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal Footer -->
+          <div class="p-6 border-t border-gray-700 flex justify-end gap-3">
+            <button 
+              @click="closeResponseLetterModal"
+              class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors"
+            >
+              Batal
+            </button>
+            <button 
+              @click="submitStatusUpdate"
+              :disabled="actionType === 'approved' && !selectedFile"
+              class="bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+            >
+              <i class="fas fa-paper-plane"></i>
+              {{ actionType === 'approved' ? 'Kirim Surat Balasan' : 'Konfirmasi Penolakan' }}
+            </button>    </div>
         </div>
       </div>
     </div>
@@ -419,6 +481,7 @@
 
 <script>
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import DashboardLayout from '../../layouts/DashboardLayout.vue'
 import StatusBadge from '@/components/StatusBadge.vue'
 
@@ -442,11 +505,12 @@ export default {
       documentUrl: '',
       documentTitle: '',
       selectedItem: null,
-      // Toast notification
-      showToast: false,
-      toastMessage: '',
-      toastType: 'success', // success, error, info
-      toastTimeout: null
+      // Data untuk surat balasan
+      showResponseLetterModal: false,
+      selectedFile: null,
+      selectedFileName: '',
+      actionType: '', // 'approved' atau 'rejected'
+      currentItemId: null
     }
   },
   computed: {
@@ -459,86 +523,28 @@ export default {
         approved: this.dataPkl.filter(item => item.status === 'approved').length,
         rejected: this.dataPkl.filter(item => item.status === 'rejected').length
       }
-    },
-    toastClass() {
-      const baseClass = 'transition-all duration-300 '
-      switch (this.toastType) {
-        case 'success':
-          return baseClass + 'bg-green-600 text-white'
-        case 'error':
-          return baseClass + 'bg-red-600 text-white'
-        case 'info':
-          return baseClass + 'bg-blue-600 text-white'
-        default:
-          return baseClass + 'bg-gray-600 text-white'
-      }
-    },
-    toastIcon() {
-      switch (this.toastType) {
-        case 'success':
-          return 'fas fa-check-circle'
-        case 'error':
-          return 'fas fa-exclamation-circle'
-        case 'info':
-          return 'fas fa-info-circle'
-        default:
-          return 'fas fa-bell'
-      }
     }
   },
   async mounted() {
     await this.fetchData()
   },
   methods: {
-    // Toast notification methods
-    showToastMessage(message, type = 'success') {
-      this.toastMessage = message
-      this.toastType = type
-      this.showToast = true
-      
-      // Clear existing timeout
-      if (this.toastTimeout) {
-        clearTimeout(this.toastTimeout)
-      }
-      
-      // Auto hide after 5 seconds
-      this.toastTimeout = setTimeout(() => {
-        this.hideToast()
-      }, 5000)
-    },
-    
-    hideToast() {
-      this.showToast = false
-      if (this.toastTimeout) {
-        clearTimeout(this.toastTimeout)
-      }
-    },
-
     async fetchData() {
       try {
         this.loading = true
-        console.log('Fetching PKL data...')
-        
         const response = await axios.get('http://localhost:5050/api/pkl')
-        console.log('PKL data received:', response.data)
-        
         this.dataPkl = response.data
         this.filteredData = [...this.dataPkl]
-        
-        console.log('Data PKL loaded:', this.dataPkl.length, 'items')
       } catch (error) {
         console.error('Error fetching PKL data:', error)
-        
-        if (error.response) {
-          console.error('Response error:', error.response.status, error.response.data)
-          this.showToastMessage(`Gagal memuat data PKL: ${error.response.data?.message || 'Server error'}`, 'error')
-        } else if (error.request) {
-          console.error('Network error:', error.request)
-          this.showToastMessage('Gagal memuat data PKL: Tidak dapat terhubung ke server', 'error')
-        } else {
-          console.error('Error message:', error.message)
-          this.showToastMessage(`Gagal memuat data PKL: ${error.message}`, 'error')
-        }
+        Swal.fire({
+          icon: 'error',
+          title: 'Gagal Memuat Data',
+          text: 'Terjadi kesalahan saat memuat data PKL',
+          background: '#374151',
+          color: '#ffffff',
+          confirmButtonColor: '#ef4444'
+        })
       } finally {
         this.loading = false
       }
@@ -547,12 +553,10 @@ export default {
     filterData() {
       let filtered = [...this.dataPkl]
       
-      // Filter by status
       if (this.filterStatus) {
         filtered = filtered.filter(item => item.status === this.filterStatus)
       }
       
-      // Filter by search query
       if (this.searchQuery) {
         const query = this.searchQuery.toLowerCase()
         filtered = filtered.filter(item => 
@@ -565,20 +569,13 @@ export default {
       }
       
       this.filteredData = filtered
-      console.log('Filtered data:', this.filteredData.length, 'items')
     },
     
     viewDocument(filename, title, folder) {
-      if (!filename) {
-        this.showToastMessage('File tidak tersedia', 'error')
-        return
-      }
-      
+      if (!filename) return
       this.documentTitle = title
       this.documentUrl = `http://localhost:5050/uploads/${folder}/${filename}`
       this.showDocumentModal = true
-      
-      console.log('Opening document:', this.documentUrl)
     },
     
     downloadDocument() {
@@ -591,12 +588,8 @@ export default {
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          
-          console.log('Download initiated:', this.documentUrl)
-          this.showToastMessage('Download dimulai', 'success')
         } catch (error) {
           console.error('Download error:', error)
-          this.showToastMessage('Gagal mengunduh dokumen', 'error')
         }
       }
     },
@@ -610,7 +603,6 @@ export default {
     viewDetail(item) {
       this.selectedItem = item
       this.showDetailModal = true
-      console.log('Viewing detail for:', item.nama_lengkap)
     },
     
     closeDetailModal() {
@@ -618,118 +610,155 @@ export default {
       this.selectedItem = null
     },
     
-    async updateStatus(id, newStatus) {
-      // Mencegah multiple request
-      if (this.updating) {
-        console.log('Update already in progress...')
+    openResponseLetterModal(id, actionType) {
+      this.currentItemId = id
+      this.actionType = actionType
+      this.showResponseLetterModal = true
+      this.selectedFile = null
+      this.selectedFileName = ''
+      if (this.$refs.responseLetterInput) {
+        this.$refs.responseLetterInput.value = ''
+      }
+    },
+    
+    closeResponseLetterModal() {
+      this.showResponseLetterModal = false
+      this.selectedFile = null
+      this.selectedFileName = ''
+      this.actionType = ''
+      this.currentItemId = null
+    },
+    
+    handleFileUpload(event) {
+      const file = event.target.files[0]
+      if (!file) return
+
+      if (file.size > 5 * 1024 * 1024) {
+        Swal.fire({
+          icon: 'error',
+          title: 'File terlalu besar',
+          text: 'Ukuran file maksimal 5MB',
+          background: '#374151',
+          color: '#ffffff',
+          confirmButtonColor: '#ef4444'
+        })
         return
       }
-
-      try {
-        console.log('Attempting to update status:', { id, newStatus })
-        
-        // Validasi input
-        if (!id || !newStatus) {
-          this.showToastMessage('Data tidak valid', 'error')
-          return
-        }
-
-        if (!['approved', 'rejected'].includes(newStatus)) {
-          this.showToastMessage('Status tidak valid', 'error')
-          return
-        }
-        
-        // Konfirmasi sebelum mengubah status
-        const statusText = newStatus === 'approved' ? 'MENYETUJUI' : 'MENOLAK'
-        const confirmation = confirm(
-          `Apakah Anda yakin ingin ${statusText} pengajuan PKL ini?\n\nTindakan ini tidak dapat dibatalkan.`
-        )
-        
-        if (!confirmation) {
-          console.log('User cancelled status update')
-          return
-        }
-
-        this.updating = true
-        this.updatingId = id
-        
-        // Tampilkan loading state di UI
-        this.showToastMessage('Sedang memproses...', 'info')
-        
-        console.log('Sending request to:', `http://localhost:5050/api/pkl/${id}/status`)
-        console.log('Request payload:', { status: newStatus })
-        
-        const response = await axios.put(`http://localhost:5050/api/pkl/${id}/status`, { 
-          status: newStatus 
-        }, {
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          timeout: 10000 // 10 second timeout
+      
+      if (file.type !== 'application/pdf') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Format tidak valid',
+          text: 'Hanya file PDF yang diperbolehkan',
+          background: '#374151',
+          color: '#ffffff',
+          confirmButtonColor: '#ef4444'
         })
+        return
+      }
+      
+      this.selectedFile = file
+      this.selectedFileName = file.name
+    },
+    
+    removeSelectedFile() {
+      this.selectedFile = null
+      this.selectedFileName = ''
+      if (this.$refs.responseLetterInput) {
+        this.$refs.responseLetterInput.value = ''
+      }
+    },
+    
+    async submitStatusUpdate() {
+      try {
+        this.updating = true
         
-        console.log('Update response:', response.data)
-        
-        // Update local data jika berhasil
-        const itemIndex = this.dataPkl.findIndex(item => item.id === id)
-        if (itemIndex !== -1) {
-          const oldStatus = this.dataPkl[itemIndex].status
-          this.dataPkl[itemIndex].status = newStatus
-          this.filterData() // Re-apply filters
-          
-          console.log(`Status updated locally: ${oldStatus} -> ${newStatus}`)
+        if (this.actionType === 'approved') {
+          await this.submitApproval()
         } else {
-          console.warn('Item not found in local data for update')
+          await this.submitRejection()
         }
         
-        // Show success message
-        const successText = newStatus === 'approved' ? 'Disetujui' : 'Ditolak'
-        this.showToastMessage(`✅ Status berhasil diubah menjadi ${successText}`, 'success')
+        await this.fetchData()
         
       } catch (error) {
         console.error('Error updating status:', error)
-        
-        // Detailed error handling
-        if (error.response) {
-          const statusCode = error.response.status
-          const errorData = error.response.data
-          
-          console.error('Response error details:', {
-            status: statusCode,
-            data: errorData,
-            headers: error.response.headers
-          })
-          
-          if (statusCode === 404) {
-            this.showToastMessage('Data PKL tidak ditemukan', 'error')
-          } else if (statusCode === 400) {
-            this.showToastMessage(`Input tidak valid: ${errorData?.message || 'Bad request'}`, 'error')
-          } else if (statusCode === 500) {
-            this.showToastMessage(`Server error: ${errorData?.message || 'Internal server error'}`, 'error')
-          } else {
-            this.showToastMessage(`Gagal mengubah status: ${errorData?.message || `HTTP ${statusCode}`}`, 'error')
-          }
-        } else if (error.request) {
-          console.error('Network error details:', error.request)
-          this.showToastMessage('❌ Tidak dapat terhubung ke server. Periksa koneksi internet Anda.', 'error')
-        } else {
-          console.error('Request setup error:', error.message)
-          this.showToastMessage(`❌ Kesalahan: ${error.message}`, 'error')
-        }
-        
-        // Refresh data untuk memastikan konsistensi
-        console.log('Refreshing data after error...')
-        await this.fetchData()
-        
+        Swal.fire({
+          icon: 'error',
+          title: 'Gagal Memperbarui Status',
+          text: error.response?.data?.message || 'Terjadi kesalahan saat memperbarui status',
+          background: '#374151',
+          color: '#ffffff',
+          confirmButtonColor: '#ef4444'
+        })
       } finally {
         this.updating = false
-        this.updatingId = null
+        this.closeResponseLetterModal()
       }
+    },
+    
+    async submitApproval() {
+      if (!this.selectedFile) {
+        throw new Error('Surat balasan wajib diunggah untuk persetujuan')
+      }
+
+      const formData = new FormData()
+      formData.append('surat_balasan', this.selectedFile)
+      formData.append('status', 'approved')
+
+      await axios.put(
+  `http://localhost:5050/api/pkl/${this.currentItemId}/approve-with-letter`, 
+  formData,
+  { headers: { 'Content-Type': 'multipart/form-data'
+          }
+        }
+      )
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Berhasil Disetujui!',
+        text: 'Pengajuan PKL telah disetujui dan surat balasan telah dikirim',
+        background: '#374151',
+        color: '#ffffff',
+        confirmButtonColor: '#10b981'
+      })
+    },
+    
+    async submitRejection() {
+      const result = await Swal.fire({
+        icon: 'warning',
+        title: 'Konfirmasi Penolakan',
+        text: 'Apakah Anda yakin ingin menolak pengajuan ini?',
+        showCancelButton: true,
+        confirmButtonText: 'Ya, Tolak',
+        cancelButtonText: 'Batal',
+        background: '#374151',
+        color: '#ffffff',
+        confirmButtonColor: '#ef4444',
+        cancelButtonColor: '#6b7280'
+      })
+
+      if (!result.isConfirmed) {
+        throw new Error('Penolakan dibatalkan')
+      }
+
+      await axios.put(
+        `http://localhost:5050/api/pkl/${this.currentItemId}/status`,
+        { status: 'rejected' }
+      )
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Berhasil Ditolak!',
+        text: 'Pengajuan PKL telah ditolak',
+        background: '#374151',
+        color: '#ffffff',
+        confirmButtonColor: '#ef4444'
+      })
     },
     
     formatDate(dateStr) {
       if (!dateStr) return '-'
-      
       try {
         const options = { 
           year: 'numeric', 
@@ -740,13 +769,12 @@ export default {
         return new Date(dateStr).toLocaleDateString('id-ID', options)
       } catch (error) {
         console.error('Date formatting error:', error)
-        return dateStr // Return original string if formatting fails
+        return dateStr
       }
     },
     
     getInitials(name) {
       if (!name) return '??'
-      
       try {
         return name
           .split(' ')
@@ -760,18 +788,17 @@ export default {
       }
     },
 
-    // Method untuk refresh data
-    async refreshData() {
-      console.log('Manual refresh triggered')
-      await this.fetchData()
-      this.showToastMessage('Data berhasil di-refresh', 'success')
-    },
-
-    // Method untuk export data ke CSV
-    exportData() {
+    async exportData() {
       try {
         if (this.filteredData.length === 0) {
-          this.showToastMessage('Tidak ada data untuk diekspor', 'error')
+          Swal.fire({
+            icon: 'info',
+            title: 'Tidak ada data',
+            text: 'Tidak ada data yang bisa diekspor',
+            background: '#374151',
+            color: '#ffffff',
+            confirmButtonColor: '#3b82f6'
+          })
           return
         }
 
@@ -786,14 +813,15 @@ export default {
           'Tanggal Selesai': this.formatDate(item.tanggal_selesai),
           'Status': item.status || '',
           'Unit Kerja': item.unit_kerja || '',
-          'Jenjang Pendidikan': item.jenjang_pendidikan || ''
+          'Jenjang Pendidikan': item.jenjang_pendidikan || '',
+          'Surat Balasan': item.surat_balasan ? 'Ada' : 'Tidak Ada'
         }))
 
         // Create CSV content
         const headers = Object.keys(dataToExport[0]).join(',')
         const csvContent = dataToExport.map(row => 
           Object.values(row).map(value => 
-            `"${String(value).replace(/"/g, '""')}"` // Escape quotes
+            `"${String(value).replace(/"/g, '""')}"`
           ).join(',')
         ).join('\n')
         
@@ -813,21 +841,26 @@ export default {
         document.body.removeChild(link)
         
         URL.revokeObjectURL(url)
-
-        this.showToastMessage(`Data berhasil diekspor (${this.filteredData.length} baris)`, 'success')
-        console.log('Data exported successfully')
+        
+        Swal.fire({
+          icon: 'success',
+          title: 'Export Berhasil',
+          text: 'Data PKL telah berhasil diekspor',
+          background: '#374151',
+          color: '#ffffff',
+          confirmButtonColor: '#10b981'
+        })
       } catch (error) {
         console.error('Export error:', error)
-        this.showToastMessage('Gagal mengekspor data', 'error')
+        Swal.fire({
+          icon: 'error',
+          title: 'Export Gagal',
+          text: 'Terjadi kesalahan saat mengekspor data',
+          background: '#374151',
+          color: '#ffffff',
+          confirmButtonColor: '#ef4444'
+        })
       }
-    }
-  },
-  
-  // Lifecycle hook untuk cleanup
-  beforeUnmount() {
-    console.log('Component unmounting, cleaning up...')
-    if (this.toastTimeout) {
-      clearTimeout(this.toastTimeout)
     }
   }
 }
@@ -873,33 +906,6 @@ button:disabled {
   opacity: 0.6;
 }
 
-/* Animation for toast */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-.transition-all {
-  animation: slideInRight 0.3s ease-out;
-}
-
 /* Loading spinner */
 @keyframes spin {
   to {
@@ -925,5 +931,10 @@ button:disabled {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+}
+
+/* SweetAlert2 custom styles */
+.swal2-popup {
+  font-family: inherit;
 }
 </style>
