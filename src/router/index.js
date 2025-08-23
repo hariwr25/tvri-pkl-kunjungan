@@ -13,13 +13,10 @@ import DashboardAdmin from '@/views/admin/DashboardAdmin.vue'
 // Halaman admin lainnya
 import DataPKL from '@/views/admin/DataPkl.vue'
 import DataKunjungan from '@/views/admin/DataKunjungan.vue'
-import RiwayatPKL from '@/views/admin/RiwayatPkl.vue'
-import RiwayatKunjungan from '@/views/admin/RiwayatKunjungan.vue'
 import Laporan from '@/views/admin/Laporan.vue'
 import Users from '@/views/admin/Users.vue'
-import Tentang from '@/views/admin/Tentang.vue'
 import Profil from '@/views/admin/ProfilAdmin.vue'
-import Settings from '@/views/admin/SettingsAdmin.vue'
+import Pengaturan from '@/views/admin/Pengaturan.vue'
 
 const routes = [
   {
@@ -66,16 +63,6 @@ const routes = [
     component: DataKunjungan
   },
   {
-    path: '/admin/riwayat-pkl',
-    name: 'RiwayatPKL',
-    component: RiwayatPKL
-  },
-  {
-    path: '/admin/riwayat-kunjungan',
-    name: 'RiwayatKunjungan',
-    component: RiwayatKunjungan
-  },
-  {
     path: '/admin/laporan',
     name: 'Laporan',
     component: Laporan
@@ -86,20 +73,15 @@ const routes = [
     component: Users
   },
   {
-    path: '/admin/tentang',
-    name: 'Tentang',
-    component: Tentang
+    path: '/admin/pengaturan',
+    name: 'Pengaturan',
+    component: Pengaturan
   },
   {
     path: '/admin/profil',
     name: 'ProfilAdmin',
     component: Profil
   },
-  {
-    path: '/admin/settings',
-    name: 'SettingsAdmin',
-    component: Settings
-  }
 ]
 
 const router = createRouter({
@@ -116,12 +98,9 @@ router.beforeEach((to, from, next) => {
     '/admin/pkl',
     '/admin/profil',
     '/admin/kunjungan',
-    '/admin/riwayat-pkl',
-    '/admin/riwayat-kunjungan',
     '/admin/laporan',
     '/admin/users',
-    '/admin/tentang',
-    '/admin/settings'
+    '/admin/pengaturan'
   ]
 
   // Set judul halaman

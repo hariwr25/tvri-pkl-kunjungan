@@ -13,6 +13,7 @@
     "@mdi/font": "^7.4.47",
     "axios": "^1.10.0",
     "chart.js": "^4.5.0",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "core-js": "^3.8.3",
     "gsap": "^3.13.0",
     "multer": "^2.0.1",
@@ -22,8 +23,7 @@
     "sweetalert2": "^11.22.1",
     "vue": "^3.2.13",
     "vue-router": "^4.5.1",
-    "vuetify": "^3.8.10",
-    "xlsx": "^0.18.5"
+    "vuetify": "^3.8.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

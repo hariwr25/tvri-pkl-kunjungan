@@ -17,7 +17,7 @@
       <div v-if="!collapsed" class="px-6 pt-6 pb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">Utama</div>
       <nav class="px-2 space-y-1 text-sm font-medium">
         <router-link to="/admin/dashboard" class="menu-link">
-          <i class="fas fa-chart-line"></i>
+          <i class="fas fa-home"></i>
           <span v-if="!collapsed">Dashboard</span>
         </router-link>
       </nav>
@@ -25,38 +25,30 @@
       <!-- Menu Data -->
       <div v-if="!collapsed" class="px-6 pt-6 pb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">Data</div>
       <nav class="px-2 space-y-1 text-sm font-medium">
-        <router-link to="/admin/Pkl" class="menu-link">
+        <router-link to="/admin/pkl" class="menu-link">
           <i class="fas fa-clipboard-list"></i>
           <span v-if="!collapsed">Data PKL</span>
         </router-link>
-        <router-link to="/admin/Kunjungan" class="menu-link">
-          <i class="fas fa-users"></i>
+        <router-link to="/admin/kunjungan" class="menu-link">
+          <i class="fas fa-clipboard-list"></i>
           <span v-if="!collapsed">Data Kunjungan</span>
         </router-link>
-        <router-link to="/admin/riwayat-pkl" class="menu-link">
-          <i class="fas fa-history"></i>
-          <span v-if="!collapsed">Riwayat PKL</span>
-        </router-link>
-        <router-link to="/admin/riwayat-kunjungan" class="menu-link">
-          <i class="fas fa-clock"></i>
-          <span v-if="!collapsed">Riwayat Kunjungan</span>
+        <router-link to="/admin/laporan" class="menu-link">
+          <i class="fas fa-chart-bar"></i>
+          <span v-if="!collapsed">Laporan</span>
         </router-link>
       </nav>
 
-      <!-- Menu Lainnya -->
-      <div v-if="!collapsed" class="px-6 pt-6 pb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">Lainnya</div>
+      <!-- Menu Pengaturan -->
+      <div v-if="!collapsed" class="px-6 pt-6 pb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">Pengaturan</div>
       <nav class="px-2 space-y-1 text-sm font-medium mb-4">
-        <router-link to="/admin/laporan" class="menu-link">
-          <i class="fas fa-file-alt"></i>
-          <span v-if="!collapsed">Laporan</span>
-        </router-link>
         <router-link to="/admin/users" class="menu-link">
-          <i class="fas fa-user-shield"></i>
-          <span v-if="!collapsed">Admin & Akses</span>
+          <i class="fas fa-user"></i>
+          <span v-if="!collapsed">User</span>
         </router-link>
-        <router-link to="/admin/tentang" class="menu-link">
-          <i class="fas fa-info-circle"></i>
-          <span v-if="!collapsed">Tentang Aplikasi</span>
+        <router-link to="/admin/pengaturan" class="menu-link">
+          <i class="fas fa-cog"></i>
+          <span v-if="!collapsed">Pengaturan</span>
         </router-link>
       </nav>
     </aside>
@@ -91,7 +83,7 @@
           </button>
           <div v-if="showProfileDropdown" class="absolute right-0 mt-2 w-44 bg-gray-700 rounded-md shadow-lg z-50">
             <router-link to="/admin/profil" class="block px-4 py-2 text-sm hover:bg-gray-600">Lihat Profil</router-link>
-            <router-link to="/admin/settings" class="block px-4 py-2 text-sm hover:bg-gray-600">Pengaturan</router-link>
+            <router-link to="/admin/pengaturan" class="block px-4 py-2 text-sm hover:bg-gray-600">Pengaturan</router-link>
             <button @click="handleLogout" class="w-full text-left px-4 py-2 text-sm hover:bg-red-600">Logout</button>
           </div>
         </div>

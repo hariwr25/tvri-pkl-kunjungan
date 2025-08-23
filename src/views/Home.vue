@@ -8,13 +8,12 @@
             <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center shadow-lg animate-pulse logo-circle">
               <span class="text-white font-bold">TV</span>
             </div>
-            <span class="text-xl font-bold text-amber-400">TVRI Yogyakarta</span>
+            <span class="text-xl font-bold text-amber-400">Yogyakarta</span>
           </div>
           <div class="hidden md:flex items-center gap-6">
             <a href="#home" class="hover:text-amber-300 transition-colors font-medium hover:scale-105">Beranda</a>
             <a href="#info" class="hover:text-emerald-300 transition-colors font-medium hover:scale-105">Info</a>
             <a href="#program" class="hover:text-rose-300 transition-colors font-medium hover:scale-105">Program</a>
-            <a href="#kontak" class="hover:text-sky-300 transition-colors font-medium hover:scale-105">Kontak</a>
             <router-link 
               to="/cek-status" 
               class="bg-amber-500 hover:bg-amber-400 px-4 py-2 rounded-lg transition-all shadow-lg hover:shadow-amber-400/40 flex items-center gap-2 font-medium hover:scale-105"
@@ -843,26 +842,6 @@
             Lihat Lebih Banyak Foto
           </button>
         </div>
-
-        <!-- Statistics Cards -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-rose-500/10 to-pink-500/10 border border-rose-500/20 backdrop-blur-sm stat-item">
-            <div class="text-3xl font-bold text-rose-400 mb-2">150+</div>
-            <div class="text-gray-300 text-sm">Peserta PKL</div>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-sm stat-item">
-            <div class="text-3xl font-bold text-blue-400 mb-2">25</div>
-            <div class="text-gray-300 text-sm">Batch Pelatihan</div>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 backdrop-blur-sm stat-item">
-            <div class="text-3xl font-bold text-green-400 mb-2">50+</div>
-            <div class="text-gray-300 text-sm">Sekolah Partner</div>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/20 backdrop-blur-sm stat-item">
-            <div class="text-3xl font-bold text-purple-400 mb-2">95%</div>
-            <div class="text-gray-300 text-sm">Tingkat Kepuasan</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1181,6 +1160,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 
 export default {
   name: 'ModernGalleryTVRI',
@@ -1439,6 +1419,36 @@ export default {
   },
   
   methods: {
+    // Fixed scrollToSection method
+    scrollToSection(sectionId) {
+      // First register the ScrollTo plugin
+      gsap.registerPlugin(ScrollToPlugin)
+      
+      const element = document.getElementById(sectionId)
+      if (element) {
+        // Using GSAP's scrollTo with proper syntax
+        gsap.to(window, {
+          duration: 0.8,
+          scrollTo: {
+            y: element,
+            offsetY: 100
+          },
+          ease: 'power2.inOut'
+        })
+      }
+    },
+
+    // Alternative native implementation if GSAP issues persist
+    nativeScrollToSection(sectionId) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    },
+
     initAnimations() {
       // Hero section animations
       gsap.from('.hero-content', {
