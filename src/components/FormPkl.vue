@@ -1,3 +1,4 @@
+
 <template>
   <div class="min-h-screen bg-gray-900 relative overflow-hidden flex items-center justify-center">
     <!-- Animated Background Elements -->
@@ -7,13 +8,18 @@
       <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-pulse" style="animation-delay: 4s;"></div>
     </div>
 
-    <div class="relative w-full max-w-4xl px-4">
-      <!-- Header -->
-      <div class="text-center mb-8">
-        <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent mb-2 animate-pulse">
-          Form Pendaftaran PKL
-        </h2>
-        <p class="text-gray-300">Lengkapi formulir di bawah untuk mendaftar program PKL di TVRI Yogyakarta</p>
+    <div class="relative w-full max-w-4xl px-4 py-6 sm:py-8">
+      <!-- Header dengan Logo -->
+      <div class="text-center mb-6 sm:mb-8">
+        <div class="flex items-center justify-center gap-3 sm:gap-4 mb-3">
+          <div class="h-16 w-16 sm:h-20 sm:w-20">
+            <img :src="require('@/assets/logo.png')" alt="TVRI Logo" class="w-full h-full object-contain" />
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent animate-pulse">
+            Form Pendaftaran PKL
+          </h2>
+        </div>
+        <p class="text-gray-300 text-sm sm:text-base px-2">Lengkapi formulir di bawah untuk mendaftar program PKL di TVRI Yogyakarta</p>
       </div>
 
       <!-- Form Container -->

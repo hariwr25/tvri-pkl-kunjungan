@@ -16,7 +16,6 @@ import DataKunjungan from '@/views/admin/DataKunjungan.vue'
 import Laporan from '@/views/admin/Laporan.vue'
 import Users from '@/views/admin/Users.vue'
 import Profil from '@/views/admin/ProfilAdmin.vue'
-import Pengaturan from '@/views/admin/Pengaturan.vue'
 
 const routes = [
   {
@@ -73,11 +72,6 @@ const routes = [
     component: Users
   },
   {
-    path: '/admin/pengaturan',
-    name: 'Pengaturan',
-    component: Pengaturan
-  },
-  {
     path: '/admin/profil',
     name: 'ProfilAdmin',
     component: Profil
@@ -100,7 +94,6 @@ router.beforeEach((to, from, next) => {
     '/admin/kunjungan',
     '/admin/laporan',
     '/admin/users',
-    '/admin/pengaturan'
   ]
 
   // Set judul halaman
