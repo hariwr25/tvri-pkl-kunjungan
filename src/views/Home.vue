@@ -1,37 +1,101 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-white overflow-hidden">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-amber-400/20 shadow-lg">
-      <div class="max-w-7xl mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-15 h-10 rounded-lg flex items-center justify-center shadow-lg ">
-              <img :src="require('@/assets/logo.png')" alt="TVRI Logo" class="w-full h-full object-contain">
-            </div>
-            <span class="text-xl font-bold text-amber-1000">Yogyakarta</span>
-          </div>
-          <div class="hidden md:flex items-center gap-6">
-            <a href="#home" class="hover:text-amber-300 transition-colors font-medium hover:scale-105">Beranda</a>
-            <a href="#info" class="hover:text-emerald-300 transition-colors font-medium hover:scale-105">Info</a>
-            <a href="#program" class="hover:text-rose-300 transition-colors font-medium hover:scale-105">Program</a>
-            <router-link 
-              to="/cek-status" 
-              class="bg-amber-500 hover:bg-amber-400 px-4 py-2 rounded-lg transition-all shadow-lg hover:shadow-amber-400/40 flex items-center gap-2 font-medium hover:scale-105"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
-              </svg>
-              Cek Status
-            </router-link>
-          </div>
-          <button class="md:hidden text-gray-300 hover:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-amber-400/20 shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-15 h-10 rounded-lg flex items-center justify-center shadow-lg">
+          <img :src="require('@/assets/logo.png')" alt="TVRI Logo" class="w-full h-full object-contain">
         </div>
+        <span class="text-xl font-bold text-amber-1000">Yogyakarta</span>
       </div>
-    </nav>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#home" class="hover:text-amber-300 transition-colors font-medium hover:scale-105">Beranda</a>
+        <a href="#info" class="hover:text-emerald-300 transition-colors font-medium hover:scale-105">Info</a>
+        <a href="#program" class="hover:text-rose-300 transition-colors font-medium hover:scale-105">Program</a>
+        <router-link 
+          to="/cek-status" 
+          class="bg-amber-500 hover:bg-amber-400 px-4 py-2 rounded-lg transition-all shadow-lg hover:shadow-amber-400/40 flex items-center gap-2 font-medium hover:scale-105"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+          </svg>
+          Cek Status
+        </router-link>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        @click="toggleMobileMenu"
+        class="md:hidden text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-lg p-2"
+        :aria-expanded="mobileMenuOpen"
+        aria-label="Toggle menu"
+      >
+        <!-- Hamburger Icon (when closed) -->
+        <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close Icon (when open) -->
+        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu Dropdown -->
+    <transition
+      enter-active-class="transition ease-out duration-200"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition ease-in duration-150"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <div 
+        v-show="mobileMenuOpen" 
+        class="md:hidden mt-4 pb-4 space-y-3 border-t border-gray-700 pt-4"
+      >
+        <a 
+          href="#home" 
+          @click="closeMobileMenu"
+          class="block py-2 px-4 hover:bg-gray-800 hover:text-amber-300 transition-colors rounded-lg font-medium"
+        >
+          Beranda
+        </a>
+        <a 
+          href="#info" 
+          @click="closeMobileMenu"
+          class="block py-2 px-4 hover:bg-gray-800 hover:text-emerald-300 transition-colors rounded-lg font-medium"
+        >
+          Info
+        </a>
+        <a 
+          href="#program" 
+          @click="closeMobileMenu"
+          class="block py-2 px-4 hover:bg-gray-800 hover:text-rose-300 transition-colors rounded-lg font-medium"
+        >
+          Program
+        </a>
+        <router-link 
+          to="/cek-status" 
+          @click="closeMobileMenu"
+          class="block bg-amber-500 hover:bg-amber-400 px-4 py-3 rounded-lg transition-all shadow-lg text-center font-medium"
+        >
+          <span class="flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+            </svg>
+            Cek Status
+          </span>
+        </router-link>
+      </div>
+    </transition>
+  </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 hero-content">
@@ -745,15 +809,15 @@
           </p>
         </div>
 
-        <!-- Gallery Filter Tabs -->
-        <div class="flex justify-center mb-8">
-          <div class="inline-flex bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 border border-gray-700">
+        <!-- Gallery Filter Tabs - Responsive -->
+        <div class="flex justify-center mb-8 overflow-x-auto pb-2 px-4">
+          <div class="inline-flex bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 border border-gray-700 gap-1">
             <button 
               v-for="(filter, index) in galleryFilters" 
               :key="index"
               @click="activeFilter = filter.id"
               :class="[
-                'px-6 py-3 rounded-xl font-medium transition-all duration-300',
+                'px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-medium transition-all duration-300 whitespace-nowrap text-sm sm:text-base',
                 activeFilter === filter.id 
                   ? 'bg-rose-500 text-white shadow-lg' 
                   : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -767,69 +831,36 @@
         <!-- Main Gallery Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           
-          <!-- Featured Video - Spans 2 columns -->
-          <div 
-            class="lg:col-span-2 xl:row-span-2 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-rose-500/20 gallery-item"
-          >
-            <div class="aspect-video lg:aspect-[4/3] relative h-full">
-              <img :src="featuredVideo.thumbnail" 
-                   :alt="featuredVideo.title" 
-                   class="w-full h-full object-cover">
-              
-              <!-- Play button -->
-              <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-                <div class="w-20 h-20 bg-rose-500/90 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-rose-400 transition-all duration-300 shadow-lg hover:shadow-rose-500/50">
-                  <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-              </div>
-              
-              <!-- Content overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
-                <div>
-                  <h3 class="text-2xl font-bold text-white mb-2">{{ featuredVideo.title }}</h3>
-                  <p class="text-gray-300 mb-3">{{ featuredVideo.description }}</p>
-                  <div class="flex items-center gap-2">
-                    <span class="px-3 py-1 bg-rose-500/80 text-white text-sm rounded-full backdrop-blur-sm">Video</span>
-                    <span class="text-gray-400 text-sm">{{ featuredVideo.duration }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Gallery Items - Simple Display -->
+          <!-- Gallery Items - Responsive -->
           <div 
             v-for="(item, index) in filteredGalleryItems.slice(0, 8)" 
             :key="index"
-            :class="`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-${item.color}-500/20 gallery-item`"
+            class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-xl gallery-item"
           >
             <div class="aspect-square relative">
               <img :src="item.image" 
                    :alt="item.title" 
-                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                   loading="lazy">
+                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
               
-              <!-- Hover overlay with info -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+              <!-- Hover overlay with info - Better Mobile Touch -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent sm:opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-3 sm:p-4">
                 <div class="w-full">
-                  <h3 class="font-bold text-white text-lg mb-1">{{ item.title }}</h3>
-                  <p class="text-gray-300 text-sm mb-2 line-clamp-2">{{ item.description }}</p>
+                  <h3 class="font-bold text-white text-base sm:text-lg mb-1">{{ item.title }}</h3>
+                  <p class="text-gray-300 text-xs sm:text-sm mb-2 line-clamp-2">{{ item.description }}</p>
                   
-                  <!-- Tags -->
+                  <!-- Tags - Responsive -->
                   <div class="flex flex-wrap gap-1 mb-2">
                     <span 
                       v-for="(tag, tagIndex) in item.tags" 
                       :key="tagIndex"
-                      :class="`px-2 py-1 bg-${item.color}-500/80 text-white text-xs rounded-full`"
+                      :class="`px-2 py-0.5 sm:py-1 bg-${item.color}-500/80 text-white text-xs rounded-full`"
                     >
                       {{ tag }}
                     </span>
                   </div>
                   
                   <!-- Category badge -->
-                  <span :class="`inline-block px-2 py-1 bg-${item.color}-500/60 text-white text-xs rounded-full capitalize`">
+                  <span :class="`inline-block px-2 py-0.5 sm:py-1 bg-${item.color}-500/60 text-white text-xs rounded-full`">
                     {{ item.category }}
                   </span>
                 </div>
@@ -1007,11 +1038,11 @@
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           <!-- Logo & Description -->
           <div class="col-span-1 md:col-span-2">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg animate-pulse logo-circle">
-                <span class="text-white font-bold text-lg">TV</span>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-20 h-20 rounded-full flex items-center justify-center shadow-lg">
+                <img :src="require('@/assets/logo.png')" alt="TVRI Logo" class="w-full h-full object-contain">
               </div>
-              <span class="text-2xl font-bold text-amber-400">TVRI Yogyakarta</span>
+              <span class="text-3xl font-bold text-amber-0">Yogyakarta</span>
             </div>
             <p class="text-gray-400 max-w-md mb-6">
               Stasiun televisi publik yang berkomitmen pada pendidikan dan pengembangan sumber daya manusia di bidang broadcasting dan media.
@@ -1087,13 +1118,13 @@
               Links
             </h3>
             <div class="space-y-3 text-gray-400">
-              <a href="#" class="block hover:text-amber-300 transition-colors flex items-center gap-2">
+              <a href="https://yogyakarta.tvri.go.id/profil.php?id=1" class="block hover:text-amber-300 transition-colors flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
                 Tentang Kami
               </a>
-              <a href="#" class="block hover:text-emerald-300 transition-colors flex items-center gap-2">
+              <a href="https://tvriyogyakartanews.com/" class="block hover:text-emerald-300 transition-colors flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
@@ -1105,12 +1136,6 @@
                 </svg>
                 Cek Status
               </router-link>
-              <a href="#kontak" class="block hover:text-sky-300 transition-colors flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Kontak
-              </a>
             </div>
           </div>
           
@@ -1149,7 +1174,7 @@
         <!-- Copyright & Additional Links -->
         <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; 2025 TVRI Yogyakarta - Divisi New Media. All rights reserved.
+            &copy; 2025 TVRI Yogyakarta - Divisi Umum. All rights reserved.
           </p>
           <div class="flex gap-6">
             <a href="#" class="text-gray-500 hover:text-amber-400 text-sm transition-colors">Privacy Policy</a>
@@ -1172,6 +1197,8 @@ export default {
   name: 'ModernGalleryTVRI',
   data() {
     return {
+      mobileMenuOpen: false,
+
       // Gallery specific data
       activeFilter: 'all',
       lightboxOpen: false,
@@ -1221,9 +1248,9 @@ export default {
           id: 1,
           title: 'Studio Produksi TVRI',
           description: 'Peserta PKL belajar operasional studio produksi dengan peralatan broadcasting profesional',
-          image: require('@/assets/foto.jpg'),
-          thumbnail: require('@/assets/foto.jpg'),
-          category: 'pkl',
+          image: require('@/assets/studio.jpg'),
+          thumbnail: require('@/assets/studio.jpg'),
+          category: 'fasilitas',
           color: 'rose',
           tags: ['Studio', 'Produksi', 'Broadcasting']
         },
@@ -1241,9 +1268,9 @@ export default {
           id: 3,
           title: 'Pelatihan Jurnalistik',
           description: 'Sesi pelatihan intensif jurnalistik televisi dan teknik wawancara profesional',
-          image: require('@/assets/pkl1.jpg'),
-          thumbnail: require('@/assets/pkl1.jpg'),
-          category: 'pkl',
+          image: require('@/assets/berita.jpg'),
+          thumbnail: require('@/assets/berita.jpg'),
+          category: 'kunjungan',
           color: 'green',
           tags: ['Jurnalistik', 'Wawancara', 'Pelatihan']
         },
@@ -1251,9 +1278,9 @@ export default {
           id: 4,
           title: 'Workshop Editing Video',
           description: 'Peserta belajar teknik editing video profesional menggunakan software terkini',
-          image: require('@/assets/pkl2.jpg'),
-          thumbnail: require('@/assets/pkl2.jpg'),
-          category: 'pkl',
+          image: require('@/assets/workshop.jpg'),
+          thumbnail: require('@/assets/workshop.jpg'),
+          category: 'acara',
           color: 'purple',
           tags: ['Editing', 'Video', 'Post Production']
         },
@@ -1261,8 +1288,8 @@ export default {
           id: 5,
           title: 'Ruang Master Control',
           description: 'Peserta mengamati proses kontrol siaran dari ruang master control TVRI',
-          image: require('@/assets/foto.jpg'),
-          thumbnail: require('@/assets/foto.jpg'),
+          image: require('@/assets/berita3.jpg'),
+          thumbnail: require('@/assets/berita3.jpg'),
           category: 'fasilitas',
           color: 'cyan',
           tags: ['MCR', 'Siaran', 'Kontrol']
@@ -1273,26 +1300,26 @@ export default {
           description: 'Acara penutupan dan perpisahan peserta PKL batch 2024 dengan pemberian sertifikat',
           image: require('@/assets/pkl1.jpg'),
           thumbnail: require('@/assets/pkl1.jpg'),
-          category: 'acara',
+          category: 'pkl',
           color: 'amber',
           tags: ['Perpisahan', 'Sertifikat', 'Graduation']
         },
         {
-          id: 7,
-          title: 'Kunjungan SMK Multimedia',
-          description: 'Kunjungan khusus siswa SMK jurusan multimedia untuk mempelajari teknologi broadcasting',
-          image: require('@/assets/kunjungan3.jpeg'),
-          thumbnail: require('@/assets/kunjungan3.jpeg'),
-          category: 'kunjungan',
-          color: 'indigo',
-          tags: ['SMK', 'Multimedia', 'Teknologi']
-        },
+  id: 7,
+  title: 'Kegiatan Bersama PKL & Staff',
+  description: 'Olahraga bersama, gathering, dan kegiatan team building antara peserta PKL dengan staff TVRI',
+  image: require('@/assets/gathering.jpg'),
+  thumbnail: require('@/assets/gathering.jpg'),
+  category: 'acara',
+  color: 'indigo',
+  tags: ['Team Building', 'Gathering', 'Kebersamaan']
+},
         {
           id: 8,
           title: 'Live Streaming Setup',
           description: 'Peserta mempelajari setup peralatan untuk live streaming dan siaran langsung',
-          image: require('@/assets/pkl2.jpg'),
-          thumbnail: require('@/assets/pkl2.jpg'),
+          image: require('@/assets/program6.jpg'),
+          thumbnail: require('@/assets/program6.jpg'),
           category: 'pkl',
           color: 'red',
           tags: ['Live Stream', 'Setup', 'Broadcasting']
@@ -1425,6 +1452,20 @@ export default {
   },
   
   methods: {
+
+    toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen
+  },
+  
+  closeMobileMenu() {
+    this.mobileMenuOpen = false
+  },
+
+   // TAMBAHKAN METHOD INI
+   loadMoreImages() {
+    this.imagesDisplayCount += 8
+  },
+
     // Fixed scrollToSection method
     scrollToSection(sectionId) {
       // First register the ScrollTo plugin
@@ -1802,6 +1843,9 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
   }
+  nav {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1811,6 +1855,32 @@ html {
 
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Ensure filter tabs don't wrap on mobile */
+  .inline-flex {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 2px;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(251, 191, 36, 0.3);
+    border-radius: 2px;
+  }
+  
+  /* Mobile overlay always visible */
+  .gallery-item .absolute.inset-0 {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
   }
 }
 
@@ -1836,9 +1906,49 @@ button:focus,
     border: 1px solid #fff;
   }
 }
+ /* Mobile Menu Transitions */
+ .transition {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.-translate-y-2 {
+  transform: translateY(-0.5rem);
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
+ 
   .transition-all,
   .gallery-item,
   .gallery-image {
