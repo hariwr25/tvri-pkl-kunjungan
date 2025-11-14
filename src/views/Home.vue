@@ -1,37 +1,101 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-white overflow-hidden">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-amber-400/20 shadow-lg">
-      <div class="max-w-7xl mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-15 h-10 rounded-lg flex items-center justify-center shadow-lg ">
-              <img :src="require('@/assets/logo.png')" alt="TVRI Logo" class="w-full h-full object-contain">
-            </div>
-            <span class="text-xl font-bold text-amber-1000">Yogyakarta</span>
-          </div>
-          <div class="hidden md:flex items-center gap-6">
-            <a href="#home" class="hover:text-amber-300 transition-colors font-medium hover:scale-105">Beranda</a>
-            <a href="#info" class="hover:text-emerald-300 transition-colors font-medium hover:scale-105">Info</a>
-            <a href="#program" class="hover:text-rose-300 transition-colors font-medium hover:scale-105">Program</a>
-            <router-link 
-              to="/cek-status" 
-              class="bg-amber-500 hover:bg-amber-400 px-4 py-2 rounded-lg transition-all shadow-lg hover:shadow-amber-400/40 flex items-center gap-2 font-medium hover:scale-105"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
-              </svg>
-              Cek Status
-            </router-link>
-          </div>
-          <button class="md:hidden text-gray-300 hover:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-amber-400/20 shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-15 h-10 rounded-lg flex items-center justify-center shadow-lg">
+          <img :src="require('@/assets/logo.png')" alt="TVRI Logo" class="w-full h-full object-contain">
         </div>
+        <span class="text-xl font-bold text-amber-1000">Yogyakarta</span>
       </div>
-    </nav>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#home" class="hover:text-amber-300 transition-colors font-medium hover:scale-105">Beranda</a>
+        <a href="#info" class="hover:text-emerald-300 transition-colors font-medium hover:scale-105">Info</a>
+        <a href="#program" class="hover:text-rose-300 transition-colors font-medium hover:scale-105">Program</a>
+        <router-link 
+          to="/cek-status" 
+          class="bg-amber-500 hover:bg-amber-400 px-4 py-2 rounded-lg transition-all shadow-lg hover:shadow-amber-400/40 flex items-center gap-2 font-medium hover:scale-105"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+          </svg>
+          Cek Status
+        </router-link>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        @click="toggleMobileMenu"
+        class="md:hidden text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-lg p-2"
+        :aria-expanded="mobileMenuOpen"
+        aria-label="Toggle menu"
+      >
+        <!-- Hamburger Icon (when closed) -->
+        <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close Icon (when open) -->
+        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu Dropdown -->
+    <transition
+      enter-active-class="transition ease-out duration-200"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition ease-in duration-150"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <div 
+        v-show="mobileMenuOpen" 
+        class="md:hidden mt-4 pb-4 space-y-3 border-t border-gray-700 pt-4"
+      >
+        <a 
+          href="#home" 
+          @click="closeMobileMenu"
+          class="block py-2 px-4 hover:bg-gray-800 hover:text-amber-300 transition-colors rounded-lg font-medium"
+        >
+          Beranda
+        </a>
+        <a 
+          href="#info" 
+          @click="closeMobileMenu"
+          class="block py-2 px-4 hover:bg-gray-800 hover:text-emerald-300 transition-colors rounded-lg font-medium"
+        >
+          Info
+        </a>
+        <a 
+          href="#program" 
+          @click="closeMobileMenu"
+          class="block py-2 px-4 hover:bg-gray-800 hover:text-rose-300 transition-colors rounded-lg font-medium"
+        >
+          Program
+        </a>
+        <router-link 
+          to="/cek-status" 
+          @click="closeMobileMenu"
+          class="block bg-amber-500 hover:bg-amber-400 px-4 py-3 rounded-lg transition-all shadow-lg text-center font-medium"
+        >
+          <span class="flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+            </svg>
+            Cek Status
+          </span>
+        </router-link>
+      </div>
+    </transition>
+  </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 hero-content">
@@ -1172,6 +1236,8 @@ export default {
   name: 'ModernGalleryTVRI',
   data() {
     return {
+      mobileMenuOpen: false,
+
       // Gallery specific data
       activeFilter: 'all',
       lightboxOpen: false,
@@ -1425,6 +1491,15 @@ export default {
   },
   
   methods: {
+
+    toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen
+  },
+  
+  closeMobileMenu() {
+    this.mobileMenuOpen = false
+  },
+
     // Fixed scrollToSection method
     scrollToSection(sectionId) {
       // First register the ScrollTo plugin
@@ -1802,6 +1877,9 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
   }
+  nav {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1839,6 +1917,45 @@ button:focus,
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
+  /* Mobile Menu Transitions */
+.transition {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.-translate-y-2 {
+  transform: translateY(-0.5rem);
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
   .transition-all,
   .gallery-item,
   .gallery-image {
